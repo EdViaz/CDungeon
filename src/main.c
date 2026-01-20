@@ -8,7 +8,7 @@
 int main() {
   NodoSalvataggio *lista_salvataggi = NULL;
   Giocatore giocatore_corrente;
-  
+
   // Carica i salvataggi esistenti da file
   carica_salvataggi_da_file(&lista_salvataggi);
 
@@ -22,6 +22,4 @@ int main() {
   libera_salvataggi(lista_salvataggi);
 
   return 0;
-
-
 }
