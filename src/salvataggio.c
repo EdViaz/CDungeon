@@ -4,7 +4,6 @@
 #include <string.h>
 #include <time.h>
 
-
 // Funzione helper per ottenere la data corrente come stringa
 void ottieni_data_corrente(char *buffer, size_t size) {
   time_t t = time(NULL);
@@ -89,10 +88,10 @@ void elimina_salvataggio(NodoSalvataggio **testa, int id) {
         *testa = curr->prossimo;
       }
       free(curr);
-      
+
       // Aggiorniamo il file dopo la modifica
       salva_tutto_su_file(*testa);
-      
+
       printf("Salvataggio %d eliminato.\n", id);
       return;
     }
@@ -107,16 +106,14 @@ void stampa_salvataggi(NodoSalvataggio *testa) {
     printf("Nessun salvataggio disponibile.\n");
     return;
   }
-  
+
   NodoSalvataggio *curr = testa;
   while (curr) {
     // Formato richiesto: ID. DATA , P. VITA , MONETE , OGGETTI , MISSIONI
-    printf("%d. %s , %d P. VITA , %d MONETE , %d OGGETTI , %d MISSIONI COMPLETATE\n",
-           curr->id,
-           curr->timestamp,
-           curr->dati_giocatore.punti_vita,
-           curr->dati_giocatore.monete,
-           curr->dati_giocatore.numero_oggetti,
+    printf("%d. %s , %d P. VITA , %d MONETE , %d OGGETTI , %d MISSIONI "
+           "COMPLETATE\n",
+           curr->id, curr->timestamp, curr->dati_giocatore.punti_vita,
+           curr->dati_giocatore.monete, curr->dati_giocatore.numero_oggetti,
            curr->dati_giocatore.missioni_completate);
     curr = curr->prossimo;
   }
@@ -134,7 +131,8 @@ void libera_salvataggi(NodoSalvataggio *testa) {
 // Nuova funzione per caricare dal file all'avvio
 void carica_salvataggi_da_file(NodoSalvataggio **testa) {
   FILE *f = fopen("salvataggi.bin", "rb");
-  if (!f) return; // File non esiste, nessun problema (prima esecuzione)
+  if (!f)
+    return; // File non esiste, nessun problema (prima esecuzione)
 
   // Svuota lista attuale se ce ne fosse bisogno (ma all'avvio è NULL)
   libera_salvataggi(*testa);
@@ -142,27 +140,33 @@ void carica_salvataggi_da_file(NodoSalvataggio **testa) {
 
   while (1) {
     NodoSalvataggio *nuovo = (NodoSalvataggio *)malloc(sizeof(NodoSalvataggio));
-    if (!nuovo) break; // Errore mem
+    if (!nuovo)
+      break; // Errore mem
 
     // Leggi i 3 campi
-    if (fread(&nuovo->id, sizeof(int), 1, f) != 1) { free(nuovo); break; }
+    if (fread(&nuovo->id, sizeof(int), 1, f) != 1) {
+      free(nuovo);
+      break;
+    }
     fread(nuovo->timestamp, sizeof(nuovo->timestamp), 1, f);
     fread(&nuovo->dati_giocatore, sizeof(Giocatore), 1, f);
-    
-    // Inserisci in coda per mantenere l'ordine (o in testa se salviamo in ordine inverso)
-    // Dato che salva_tutto scorre dalla testa, il primo nel file è la testa (il più recente).
-    // Se inseriamo in testa man mano che leggiamo, invertiamo l'ordine!
+
+    // Inserisci in coda per mantenere l'ordine (o in testa se salviamo in
+    // ordine inverso) Dato che salva_tutto scorre dalla testa, il primo nel
+    // file è la testa (il più recente). Se inseriamo in testa man mano che
+    // leggiamo, invertiamo l'ordine!
     // -> Il file ha: [Testa (Recente)] -> [Succ] -> ...
     // -> Lettura 1: Leggo Recente. Inserisco in testa. Lista: [Recente]
-    // -> Lettura 2: Leggo MenoRecente. Inserisco in testa. Lista: [MenoRecente] -> [Recente]
-    // ERRORE: Invertiamo l'ordine. Dobbiamo inserire in coda.
-    
+    // -> Lettura 2: Leggo MenoRecente. Inserisco in testa. Lista: [MenoRecente]
+    // -> [Recente] ERRORE: Invertiamo l'ordine. Dobbiamo inserire in coda.
+
     nuovo->prossimo = NULL;
     if (*testa == NULL) {
       *testa = nuovo;
     } else {
       NodoSalvataggio *temp = *testa;
-      while (temp->prossimo) temp = temp->prossimo;
+      while (temp->prossimo)
+        temp = temp->prossimo;
       temp->prossimo = nuovo;
     }
   }

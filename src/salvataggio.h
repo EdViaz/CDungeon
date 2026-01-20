@@ -4,17 +4,18 @@
 #include "giocatore.h"
 
 typedef struct NodoSalvataggio {
-    int id;
-    char timestamp[32];
-    Giocatore dati_giocatore;
-    struct NodoSalvataggio *prossimo;
+  int id;
+  char timestamp[32];
+  Giocatore dati_giocatore;
+  struct NodoSalvataggio *prossimo;
 } NodoSalvataggio;
 
 void aggiungi_salvataggio(NodoSalvataggio **testa, Giocatore *g);
-NodoSalvataggio* carica_salvataggio(NodoSalvataggio *testa, int id);
+NodoSalvataggio *carica_salvataggio(NodoSalvataggio *testa, int id);
 void elimina_salvataggio(NodoSalvataggio **testa, int id);
 void stampa_salvataggi(NodoSalvataggio *testa);
 void carica_salvataggi_da_file(NodoSalvataggio **testa);
+void salva_tutto_su_file(NodoSalvataggio *testa);
 void libera_salvataggi(NodoSalvataggio *testa);
 
 #endif
