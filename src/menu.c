@@ -1,6 +1,7 @@
 #include "menu.h"
+#include "combattimento.h"
+#include "dungeon.h"
 #include "giocatore.h"
-#include "gioco.h" // Per costanti o funzioni di gioco se necessarie
 #include "salvataggio.h"
 #include "utilita.h"
 #include <ctype.h>
@@ -8,257 +9,240 @@
 #include <stdlib.h>
 #include <string.h>
 
+void gestisci_trucchi(Giocatore *g, NodoSalvataggio **lista);
 
-// Forward declarations
-void mostra_menu_villaggio(Giocatore *g, NodoSalvataggio **lista_salvataggi);
-void mostra_menu_missione(Giocatore *g);
-void gestisci_trucchi(
-    Giocatore *g); // Da implementare se richiesto nel menu principale
-
-// Funzione helper per leggere input in modo sicuro e gestire Konami code
-char leggi_input_menu_principale() {
-  char buffer[100];
-  if (fgets(buffer, sizeof(buffer), stdin) != NULL) {
-    // Rimuovi newline
-    buffer[strcspn(buffer, "\n")] = 0;
-
-    // Se l'input è vuoto (solo invio), ritorna un carattere nullo o speciale
-    if (strlen(buffer) == 0)
+char leggi_input_char() {
+  char b[100];
+  if (fgets(b, sizeof(b), stdin)) {
+    b[strcspn(b, "\n")] = 0;
+    if (strlen(b) == 0)
       return 0;
-
-    // Se è ' ' (spazio), ritornalo
-    if (strcmp(buffer, " ") == 0)
+    if (strcmp(b, " ") == 0)
       return ' ';
-
-    // Ritorna il primo carattere minuscolo per facilitare i controlli
-    return tolower(buffer[0]);
+    return tolower(b[0]);
   }
   return 0;
 }
 
-void mostra_menu_principale(NodoSalvataggio **lista_salvataggi,
-                            Giocatore *giocatore_corrente) {
-  char input;
-  // Sequenza Konami: w w s s a d a d b a ' '
-  const char *konami_sequence =
-      "wwssadadba "; // Nota: l'ultimo carattere è spazio
-  int konami_index = 0;
-  int trucchi_sbloccati = 0;
+void mostra_menu_principale(NodoSalvataggio **lista, Giocatore *g) {
+  char in;
+  const char *k_code = "wwssadadba ";
+  int k_idx = 0;
+  int cheat = 0;
 
   do {
     pulisci_schermo();
     printf("=== CDungeon ===\n");
-    printf("1. Nuova Partita\n");
-    printf("2. Carica Salvataggio\n");
-    if (trucchi_sbloccati) {
-      printf("3. Trucchi\n");
-      printf("4. Esci\n");
-    } else {
+    printf("1. Nuova Partita\n2. Carica\n");
+    if (cheat)
+      printf("3. Trucchi\n4. Esci\n");
+    else
       printf("3. Esci\n");
-    }
+    printf("Scelta: ");
 
-    int max_scelta = trucchi_sbloccati ? 4 : 3;
-    printf("Seleziona un'opzione [1-%d]: ", max_scelta);
-
-    input = leggi_input_menu_principale();
-
-    // Controllo Menu Standard
-    if (isdigit(input)) {
-      int scelta = input - '0';
-
-      if (scelta == 1) {
-        printf("Inizio nuova partita...\n");
-        inizializza_giocatore(giocatore_corrente);
-        printf("Premi Invio per entrare nel villaggio...");
-        getchar(); // Attendi invio
-        mostra_menu_villaggio(giocatore_corrente, lista_salvataggi);
-        konami_index = 0; // Reset konami
-      } else if (scelta == 2) {
-        stampa_salvataggi(*lista_salvataggi);
-        printf("Inserisci ID salvataggio da selezionare (0 per annullare): ");
+    in = leggi_input_char();
+    if (isdigit(in)) {
+      int s = in - '0';
+      if (s == 1) {
+        inizializza_giocatore(g);
+        mostra_menu_villaggio(g, lista);
+      } else if (s == 2) {
+        stampa_salvataggi(*lista);
+        printf("ID: ");
         int id = leggi_intero();
-        if (id != 0) {
-          NodoSalvataggio *s = carica_salvataggio(*lista_salvataggi, id);
-          if (s) {
-            printf("Seleziona un'opzione per il salvataggio %d:\n", id);
-            printf("1. Carica\n");
-            printf("2. Elimina\n");
-            printf("Seleziona opzione [1-2]: ");
-            int sub_scelta = leggi_intero();
-            if (sub_scelta == 1) {
-              *giocatore_corrente = s->dati_giocatore;
-              printf("Salvataggio caricato!\n");
-              printf("Premi Invio per continuare...");
-              getchar(); // Consuma il newline rimasto da leggi_intero
-              mostra_menu_villaggio(giocatore_corrente, lista_salvataggi);
-            } else if (sub_scelta == 2) {
-              printf(
-                  "Sei sicuro di voler eliminare definitivamente il salvataggio? "
-                  "[s/n]: ");
-              char conferma;
-              scanf(" %c", &conferma);
-              getchar(); // Consuma newline
-              if (tolower(conferma) == 's') {
-                elimina_salvataggio(lista_salvataggi, id);
-              }
-            }
-          } else {
-            printf("Salvataggio non trovato.\n");
-            printf("Premi Invio per continuare...");
-            getchar();
+        if (id) {
+          NodoSalvataggio *salv = carica_salvataggio(*lista, id);
+          if (salv) {
+            *g = salv->dati_giocatore;
+            mostra_menu_villaggio(g, lista);
           }
-        } else {
-          // Consuma newline se necessario
-          getchar();
         }
-        konami_index = 0;
-      } else if (trucchi_sbloccati && scelta == 3) {
-        // Menu Trucchi
-        gestisci_trucchi(giocatore_corrente);
-        konami_index = 0;
-      } else if ((!trucchi_sbloccati && scelta == 3) ||
-                 (trucchi_sbloccati && scelta == 4)) {
-        printf("Arrivederci!\n");
-        return; // Esci dalla funzione e quindi dal gioco
-      } else {
-        printf("Opzione non valida.\n");
-      }
+      } else if (cheat && s == 3)
+        gestisci_trucchi(g, lista);
+      else
+        return;
     } else {
-      // Controllo Konami Code
-      // Se l'input corrisponde al carattere atteso nella sequenza
-      if (input == konami_sequence[konami_index]) {
-        konami_index++;
-        if (konami_index == strlen(konami_sequence)) {
-          printf("\n*** TRUCCHI SBLOCCATI! ***\n");
-          trucchi_sbloccati = 1;
-          konami_index = 0;
-          printf("Premi Invio per aggiornare il menu...");
+      if (in == k_code[k_idx]) {
+        k_idx++;
+        if (k_idx == strlen(k_code)) {
+          cheat = 1;
+          k_idx = 0;
+          printf("Trucchi Attivi!\n");
           getchar();
         }
       } else {
-        konami_index = 0; // Reset se sbaglia sequenza
-        // Controllo se il carattere inserito è l'inizio della sequenza (w) per
-        // ripartire subito
-        if (input == 'w') {
-          konami_index = 1;
-        }
+        k_idx = (in == 'w') ? 1 : 0;
       }
     }
-
   } while (1);
 }
 
-void mostra_menu_villaggio(Giocatore *g, NodoSalvataggio **lista_salvataggi) {
-  int scelta;
+void mostra_menu_villaggio(Giocatore *g, NodoSalvataggio **lista) {
   do {
     pulisci_schermo();
-    printf("=== Menu del Villaggio ===\n");
-    printf("1. Intraprendi una missione\n");
-    printf("2. Riposati (Ripristina HP)\n");
-    printf("3. Inventario\n");
-    printf("4. Salva la partita\n");
-    printf("5. Esci al Menu Principale\n");
-    printf("Seleziona un'opzione [1-5]: ");
+    printf("=== Villaggio ===\nHP: %d/%d | Monete: %d\n", g->punti_vita,
+           g->max_punti_vita, g->monete);
+    printf(
+        "1. Missioni\n2. Riposa\n3. Inventario\n4. Salva\n5. Esci\nScelta: ");
+    int s = leggi_intero();
 
-    scelta = leggi_intero();
-
-    switch (scelta) {
+    switch (s) {
     case 1:
       mostra_menu_missione(g);
       break;
     case 2:
-      if (g->punti_vita == g->max_punti_vita) {
-        printf("Hai già le forze al massimo!\n");
-        printf("Premi Invio per continuare...");
-        getchar();
-        break;
-      }else{
       g->punti_vita = g->max_punti_vita;
-      printf("Ti sei riposato e hai recuperato le forze! (%d HP)\n",
-             g->punti_vita);
-      printf("Premi Invio per continuare...");
+      printf("Riposato.\n");
       getchar();
       break;
-    }
     case 3:
       stampa_statistiche_giocatore(g);
-      printf("Premi Invio per continuare...");
       getchar();
       break;
     case 4:
-      aggiungi_salvataggio(lista_salvataggi, g);
-      printf("Premi Invio per continuare...");
+      aggiungi_salvataggio(lista, g);
       getchar();
       break;
-    case 5: {
-      char conferma;
-      printf("Stai uscendo dal gioco ricordati di salvare la partita per non "
-             "perdere i tuoi progressi.\n");
-      printf("Sei sicuro di voler procedere? [s/n]: ");
-      scanf(" %c", &conferma);
-      getchar(); // Consuma newline
-      if (tolower(conferma) == 's') {
-        return; // Torna al menu principale
-      }
-    } break;
-    default:
-      printf("Scelta non valida.\n");
-      break;
+    case 5:
+      return;
     }
   } while (1);
 }
 
 void mostra_menu_missione(Giocatore *g) {
-  pulisci_schermo();
-  printf("=== Menu di Selezione Missione ===\n");
-  printf("(Funzionalità da implementare dai tuoi amici!)\n");
-  printf("1. Palude Putrescente\n");
-  printf("2. Magione Infestata\n");
-  printf("3. Grotta di Cristallo\n");
-  printf("Seleziona... (premi invio per tornare indietro)\n");
-  getchar();
-}
-
-void gestisci_trucchi(Giocatore *g) {
-  int scelta;
   do {
     pulisci_schermo();
-    printf("=== Menu Trucchi ===\n");
-    printf("1. Setta Monete a 999\n");
-    printf("2. Setta HP a 999\n");
-    printf("3. Sblocca Missione Finale (Placeholder)\n");
-    printf(
-        "4. Seleziona un salvataggio da modificare (Placeholder)\n"); // Opzione
-                                                                      // extra
-                                                                      // menzionata
-                                                                      // nelle
-                                                                      // specifiche
-    printf("5. Torna indietro\n");
-    printf("Scelta: ");
-    scelta = leggi_intero();
+    printf("=== Missioni ===\n");
+    int f1 = g->missioni_completate & 1;
+    int f2 = g->missioni_completate & 2;
+    int f3 = g->missioni_completate & 4;
 
-    switch (scelta) {
-    case 1:
-      g->monete = 999;
-      printf("Monete impostate a 999!\n");
-      break;
-    case 2:
-      g->max_punti_vita = 999;
-      g->punti_vita = 999;
-      printf("HP impostati a 999!\n");
-      break;
-    case 3:
-      printf("Missione finale sbloccata (logica da implementare)!\n");
-      break;
-    case 4:
-      // Qui servirebbe logica per selezionare un salvataggio specifico dalla
-      // lista
-      printf("Modifica salvataggi non implementata in questo menu rapido.\n");
-      break;
-    case 5:
+    if (!f1)
+      printf("1. Palude\n");
+    if (!f2)
+      printf("2. Magione\n");
+    if (!f3)
+      printf("3. Grotta\n");
+    if (f1 && f2 && f3)
+      printf("4. Castello Finale\n");
+    printf("0. Indietro\nScelta: ");
+
+    int s = leggi_intero();
+    if (s == 0)
       return;
+
+    if (s == 1 && !f1) {
+      if (esegui_missione(g, 1, "Palude"))
+        g->missioni_completate |= 1;
+    } else if (s == 2 && !f2) {
+      if (esegui_missione(g, 2, "Magione"))
+        g->missioni_completate |= 2;
+    } else if (s == 3 && !f3) {
+      if (esegui_missione(g, 3, "Grotta"))
+        g->missioni_completate |= 4;
+    } else if (s == 4 && f1 && f2 && f3) {
+      if (combattimento_boss_finale(g)) {
+        printf("HAI VINTO IL GIOCO!\n");
+        getchar();
+        return;
+      } else {
+        printf("Game Over.\n");
+        g->punti_vita = 0;
+        getchar();
+        return;
+      }
     }
-    printf("Premi Invio per continuare...");
+  } while (1);
+}
+
+void mostra_negozio(Giocatore *g) {
+  do {
+    pulisci_schermo();
+    printf("=== Negozio (Monete: %d) ===\n", g->monete);
+    printf("1. Pozione (4)\n2. Spada (5)\n3. Armatura (10)\n0. Esci\nScelta: ");
+    int s = leggi_intero();
+    if (s == 0)
+      return;
+
+    if (s == 1 && g->monete >= 4) {
+      g->monete -= 4;
+      g->punti_vita += lancia_dado(6);
+      if (g->punti_vita > g->max_punti_vita)
+        g->punti_vita = g->max_punti_vita;
+      printf("Curato.\n");
+    } else if (s == 2 && g->monete >= 5) {
+      if (!g->ha_spada) {
+        g->monete -= 5;
+        g->ha_spada = 1;
+        g->numero_oggetti++;
+        printf("Presa Spada.\n");
+      }
+    } else if (s == 3 && g->monete >= 10) {
+      if (!g->ha_armatura) {
+        g->monete -= 10;
+        g->ha_armatura = 1;
+        g->numero_oggetti++;
+        printf("Presa Armatura.\n");
+      }
+    } else
+      printf("Non puoi.\n");
     getchar();
+  } while (1);
+}
+
+void gestisci_trucchi(Giocatore *g, NodoSalvataggio **lista) {
+  do {
+    pulisci_schermo();
+    stampa_salvataggi(*lista);
+    printf("Inserisci ID salvataggio (0 per uscire): ");
+    int id = leggi_intero();
+    if (id == 0)
+      return;
+
+    NodoSalvataggio *salv = carica_salvataggio(*lista, id);
+    if (!salv) {
+      printf("Salvataggio non trovato.\n");
+      getchar();
+      continue;
+    }
+
+    // Copia i dati dal salvataggio per lavorarci
+    *g = salv->dati_giocatore;
+
+    printf("\n--- TRUCCHI (Salvataggio ID: %d) ---\n", id);
+    printf("1. Max Monete (999)\n");
+    printf("2. Max HP (999)\n");
+    printf("3. Sblocca Tutte le Missioni\n");
+    printf("4. Torna indietro\n");
+    printf("Scelta: ");
+
+    int s = leggi_intero();
+    int modificato = 0;
+
+    if (s == 1) {
+      salv->dati_giocatore.monete = 999;
+      modificato = 1;
+      printf("Monete impostate a 999!\n");
+    } else if (s == 2) {
+      salv->dati_giocatore.max_punti_vita = 999;
+      salv->dati_giocatore.punti_vita = 999;
+      modificato = 1;
+      printf("HP impostati a 999!\n");
+    } else if (s == 3) {
+      salv->dati_giocatore.missioni_completate = 7; // 1 | 2 | 4
+      modificato = 1;
+      printf("Tutte le missioni sbloccate!\n");
+    } else if (s == 4) {
+      continue;
+    }
+
+    if (modificato) {
+      salva_tutto_su_file(*lista);
+      printf("Salvataggio aggiornato su file.\n");
+      // Aggiorna anche g per riflettere le modifiche se l'utente carica subito
+      *g = salv->dati_giocatore;
+    }
+    getchar();
+
   } while (1);
 }

@@ -36,6 +36,4 @@ void stampa_statistiche_giocatore(const Giocatore *g) {
     printf("- Oggetti Chiave: Chiave del Castello\n");
   }
   printf("============================\n");
-
-
 }
