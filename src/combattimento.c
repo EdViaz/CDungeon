@@ -42,6 +42,7 @@ int inizia_combattimento(Giocatore *g, Stanza *e) {
 
   printf("\nSEI STATO SCONFITTO!\n");
   g->punti_vita = 0;
+  getchar();
   return 0;
 }
 
