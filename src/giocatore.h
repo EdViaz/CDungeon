@@ -8,7 +8,9 @@ typedef struct {
   int max_punti_vita;
   int monete;
   int numero_oggetti;
-  int missioni_completate;
+  int missione_palude;  // 0 o 1
+  int missione_magione; // 0 o 1
+  int missione_grotta;  // 0 o 1
   // Flag per oggetti chiave
   int ha_spada;           // 0 o 1
   int ha_armatura;        // 0 o 1
