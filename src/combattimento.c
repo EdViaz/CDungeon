@@ -15,6 +15,26 @@ int inizia_combattimento(Giocatore *g, Stanza *e)
     printf("Premi Invio per attaccare...");
     getchar();
 
+    int danno_nemico = e->danno;
+
+    // Controllo indovinello Drago
+    if (strcmp(e->nome, "Drago Antico") == 0)
+    {
+      int n = (rand() % 500) + 1;
+      printf("Drago: Il numero %d e' di Padovan? [s/n]: ", n);
+      char r;
+      scanf(" %c", &r);
+      getchar();
+      int vero = controlla_padovan(n);
+      if ((tolower(r) == 's' && vero) || (tolower(r) == 'n' && !vero))
+      {
+        printf("Giusto! Il Drago non attacca.\n");
+        danno_nemico = 0;
+      }
+      else
+        printf("Sbagliato! Grrr!\n");
+    }
+
     // Turno Giocatore
     int dado = lancia_dado(6);
     int attacco = dado;
@@ -38,33 +58,13 @@ int inizia_combattimento(Giocatore *g, Stanza *e)
       printf("Mancato (Serviva > %d).\n", e->colpo_fatale);
 
       // Turno Nemico
-      int danno = e->danno;
-
-      // Indovinello Drago
-      if (strcmp(e->nome, "Drago Antico") == 0)
-      {
-        int n = (rand() % 500) + 1;
-        printf("Drago: Il numero %d e' di Padovan? [s/n]: ", n);
-        char r;
-        scanf(" %c", &r);
-        getchar();
-        int vero = controlla_padovan(n);
-        if ((tolower(r) == 's' && vero) || (tolower(r) == 'n' && !vero))
-        {
-          printf("Giusto! Il Drago non attacca.\n");
-          danno = 0;
-        }
-        else
-          printf("Sbagliato! Grrr!\n");
-      }
-
       if (g->ha_armatura)
       {
-        danno--;
+        danno_nemico--;
         printf("Armatura assorbe 1 danno.\n");
       }
-      g->punti_vita -= danno;
-      printf("%s infligge %d danni!\n", e->nome, danno);
+      g->punti_vita -= danno_nemico;
+      printf("%s infligge %d danni!\n", e->nome, danno_nemico);
     }
   }
 

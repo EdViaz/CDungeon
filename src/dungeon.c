@@ -187,7 +187,7 @@ int esegui_missione(Giocatore *g, int tipo_missione, const char *nome_missione)
 
     // Obiettivi missione 'Magione'
     else if (tipo_missione == 2)
-      printf("Obiettivo: Sconfiggi Vampiro (%d/%d) e prendi Chiave (%d/1)\n", progress, target, g->ha_chiave_castello);
+      printf("Obiettivo: Sconfiggi Vampiro Superiore (%d/%d) e prendi Chiave (%d/1)\n", progress, target, g->ha_chiave_castello);
 
     // Obiettivi missione 'Grotta'
     else
@@ -230,12 +230,14 @@ int esegui_missione(Giocatore *g, int tipo_missione, const char *nome_missione)
       {
         if (inizia_combattimento(g, &s)) // dopo aver vinto il combattimento eseguo il codice
         {
-          // Update progressi
+          // Update progressi missione 'Palude'
           if (tipo_missione == 1 && s.is_boss)
             progress++;
-          if (tipo_missione == 2 && s.is_boss)
+
+          // Update progressi missione 'Magione'
+          else if (tipo_missione == 2 && s.is_boss)
           {
-            if (strcmp(s.nome, "Vampiro") == 0)
+            if (strcmp(s.nome, "Vampiro Superiore") == 0)
             {
               progress++;
             }
@@ -246,7 +248,8 @@ int esegui_missione(Giocatore *g, int tipo_missione, const char *nome_missione)
               g->numero_oggetti++;
             }
           }
-          if (tipo_missione == 3 && s.is_boss)
+          // Update progressi missione 'Grotta'
+          else if (tipo_missione == 3 && s.is_boss)
           {
             printf("Trovata Spada Eroe!\n");
             g->ha_spada_eroe = 1;
@@ -271,6 +274,10 @@ int esegui_missione(Giocatore *g, int tipo_missione, const char *nome_missione)
             printf("Monete! (+%d)\n", s.ricompensa_monete);
             g->monete += s.ricompensa_monete;
           }
+        }
+        else if (strcmp(s.nome, "Ponte Pericolante") == 0)
+        {
+          g->monete -= 3;
         }
         else if (s.danno > 0)
           applica_danno_trappola(g, &s);
