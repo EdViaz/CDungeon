@@ -1,7 +1,6 @@
 #include "combattimento.h"
 #include "utilita.h"
 #include <stdio.h>
-#include <stdlib.h>
 
 int inizia_combattimento(Giocatore *g, Stanza *e) {
   printf("\n--- COMBATTIMENTO: %s ---\n", e->nome);
