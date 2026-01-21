@@ -1,11 +1,16 @@
 #include "combattimento.h"
 #include "utilita.h"
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <stdlib.h>
 
-int inizia_combattimento(Giocatore *g, Stanza *e) {
+int inizia_combattimento(Giocatore *g, Stanza *e)
+{
   printf("\n--- COMBATTIMENTO: %s ---\n", e->nome);
 
-  while (g->punti_vita > 0) {
+  while (g->punti_vita > 0)
+  {
     printf("\nTu: %d HP | Nemico: %s\n", g->punti_vita, e->nome);
     printf("Premi Invio per attaccare...");
     getchar();
@@ -21,17 +26,40 @@ int inizia_combattimento(Giocatore *g, Stanza *e) {
 
     printf("Tiro: %d (Totale: %d)\n", dado, attacco);
 
-    if (attacco > e->colpo_fatale) {
-      printf("Colpo fatale! %s sconfitto!\n", e->nome);
+    if (attacco > e->colpo_fatale)
+    {
+      printf("\nColpo fatale! %s sconfitto!\n", e->nome);
       g->monete += e->ricompensa_monete;
       printf("Ottieni %d monete.\n", e->ricompensa_monete);
       return 1;
-    } else {
+    }
+    else
+    {
       printf("Mancato (Serviva > %d).\n", e->colpo_fatale);
 
       // Turno Nemico
       int danno = e->danno;
-      if (g->ha_armatura) {
+
+      // Indovinello Drago
+      if (strcmp(e->nome, "Drago Antico") == 0)
+      {
+        int n = (rand() % 500) + 1;
+        printf("Drago: Il numero %d e' di Padovan? [s/n]: ", n);
+        char r;
+        scanf(" %c", &r);
+        getchar();
+        int vero = controlla_padovan(n);
+        if ((tolower(r) == 's' && vero) || (tolower(r) == 'n' && !vero))
+        {
+          printf("Giusto! Il Drago non attacca.\n");
+          danno = 0;
+        }
+        else
+          printf("Sbagliato! Grrr!\n");
+      }
+
+      if (g->ha_armatura)
+      {
         danno--;
         printf("Armatura assorbe 1 danno.\n");
       }
@@ -46,12 +74,14 @@ int inizia_combattimento(Giocatore *g, Stanza *e) {
   return 0;
 }
 
-void applica_danno_trappola(Giocatore *g, Stanza *trappola) {
+void applica_danno_trappola(Giocatore *g, Stanza *trappola)
+{
   printf("\n!!! TRAPPOLA: %s !!!\n", trappola->nome);
 
   int danno = trappola->danno;
 
-  if (g->ha_armatura) {
+  if (g->ha_armatura)
+  {
     danno--;
     if (danno < 0)
       danno = 0;
@@ -62,7 +92,8 @@ void applica_danno_trappola(Giocatore *g, Stanza *trappola) {
   printf("Subisci %d danni! (HP: %d)\n", danno, g->punti_vita);
 }
 
-int combattimento_boss_finale(Giocatore *g) {
+int combattimento_boss_finale(Giocatore *g)
+{
   printf("\n--- SCONTRO FINALE: SIGNORE OSCURO ---\n");
   printf("Regole: Scudo > Spada > Magia > Scudo\n");
   printf("Vinci 3 round su 5.\n");
@@ -72,7 +103,8 @@ int combattimento_boss_finale(Giocatore *g) {
   int round = 1;
   const char *mosse[] = {"", "Scudo", "Magia", "Spada"};
 
-  while (vittorie_eroe < 3 && vittorie_boss < 3 && round <= 5) {
+  while (vittorie_eroe < 3 && vittorie_boss < 3 && round <= 5)
+  {
     printf("\n--- Round %d (Eroe %d - Boss %d) ---\n", round, vittorie_eroe,
            vittorie_boss);
     printf("1. Scudo\n2. Magia\n3. Spada\nScelta: ");
@@ -86,13 +118,18 @@ int combattimento_boss_finale(Giocatore *g) {
 
     int esito = valuta_vittoria_morra(mossa_eroe, mossa_boss);
 
-    if (esito == 0) {
+    if (esito == 0)
+    {
       printf("Pareggio!\n");
-    } else if (esito == 1) {
+    }
+    else if (esito == 1)
+    {
       printf("Vinci il round!\n");
       vittorie_eroe++;
       round++;
-    } else {
+    }
+    else
+    {
       printf("Il Boss vince il round!\n");
       vittorie_boss++;
       round++;
