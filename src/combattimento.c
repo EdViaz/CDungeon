@@ -3,11 +3,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int inizia_combattimento(Giocatore *g, Entita *e) {
+int inizia_combattimento(Giocatore *g, Stanza *e) {
   printf("\n--- COMBATTIMENTO: %s ---\n", e->nome);
 
-  while (g->punti_vita > 0 && e->punti_vita > 0) {
-    printf("\nTu: %d HP | %s: %d HP\n", g->punti_vita, e->nome, e->punti_vita);
+  while (g->punti_vita > 0) {
+    printf("\nTu: %d HP | Nemico: %s\n", g->punti_vita, e->nome);
     printf("Premi Invio per attaccare...");
     getchar();
 
@@ -22,9 +22,8 @@ int inizia_combattimento(Giocatore *g, Entita *e) {
 
     printf("Tiro: %d (Totale: %d)\n", dado, attacco);
 
-    if (attacco > e->colpo_fatale) { // Usa colpo_fatale defined in entita.h
+    if (attacco > e->colpo_fatale) {
       printf("Colpo fatale! %s sconfitto!\n", e->nome);
-      e->punti_vita = 0;
       g->monete += e->ricompensa_monete;
       printf("Ottieni %d monete.\n", e->ricompensa_monete);
       return 1;
@@ -35,8 +34,6 @@ int inizia_combattimento(Giocatore *g, Entita *e) {
       int danno = e->danno;
       if (g->ha_armatura) {
         danno--;
-        if (danno < 0)
-          danno = 0;
         printf("Armatura assorbe 1 danno.\n");
       }
       g->punti_vita -= danno;
@@ -44,15 +41,12 @@ int inizia_combattimento(Giocatore *g, Entita *e) {
     }
   }
 
-  if (g->punti_vita <= 0) {
-    printf("\nSEI STATO SCONFITTO!\n");
-    g->punti_vita = 0;
-    return 0;
-  }
-  return 1;
+  printf("\nSEI STATO SCONFITTO!\n");
+  g->punti_vita = 0;
+  return 0;
 }
 
-void applica_danno_trappola(Giocatore *g, Entita *trappola) {
+void applica_danno_trappola(Giocatore *g, Stanza *trappola) {
   printf("\n!!! TRAPPOLA: %s !!!\n", trappola->nome);
 
   int danno = trappola->danno;
