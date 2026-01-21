@@ -6,7 +6,6 @@
 #include "utilita.h"
 #include <ctype.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 void gestisci_trucchi(Giocatore *g, NodoSalvataggio **lista);
@@ -53,8 +52,19 @@ void mostra_menu_principale(NodoSalvataggio **lista, Giocatore *g) {
         if (id) {
           NodoSalvataggio *salv = carica_salvataggio(*lista, id);
           if (salv) {
-            *g = salv->dati_giocatore;
-            mostra_menu_villaggio(g, lista);
+            printf("Scegli operazione:\n1. Carica\n2. Elimina\n0. "
+                   "Annulla\nScelta: ");
+            int op = leggi_intero();
+            if (op == 1) {
+              *g = salv->dati_giocatore;
+              mostra_menu_villaggio(g, lista);
+            } else if (op == 2) {
+              elimina_salvataggio(lista, id);
+              getchar(); // Attendi invio per leggere messaggio
+            }
+          } else {
+            printf("Salvataggio non trovato.\n");
+            getchar();
           }
         }
       } else if (cheat && s == 3)
@@ -113,9 +123,10 @@ void mostra_menu_missione(Giocatore *g) {
   do {
     pulisci_schermo();
     printf("=== Missioni ===\n");
-    int f1 = g->missioni_completate & 1;
-    int f2 = g->missioni_completate & 2;
-    int f3 = g->missioni_completate & 4;
+    // Flag ora sono diretti
+    int f1 = g->missione_palude;
+    int f2 = g->missione_magione;
+    int f3 = g->missione_grotta;
 
     if (!f1)
       printf("1. Palude\n");
@@ -133,13 +144,13 @@ void mostra_menu_missione(Giocatore *g) {
 
     if (s == 1 && !f1) {
       if (esegui_missione(g, 1, "Palude"))
-        g->missioni_completate |= 1;
+        g->missione_palude = 1;
     } else if (s == 2 && !f2) {
       if (esegui_missione(g, 2, "Magione"))
-        g->missioni_completate |= 2;
+        g->missione_magione = 1;
     } else if (s == 3 && !f3) {
       if (esegui_missione(g, 3, "Grotta"))
-        g->missioni_completate |= 4;
+        g->missione_grotta = 1;
     } else if (s == 4 && f1 && f2 && f3) {
       if (combattimento_boss_finale(g)) {
         printf("HAI VINTO IL GIOCO!\n");
@@ -229,7 +240,9 @@ void gestisci_trucchi(Giocatore *g, NodoSalvataggio **lista) {
       modificato = 1;
       printf("HP impostati a 999!\n");
     } else if (s == 3) {
-      salv->dati_giocatore.missioni_completate = 7; // 1 | 2 | 4
+      g->missione_palude = 1;
+      g->missione_magione = 1;
+      g->missione_grotta = 1;
       modificato = 1;
       printf("Tutte le missioni sbloccate!\n");
     } else if (s == 4) {

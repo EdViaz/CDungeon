@@ -114,7 +114,9 @@ void stampa_salvataggi(NodoSalvataggio *testa) {
            "COMPLETATE\n",
            curr->id, curr->timestamp, curr->dati_giocatore.punti_vita,
            curr->dati_giocatore.monete, curr->dati_giocatore.numero_oggetti,
-           curr->dati_giocatore.missioni_completate);
+           curr->dati_giocatore.missione_palude +
+               curr->dati_giocatore.missione_magione +
+               curr->dati_giocatore.missione_grotta);
     curr = curr->prossimo;
   }
 }

@@ -6,7 +6,9 @@ void inizializza_giocatore(Giocatore *g) {
   g->max_punti_vita = 20;
   g->monete = 0;
   g->numero_oggetti = 0;
-  g->missioni_completate = 0;
+  g->missione_palude = 0;
+  g->missione_magione = 0;
+  g->missione_grotta = 0;
   g->ha_spada = 0;
   g->ha_armatura = 0;
   g->ha_spada_eroe = 0;
@@ -18,7 +20,8 @@ void stampa_statistiche_giocatore(const Giocatore *g) {
   printf("Punti Vita: %d / %d\n", g->punti_vita, g->max_punti_vita);
   printf("Monete: %d\n", g->monete);
   printf("Oggetti: %d\n", g->numero_oggetti);
-  printf("Missioni Completate: %d\n", g->missioni_completate);
+  printf("Missioni Completate: %d\n",
+         g->missione_palude + g->missione_magione + g->missione_grotta);
   printf("Equipaggiamento:\n");
   if (g->ha_spada || g->ha_spada_eroe) {
     printf("- Spada: %s (+%d attacco)\n",

@@ -7,7 +7,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-
 void mostra_negozio(Giocatore *g); // Extern
 
 Entita genera_entita_missione(int tipo, int dado) {
