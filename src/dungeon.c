@@ -190,17 +190,21 @@ int esegui_missione(Giocatore *g, int tipo_missione, const char *nome_missione)
       printf("Obiettivo: Sconfiggi Vampiro Superiore (%d/%d) e prendi Chiave (%d/1)\n", progress, target, g->ha_chiave_castello);
 
     // Obiettivi missione 'Grotta'
-    else
+    else if (tipo_missione == 3)
       printf("Obiettivo: Sconfiggi Drago (%d/1) e prendi Spada (%d/1)\n", progress, g->ha_spada_eroe);
 
     // Stanze esplorate
-    printf("Stanze: %d/10\n", n_stanze);
+    printf("Stanze Esplorate: %d/10\n\n", n_stanze);
 
     // Menu azioni
-    printf("1. Esplora\n2. Negozio\n3. Inventario\n4. Fuggi (50 monete)\nScelta: ");
-    int scelta = leggi_intero();
+    if (n_stanze < 10)
+      printf("1. Esplora\n");
+    printf("2. Negozio\n3. Inventario\n4. Torna al Villaggio (Completa Obbiettivo oppure Paga 50 monete)\n\n");
+    printf("Seleziona una delle opzioni del menu [1-4]: ");
 
-    if (scelta == 1)
+    // Gestione scelta utente
+    int scelta = leggi_intero();
+    if (scelta == 1 && n_stanze < 10)
     {
       n_stanze++;
       int dado = lancia_dado(6);
@@ -214,14 +218,16 @@ int esegui_missione(Giocatore *g, int tipo_missione, const char *nome_missione)
       if (n_stanze >= 9 && !completata && tipo_missione == 2)
       {
         if (g->ha_chiave_castello == 0)
-          dado = 6;
-        else if (g->ha_chiave_castello == 1)
           dado = 5;
+        else if (g->ha_chiave_castello == 1)
+          dado = 6;
       }
 
       // Grotta: Drago Antico
       if (n_stanze >= 10 && !completata && tipo_missione == 3)
         dado = 6;
+      else if (completata && tipo_missione == 3)
+        dado = lancia_dado(5); // evita di far spawnare di nuovo il drago
 
       Stanza s = genera_stanza_missione(tipo_missione, dado);
       printf("Incontri: %s\n", s.nome);
@@ -264,7 +270,9 @@ int esegui_missione(Giocatore *g, int tipo_missione, const char *nome_missione)
       {
         if (strcmp(s.nome, "Forziere Misterioso") == 0)
         {
-          if (lancia_dado(2) == 1)
+          int chance = lancia_dado(2);
+          printf("Apri il forziere... ");
+          if (chance == 1)
           {
             printf("Trappola!\n");
             applica_danno_trappola(g, &s);
@@ -278,6 +286,9 @@ int esegui_missione(Giocatore *g, int tipo_missione, const char *nome_missione)
         else if (strcmp(s.nome, "Ponte Pericolante") == 0)
         {
           g->monete -= 3;
+          if (g->monete < 0)
+            g->monete = 0;
+          printf("Caduto dal ponte! Perdi 3 monete. (Monete: %d)\n", g->monete);
         }
         else if (s.danno > 0)
           applica_danno_trappola(g, &s);
