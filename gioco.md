@@ -1,1 +1,0 @@
-Giocatore: 20 H, 0 monete, 0 oggetti, 0 missioni completate

@@ -12,33 +12,6 @@
 void gestisci_trucchi(Giocatore *g, NodoSalvataggio **lista);
 void mostra_menu_salvataggi(Giocatore *g, NodoSalvataggio **lista);
 
-// Legge un singolo carattere dall'input dell'utente e lo restituisce in minuscolo
-char leggi_input_char()
-{
-  char b[100]; // Buffer per memorizzare l'input (100 caratteri max)
-
-  // Legge una linea intera da stdin in modo sicuro
-  if (fgets(b, sizeof(b), stdin))
-  {
-    // Rimuove il carattere di newline inserito automaticamente da fgets
-    b[strcspn(b, "\n")] = 0;
-
-    // Se l'utente ha premuto solo invio (input vuoto), restituisce 0
-    if (strlen(b) == 0)
-      return 0;
-
-    // Se l'utente ha inserito solo uno spazio, lo restituisce
-    if (strcmp(b, " ") == 0)
-      return ' ';
-
-    // Restituisce il primo carattere convertito a minuscolo
-    return tolower(b[0]);
-  }
-
-  // Se fgets fallisce, restituisce 0
-  return 0;
-}
-
 void mostra_menu_principale(NodoSalvataggio **lista, Giocatore *g)
 {
   char in;
@@ -63,19 +36,19 @@ void mostra_menu_principale(NodoSalvataggio **lista, Giocatore *g)
     if (isdigit(in))
     {
       // Converto il carattere in un intero
-      int s = in - '0';
+      int scelta = in - '0';
 
       // Gestione delle opzioni del menu
-      if (s == 1)
+      if (scelta == 1)
       {
         inizializza_giocatore(g);
         mostra_menu_villaggio(g, lista);
       }
-      else if (s == 2)
+      else if (scelta == 2)
       {
         mostra_menu_salvataggi(g, lista);
       }
-      else if (cheat && s == 3)
+      else if (cheat && scelta == 3)
         gestisci_trucchi(g, lista);
       else
         return;
@@ -104,6 +77,14 @@ void mostra_menu_principale(NodoSalvataggio **lista, Giocatore *g)
 void mostra_menu_salvataggi(Giocatore *g, NodoSalvataggio **lista)
 {
   stampa_salvataggi(*lista);
+
+  if (!*lista)
+  {
+    printf("Premi Invio per tornare al menu principale...");
+    getchar();
+    return;
+  }
+
   printf("ID: ");
   int id = leggi_intero();
   if (id)
@@ -123,7 +104,12 @@ void mostra_menu_salvataggi(Giocatore *g, NodoSalvataggio **lista)
       }
       else if (op == 2)
       {
-        elimina_salvataggio(lista, id);
+        printf("Sei sicuro di voler eliminare il salvataggio? (s/n): ");
+        char conferma = leggi_input_char();
+        if (conferma == 's')
+        {
+          elimina_salvataggio(lista, id);
+        }
         getchar(); // Attendi invio per leggere messaggio
       }
     }
@@ -140,6 +126,12 @@ void mostra_menu_villaggio(Giocatore *g, NodoSalvataggio **lista)
 {
   do
   {
+    if (g->punti_vita <= 0)
+    {
+      mostra_menu_principale(lista, g);
+      return;
+    }
+
     pulisci_schermo();
     printf("=== Menù Villaggio ===\nHP: %d/%d | Monete: %d\n", g->punti_vita, g->max_punti_vita, g->monete);
 
@@ -168,7 +160,11 @@ void mostra_menu_villaggio(Giocatore *g, NodoSalvataggio **lista)
       getchar();
       break;
     case 5:
-      return;
+      printf("Stai uscendo dal gioco, ricodati di salvare la partita per non perdere i progressi!. Sei sicuro di voler uscire? (s/n): ");
+      char conferma = leggi_input_char();
+      if (conferma == 's')
+        return;
+      break;
     }
   } while (1);
 }
@@ -237,7 +233,7 @@ void mostra_menu_missione(Giocatore *g)
       }
       else
       {
-        printf("\nGAME OVER.\n");
+        printf("\nSEI STATO SCONFITTO!\n");
         g->punti_vita = 0;
         getchar();
         return;
@@ -271,7 +267,7 @@ void mostra_negozio(Giocatore *g)
     if (s == 1 && g->monete >= 4)
     {
       g->monete -= 4;
-      
+
       int punti_ripristinati = lancia_dado(6);
       g->punti_vita += punti_ripristinati;
       if (g->punti_vita > g->max_punti_vita)

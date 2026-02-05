@@ -1,7 +1,8 @@
 #include "giocatore.h"
 #include <stdio.h>
 
-void inizializza_giocatore(Giocatore *g) {
+void inizializza_giocatore(Giocatore *g)
+{
   g->punti_vita = 20;
   g->max_punti_vita = 20;
   g->monete = 0;
@@ -15,28 +16,27 @@ void inizializza_giocatore(Giocatore *g) {
   g->ha_chiave_castello = 0;
 }
 
-void stampa_statistiche_giocatore(const Giocatore *g) {
+void stampa_statistiche_giocatore(const Giocatore *g)
+{
   printf("\n=== Inventario Giocatore ===\n");
+  
   printf("Punti Vita: %d / %d\n", g->punti_vita, g->max_punti_vita);
   printf("Monete: %d\n", g->monete);
   printf("Oggetti: %d\n", g->numero_oggetti);
-  printf("Missioni Completate: %d\n",
-         g->missione_palude + g->missione_magione + g->missione_grotta);
+  printf("Missioni Completate: %d\n", g->missione_palude + g->missione_magione + g->missione_grotta);
   printf("Equipaggiamento:\n");
-  if (g->ha_spada || g->ha_spada_eroe) {
+  if (g->ha_spada || g->ha_spada_eroe)
     printf("- Spada: %s (+%d attacco)\n",
            g->ha_spada_eroe ? "Spada dell'Eroe" : "Spada Ferro",
            g->ha_spada_eroe ? 2 : 1);
-  } else {
+  else
     printf("- Nessuna arma\n");
-  }
-  if (g->ha_armatura) {
+  if (g->ha_armatura)
     printf("- Armatura: Si (-1 danno subito)\n");
-  } else {
+  else
     printf("- Nessuna armatura\n");
-  }
-  if (g->ha_chiave_castello) {
+  if (g->ha_chiave_castello)
     printf("- Oggetti Chiave: Chiave del Castello\n");
-  }
+
   printf("============================\n");
 }

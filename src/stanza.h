@@ -1,14 +1,16 @@
 #ifndef STANZA_H
 #define STANZA_H
 
-typedef enum {
+typedef enum
+{
   STANZA_NESSUNA,
   STANZA_NEMICO,
   STANZA_TRAPPOLA,
   STANZA_VUOTA
 } TipoStanza;
 
-typedef struct {
+typedef struct
+{
   char nome[32];
   TipoStanza tipo;
   int danno;

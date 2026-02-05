@@ -5,24 +5,27 @@
 #include <time.h>
 
 // Funzione helper per ottenere la data corrente come stringa
-void ottieni_data_corrente(char *buffer, size_t size) {
+void ottieni_data_corrente(char *buffer, size_t size)
+{
   time_t t = time(NULL);
   struct tm tm = *localtime(&t);
   // Formato: GG-MM-AAAA HH:MM:SS
-  snprintf(buffer, size, "%02d-%02d-%04d %02d:%02d:%02d", tm.tm_mday,
-           tm.tm_mon + 1, tm.tm_year + 1900, tm.tm_hour, tm.tm_min, tm.tm_sec);
+  snprintf(buffer, size, "%02d-%02d-%04d %02d:%02d:%02d", tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900, tm.tm_hour, tm.tm_min, tm.tm_sec);
 }
 
 // Funzione helper per scrivere l'intera lista su file
-void salva_tutto_su_file(NodoSalvataggio *testa) {
+void salva_tutto_su_file(NodoSalvataggio *testa)
+{
   FILE *f = fopen("salvataggi.bin", "wb");
-  if (!f) {
+  if (!f)
+  {
     perror("Errore apertura file salvataggi");
     return;
   }
 
   NodoSalvataggio *curr = testa;
-  while (curr) {
+  while (curr)
+  {
     // Scriviamo ID, timestamp e dati giocatore
     // Nota: Non scriviamo il puntatore 'prossimo'
     fwrite(&curr->id, sizeof(int), 1, f);
@@ -33,9 +36,11 @@ void salva_tutto_su_file(NodoSalvataggio *testa) {
   fclose(f);
 }
 
-void aggiungi_salvataggio(NodoSalvataggio **testa, Giocatore *g) {
+void aggiungi_salvataggio(NodoSalvataggio **testa, Giocatore *g)
+{
   NodoSalvataggio *nuovo = (NodoSalvataggio *)malloc(sizeof(NodoSalvataggio));
-  if (!nuovo) {
+  if (!nuovo)
+  {
     printf("Errore di allocazione memoria per il salvataggio.\n");
     return;
   }
@@ -48,14 +53,15 @@ void aggiungi_salvataggio(NodoSalvataggio **testa, Giocatore *g) {
   // Calcolo ID: Massimo attuale + 1
   int max_id = 0;
   NodoSalvataggio *curr = *testa;
-  while (curr) {
+  while (curr)
+  {
     if (curr->id > max_id)
       max_id = curr->id;
     curr = curr->prossimo;
   }
   nuovo->id = max_id + 1;
 
-  // Inserimento in testa (più recente parima)
+  // Inserimento in testa alla lista
   nuovo->prossimo = *testa;
   *testa = nuovo;
 
@@ -65,10 +71,13 @@ void aggiungi_salvataggio(NodoSalvataggio **testa, Giocatore *g) {
   printf("Partita salvata con successo! (ID: %d)\n", nuovo->id);
 }
 
-NodoSalvataggio *carica_salvataggio(NodoSalvataggio *testa, int id) {
+NodoSalvataggio *carica_salvataggio(NodoSalvataggio *testa, int id)
+{
   NodoSalvataggio *curr = testa;
-  while (curr) {
-    if (curr->id == id) {
+  while (curr)
+  {
+    if (curr->id == id)
+    {
       return curr;
     }
     curr = curr->prossimo;
@@ -76,15 +85,21 @@ NodoSalvataggio *carica_salvataggio(NodoSalvataggio *testa, int id) {
   return NULL;
 }
 
-void elimina_salvataggio(NodoSalvataggio **testa, int id) {
+void elimina_salvataggio(NodoSalvataggio **testa, int id)
+{
   NodoSalvataggio *curr = *testa;
   NodoSalvataggio *prev = NULL;
 
-  while (curr) {
-    if (curr->id == id) {
-      if (prev) {
+  while (curr)
+  {
+    if (curr->id == id)
+    {
+      if (prev)
+      {
         prev->prossimo = curr->prossimo;
-      } else {
+      }
+      else
+      {
         *testa = curr->prossimo;
       }
       free(curr);
@@ -101,29 +116,32 @@ void elimina_salvataggio(NodoSalvataggio **testa, int id) {
   printf("Salvataggio con ID %d non trovato.\n", id);
 }
 
-void stampa_salvataggi(NodoSalvataggio *testa) {
-  if (!testa) {
+void stampa_salvataggi(NodoSalvataggio *testa)
+{
+  if (!testa)
+  {
     printf("Nessun salvataggio disponibile.\n");
     return;
   }
 
   NodoSalvataggio *curr = testa;
-  while (curr) {
-    // Formato richiesto: ID. DATA , P. VITA , MONETE , OGGETTI , MISSIONI
-    printf("%d. %s , %d P. VITA , %d MONETE , %d OGGETTI , %d MISSIONI "
-           "COMPLETATE\n",
+  while (curr)
+  {
+    // Formato richiesto: ID. DATA , P. VITA , MONETE , OGGETTI , MISSIONI COMPLETATE
+    printf("%d. %s , %d P. VITA , %d MONETE , %d OGGETTI , %d MISSIONI COMPLETATE\n",
            curr->id, curr->timestamp, curr->dati_giocatore.punti_vita,
            curr->dati_giocatore.monete, curr->dati_giocatore.numero_oggetti,
-           curr->dati_giocatore.missione_palude +
-               curr->dati_giocatore.missione_magione +
-               curr->dati_giocatore.missione_grotta);
+           curr->dati_giocatore.missione_palude + curr->dati_giocatore.missione_magione + curr->dati_giocatore.missione_grotta);
+
     curr = curr->prossimo;
   }
 }
 
-void libera_salvataggi(NodoSalvataggio *testa) {
+void libera_salvataggi(NodoSalvataggio *testa)
+{
   NodoSalvataggio *curr = testa;
-  while (curr) {
+  while (curr)
+  {
     NodoSalvataggio *temp = curr;
     curr = curr->prossimo;
     free(temp);
@@ -131,41 +149,39 @@ void libera_salvataggi(NodoSalvataggio *testa) {
 }
 
 // Nuova funzione per caricare dal file all'avvio
-void carica_salvataggi_da_file(NodoSalvataggio **testa) {
+void carica_salvataggi_da_file(NodoSalvataggio **testa)
+{
   FILE *f = fopen("salvataggi.bin", "rb");
   if (!f)
-    return; // File non esiste, nessun problema (prima esecuzione)
+    return; // File non esistente, nessun salvataggio
 
   // Svuota lista attuale se ce ne fosse bisogno (ma all'avvio è NULL)
   libera_salvataggi(*testa);
   *testa = NULL;
 
-  while (1) {
+  while (1)
+  {
     NodoSalvataggio *nuovo = (NodoSalvataggio *)malloc(sizeof(NodoSalvataggio));
     if (!nuovo)
-      break; // Errore mem
-
-    // Leggi i 3 campi
-    if (fread(&nuovo->id, sizeof(int), 1, f) != 1) {
-      free(nuovo);
+      break;
+      
+    // Leggi i 3 campi (ID, timestamp, dati_giocatore)
+    if (fread(&nuovo->id, sizeof(int), 1, f) != 1)
+    {
+      free(nuovo); // Dealloca se fallisce la lettura
       break;
     }
+
     fread(nuovo->timestamp, sizeof(nuovo->timestamp), 1, f);
     fread(&nuovo->dati_giocatore, sizeof(Giocatore), 1, f);
 
-    // Inserisci in coda per mantenere l'ordine (o in testa se salviamo in
-    // ordine inverso) Dato che salva_tutto scorre dalla testa, il primo nel
-    // file è la testa (il più recente). Se inseriamo in testa man mano che
-    // leggiamo, invertiamo l'ordine!
-    // -> Il file ha: [Testa (Recente)] -> [Succ] -> ...
-    // -> Lettura 1: Leggo Recente. Inserisco in testa. Lista: [Recente]
-    // -> Lettura 2: Leggo MenoRecente. Inserisco in testa. Lista: [MenoRecente]
-    // -> [Recente] ERRORE: Invertiamo l'ordine. Dobbiamo inserire in coda.
-
     nuovo->prossimo = NULL;
-    if (*testa == NULL) {
+    if (*testa == NULL)
+    {
       *testa = nuovo;
-    } else {
+    }
+    else
+    {
       NodoSalvataggio *temp = *testa;
       while (temp->prossimo)
         temp = temp->prossimo;

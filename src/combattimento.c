@@ -17,6 +17,12 @@ int inizia_combattimento(Giocatore *g, Stanza *e)
 
     int danno_nemico = e->danno;
 
+    // Controllo colpo fatale Generale Orco
+    if (strcmp(e->nome, "Generale Orco") == 0 && g->ha_spada_eroe)
+    {
+      e->colpo_fatale = 5;
+    }
+
     // Controllo indovinello Drago
     if (strcmp(e->nome, "Drago Antico") == 0)
     {

@@ -5,11 +5,11 @@ int lancia_dado(int facce);
 
 // Funzioni matematiche / logiche
 int padovan(int n);
-int controlla_padovan(
-    int num); // Verifica se un numero appartiene alla sequenza
+int controlla_padovan(int num); // Verifica se un numero appartiene alla sequenza
 
 // Funzioni input/output
 void pulisci_schermo();
+char leggi_input_char();
 int leggi_intero();
 
 // Logica Morra Cinese (1: Scudo, 2: Magia, 3: Spada)

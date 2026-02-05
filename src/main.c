@@ -2,7 +2,7 @@
 #include "menu.h"
 #include "salvataggio.h"
 #include <stdio.h>
-#include <stdlib.h> // Added this line
+#include <stdlib.h>
 #include <time.h>
 
 int main() {
@@ -16,6 +16,7 @@ int main() {
   srand(time(NULL));
 
   printf("Benvenuto in CDungeon!\n");
+  getchar();
   mostra_menu_principale(&lista_salvataggi, &giocatore_corrente);
 
   // Pulizia della memoria alla chiusura

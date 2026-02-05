@@ -3,7 +3,8 @@
 
 #include "giocatore.h"
 
-typedef struct NodoSalvataggio {
+typedef struct NodoSalvataggio
+{
   int id;
   char timestamp[32];
   Giocatore dati_giocatore;

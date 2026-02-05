@@ -1,13 +1,13 @@
 #ifndef GIOCATORE_H
 #define GIOCATORE_H
 
-#define MAX_INVENTARIO 10
-
-typedef struct {
+typedef struct
+{
   int punti_vita;
   int max_punti_vita;
   int monete;
   int numero_oggetti;
+  // Flag per missioni completate
   int missione_palude;  // 0 o 1
   int missione_magione; // 0 o 1
   int missione_grotta;  // 0 o 1

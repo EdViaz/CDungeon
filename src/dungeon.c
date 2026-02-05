@@ -65,7 +65,7 @@ Stanza genera_stanza_missione(int tipo_missione, int dado)
     {
       sprintf(s.nome, "Generale Orco");
       s.tipo = STANZA_NEMICO;
-      s.colpo_fatale = 1;
+      s.colpo_fatale = 6;
       s.danno = 3;
       s.ricompensa_monete = 12;
       s.is_boss = 1;
@@ -222,6 +222,8 @@ int esegui_missione(Giocatore *g, int tipo_missione, const char *nome_missione)
         else if (g->ha_chiave_castello == 1)
           dado = 6;
       }
+      else if (completata && tipo_missione == 2)
+        dado = lancia_dado(4); // evita di far spawnare di nuovo i boss
 
       // Grotta: Drago Antico
       if (n_stanze >= 10 && !completata && tipo_missione == 3)
@@ -234,7 +236,7 @@ int esegui_missione(Giocatore *g, int tipo_missione, const char *nome_missione)
 
       if (s.tipo == STANZA_NEMICO)
       {
-        if (inizia_combattimento(g, &s)) // dopo aver vinto il combattimento eseguo il codice
+        if (inizia_combattimento(g, &s))
         {
           // Update progressi missione 'Palude'
           if (tipo_missione == 1 && s.is_boss)
