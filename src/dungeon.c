@@ -2,9 +2,7 @@
 #include "combattimento.h"
 #include "menu.h"
 #include "utilita.h"
-#include <ctype.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 void mostra_negozio(Giocatore *g); // Extern
