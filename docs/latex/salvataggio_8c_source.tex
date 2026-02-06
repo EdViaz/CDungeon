@@ -1,0 +1,200 @@
+\doxysection{salvataggio.\+c}
+\hypertarget{salvataggio_8c_source}{}\label{salvataggio_8c_source}\index{src/salvataggio.c@{src/salvataggio.c}}
+\doxymbox{\hyperlink{salvataggio_8c}{Vai alla documentazione di questo file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{salvataggio_8h}{salvataggio.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00012}00012\ \textcolor{comment}{//\ Funzione\ helper\ per\ ottenere\ la\ data\ corrente\ come\ stringa}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00013}\doxymbox{\hyperlink{salvataggio_8c_aa4a1d89688203fc7c1e7f49237f276d5}{00013}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{salvataggio_8c_aa4a1d89688203fc7c1e7f49237f276d5}{ottieni\_data\_corrente}}(\textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{size\_t}\ size)}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00015}00015\ \ \ time\_t\ t\ =\ time(NULL);}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00016}00016\ \ \ \textcolor{keyword}{struct\ }tm\ tm\ =\ *localtime(\&t);}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00017}00017\ \ \ \textcolor{comment}{//\ Formato:\ GG-\/MM-\/AAAA\ HH:MM:SS}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00018}00018\ \ \ snprintf(buffer,\ size,\ \textcolor{stringliteral}{"{}\%02d-\/\%02d-\/\%04d\ \%02d:\%02d:\%02d"{}},\ tm.tm\_mday,\ tm.tm\_mon\ +\ 1,\ tm.tm\_year\ +\ 1900,\ tm.tm\_hour,\ tm.tm\_min,\ tm.tm\_sec);}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00021}00021\ \textcolor{comment}{//\ Funzione\ helper\ per\ scrivere\ l'intera\ lista\ su\ file}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00022}\doxymbox{\hyperlink{salvataggio_8c_a0a65de886844282d1821ce57740562fc}{00022}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{salvataggio_8c_a0a65de886844282d1821ce57740562fc}{salva\_tutto\_su\_file}}(\doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ *testa)}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00023}00023\ \{}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00024}00024\ \ \ FILE\ *f\ =\ fopen(\textcolor{stringliteral}{"{}salvataggi.bin"{}},\ \textcolor{stringliteral}{"{}wb"{}});}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00025}00025\ \ \ \textcolor{keywordflow}{if}\ (!f)}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00026}00026\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00027}00027\ \ \ \ \ perror(\textcolor{stringliteral}{"{}Errore\ apertura\ file\ salvataggi"{}});}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00028}00028\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00029}00029\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00031}00031\ \ \ \doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ *curr\ =\ testa;}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00032}00032\ \ \ \textcolor{keywordflow}{while}\ (curr)}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00033}00033\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00034}00034\ \ \ \ \ \textcolor{comment}{//\ Scriviamo\ ID,\ timestamp\ e\ dati\ giocatore}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00035}00035\ \ \ \ \ \textcolor{comment}{//\ Nota:\ Non\ scriviamo\ il\ puntatore\ 'prossimo'}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00036}00036\ \ \ \ \ fwrite(\&curr-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_aba96c9f35a462294c983722d54572325}{id}},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}),\ 1,\ f);}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00037}00037\ \ \ \ \ fwrite(curr-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_a7fcede169e480b3730937c948a1d99aa}{timestamp}},\ \textcolor{keyword}{sizeof}(curr-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_a7fcede169e480b3730937c948a1d99aa}{timestamp}}),\ 1,\ f);}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00038}00038\ \ \ \ \ fwrite(\&curr-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_ac1069992878eb0bdc0830cf10f856880}{dati\_giocatore}},\ \textcolor{keyword}{sizeof}(\doxymbox{\hyperlink{struct_giocatore}{Giocatore}}),\ 1,\ f);}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00039}00039\ \ \ \ \ curr\ =\ curr-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_ab49ebcdfa8ffe731283346da8692f9e6}{prossimo}};}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00040}00040\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00041}00041\ \ \ fclose(f);}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00042}00042\ \}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00044}\doxymbox{\hyperlink{salvataggio_8c_a36b6eb609318283fd72c76bcee64bc5b}{00044}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{salvataggio_8c_a36b6eb609318283fd72c76bcee64bc5b}{aggiungi\_salvataggio}}(\doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ **testa,\ \doxymbox{\hyperlink{struct_giocatore}{Giocatore}}\ *g)}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00045}00045\ \{}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00046}00046\ \ \ \doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ *nuovo\ =\ (\doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ *)malloc(\textcolor{keyword}{sizeof}(\doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}));}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00047}00047\ \ \ \textcolor{keywordflow}{if}\ (!nuovo)}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00048}00048\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00049}00049\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Errore\ di\ allocazione\ memoria\ per\ il\ salvataggio.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00051}00051\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00053}00053\ \ \ \textcolor{comment}{//\ Copia\ i\ dati\ del\ giocatore}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00054}00054\ \ \ nuovo-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_ac1069992878eb0bdc0830cf10f856880}{dati\_giocatore}}\ =\ *g;}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00055}00055\ \ \ \doxymbox{\hyperlink{salvataggio_8c_aa4a1d89688203fc7c1e7f49237f276d5}{ottieni\_data\_corrente}}(nuovo-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_a7fcede169e480b3730937c948a1d99aa}{timestamp}},\ \textcolor{keyword}{sizeof}(nuovo-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_a7fcede169e480b3730937c948a1d99aa}{timestamp}}));}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00056}00056\ \ \ nuovo-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_ab49ebcdfa8ffe731283346da8692f9e6}{prossimo}}\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00058}00058\ \ \ \textcolor{comment}{//\ Calcolo\ ID:\ Massimo\ attuale\ +\ 1}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00059}00059\ \ \ \textcolor{keywordtype}{int}\ max\_id\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00060}00060\ \ \ \doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ *curr\ =\ *testa;}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00061}00061\ \ \ \textcolor{keywordflow}{while}\ (curr)}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00062}00062\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00063}00063\ \ \ \ \ \textcolor{keywordflow}{if}\ (curr-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_aba96c9f35a462294c983722d54572325}{id}}\ >\ max\_id)}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00064}00064\ \ \ \ \ \ \ max\_id\ =\ curr-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_aba96c9f35a462294c983722d54572325}{id}};}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00065}00065\ \ \ \ \ curr\ =\ curr-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_ab49ebcdfa8ffe731283346da8692f9e6}{prossimo}};}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00066}00066\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00067}00067\ \ \ nuovo-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_aba96c9f35a462294c983722d54572325}{id}}\ =\ max\_id\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00069}00069\ \ \ \textcolor{comment}{//\ Inserimento\ in\ testa\ alla\ lista}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00070}00070\ \ \ nuovo-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_ab49ebcdfa8ffe731283346da8692f9e6}{prossimo}}\ =\ *testa;}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00071}00071\ \ \ *testa\ =\ nuovo;}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00073}00073\ \ \ \textcolor{comment}{//\ Persistenza\ su\ file}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00074}00074\ \ \ \doxymbox{\hyperlink{salvataggio_8c_a0a65de886844282d1821ce57740562fc}{salva\_tutto\_su\_file}}(*testa);}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00076}00076\ \ \ printf(\textcolor{stringliteral}{"{}Partita\ salvata\ con\ successo!\ (ID:\ \%d)\(\backslash\)n"{}},\ nuovo-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_aba96c9f35a462294c983722d54572325}{id}});}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00077}00077\ \}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00079}\doxymbox{\hyperlink{salvataggio_8c_aa25228e7cfe267ee45f86f33c3924eec}{00079}}\ \doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ *\doxymbox{\hyperlink{salvataggio_8c_aa25228e7cfe267ee45f86f33c3924eec}{carica\_salvataggio}}(\doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ *testa,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00080}00080\ \{}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00081}00081\ \ \ \doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ *curr\ =\ testa;}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00082}00082\ \ \ \textcolor{keywordflow}{while}\ (curr)}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00083}00083\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00084}00084\ \ \ \ \ \textcolor{keywordflow}{if}\ (curr-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_aba96c9f35a462294c983722d54572325}{id}}\ ==\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00085}00085\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00086}00086\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ curr;}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00088}00088\ \ \ \ \ curr\ =\ curr-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_ab49ebcdfa8ffe731283346da8692f9e6}{prossimo}};}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00089}00089\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00090}00090\ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00091}00091\ \}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00093}\doxymbox{\hyperlink{salvataggio_8c_a2ce4f5bea730900b1014154c2673d38f}{00093}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{salvataggio_8c_a2ce4f5bea730900b1014154c2673d38f}{elimina\_salvataggio}}(\doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ **testa,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00094}00094\ \{}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00095}00095\ \ \ \doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ *curr\ =\ *testa;}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00096}00096\ \ \ \doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ *prev\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00098}00098\ \ \ \textcolor{keywordflow}{while}\ (curr)}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00099}00099\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00100}00100\ \ \ \ \ \textcolor{keywordflow}{if}\ (curr-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_aba96c9f35a462294c983722d54572325}{id}}\ ==\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00101}00101\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00102}00102\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (prev)}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00103}00103\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00104}00104\ \ \ \ \ \ \ \ \ prev-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_ab49ebcdfa8ffe731283346da8692f9e6}{prossimo}}\ =\ curr-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_ab49ebcdfa8ffe731283346da8692f9e6}{prossimo}};}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00105}00105\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00106}00106\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00107}00107\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00108}00108\ \ \ \ \ \ \ \ \ *testa\ =\ curr-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_ab49ebcdfa8ffe731283346da8692f9e6}{prossimo}};}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00109}00109\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00110}00110\ \ \ \ \ \ \ free(curr);}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00112}00112\ \ \ \ \ \ \ \textcolor{comment}{//\ Aggiorniamo\ il\ file\ dopo\ la\ modifica}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00113}00113\ \ \ \ \ \ \ \doxymbox{\hyperlink{salvataggio_8c_a0a65de886844282d1821ce57740562fc}{salva\_tutto\_su\_file}}(*testa);}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00115}00115\ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Salvataggio\ \%d\ eliminato.\(\backslash\)n"{}},\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00116}00116\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00117}00117\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00118}00118\ \ \ \ \ prev\ =\ curr;}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00119}00119\ \ \ \ \ curr\ =\ curr-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_ab49ebcdfa8ffe731283346da8692f9e6}{prossimo}};}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00120}00120\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00121}00121\ \ \ printf(\textcolor{stringliteral}{"{}Salvataggio\ con\ ID\ \%d\ non\ trovato.\(\backslash\)n"{}},\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00122}00122\ \}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00124}\doxymbox{\hyperlink{salvataggio_8c_a75ff6e1d6bcb76a4a5e1391443e2d3d4}{00124}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{salvataggio_8c_a75ff6e1d6bcb76a4a5e1391443e2d3d4}{stampa\_salvataggi}}(\doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ *testa)}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00125}00125\ \{}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00126}00126\ \ \ \textcolor{keywordflow}{if}\ (!testa)}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00127}00127\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00128}00128\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Nessun\ salvataggio\ disponibile.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00129}00129\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00130}00130\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00132}00132\ \ \ \doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ *curr\ =\ testa;}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00133}00133\ \ \ \textcolor{keywordflow}{while}\ (curr)}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00134}00134\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00135}00135\ \ \ \ \ \textcolor{comment}{//\ Formato\ richiesto:\ ID.\ DATA\ ,\ P.\ VITA\ ,\ MONETE\ ,\ OGGETTI\ ,\ MISSIONI\ COMPLETATE}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00136}00136\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%d.\ \%s\ ,\ \%d\ P.\ VITA\ ,\ \%d\ MONETE\ ,\ \%d\ OGGETTI\ ,\ \%d\ MISSIONI\ COMPLETATE\(\backslash\)n"{}},}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ curr-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_aba96c9f35a462294c983722d54572325}{id}},\ curr-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_a7fcede169e480b3730937c948a1d99aa}{timestamp}},\ curr-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_ac1069992878eb0bdc0830cf10f856880}{dati\_giocatore}}.\doxymbox{\hyperlink{struct_giocatore_ac225b51d0e0eeeb38afec9daf647ee27}{punti\_vita}},}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ curr-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_ac1069992878eb0bdc0830cf10f856880}{dati\_giocatore}}.\doxymbox{\hyperlink{struct_giocatore_ab16e84c52ef3c289fda14fd416f31a47}{monete}},\ curr-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_ac1069992878eb0bdc0830cf10f856880}{dati\_giocatore}}.\doxymbox{\hyperlink{struct_giocatore_acf4cc601e83274d355859d4b26fadf2a}{numero\_oggetti}},}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ curr-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_ac1069992878eb0bdc0830cf10f856880}{dati\_giocatore}}.\doxymbox{\hyperlink{struct_giocatore_af48e7cb8bc0deee433b5feccfb6fb24d}{missione\_palude}}\ +\ curr-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_ac1069992878eb0bdc0830cf10f856880}{dati\_giocatore}}.\doxymbox{\hyperlink{struct_giocatore_ae284c94c16c38a8a81532928e211445f}{missione\_magione}}\ +\ curr-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_ac1069992878eb0bdc0830cf10f856880}{dati\_giocatore}}.\doxymbox{\hyperlink{struct_giocatore_a2b3ca93d976868a3240786b7c70705a2}{missione\_grotta}});}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00141}00141\ \ \ \ \ curr\ =\ curr-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_ab49ebcdfa8ffe731283346da8692f9e6}{prossimo}};}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00142}00142\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00143}00143\ \}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00145}\doxymbox{\hyperlink{salvataggio_8c_a36012a180284fda158e06cb830e22d93}{00145}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{salvataggio_8c_a36012a180284fda158e06cb830e22d93}{libera\_salvataggi}}(\doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ *testa)}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00146}00146\ \{}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00147}00147\ \ \ \doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ *curr\ =\ testa;}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00148}00148\ \ \ \textcolor{keywordflow}{while}\ (curr)}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00149}00149\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00150}00150\ \ \ \ \ \doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ *temp\ =\ curr;}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00151}00151\ \ \ \ \ curr\ =\ curr-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_ab49ebcdfa8ffe731283346da8692f9e6}{prossimo}};}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00152}00152\ \ \ \ \ free(temp);}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00153}00153\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00154}00154\ \}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00156}00156\ \textcolor{comment}{//\ Nuova\ funzione\ per\ caricare\ dal\ file\ all'avvio}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00157}\doxymbox{\hyperlink{salvataggio_8c_a92740f4aae86090fc8fdfc5023ffa5f4}{00157}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{salvataggio_8c_a92740f4aae86090fc8fdfc5023ffa5f4}{carica\_salvataggi\_da\_file}}(\doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ **testa)}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00158}00158\ \{}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00159}00159\ \ \ FILE\ *f\ =\ fopen(\textcolor{stringliteral}{"{}salvataggi.bin"{}},\ \textcolor{stringliteral}{"{}rb"{}});}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00160}00160\ \ \ \textcolor{keywordflow}{if}\ (!f)}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00161}00161\ \ \ \ \ \textcolor{keywordflow}{return};\ \textcolor{comment}{//\ File\ non\ esistente,\ nessun\ salvataggio}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00163}00163\ \ \ \textcolor{comment}{//\ Svuota\ lista\ attuale\ se\ ce\ ne\ fosse\ bisogno\ (ma\ all'avvio\ è\ NULL)}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00164}00164\ \ \ \doxymbox{\hyperlink{salvataggio_8c_a36012a180284fda158e06cb830e22d93}{libera\_salvataggi}}(*testa);}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00165}00165\ \ \ *testa\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00167}00167\ \ \ \textcolor{keywordflow}{while}\ (1)}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00168}00168\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00169}00169\ \ \ \ \ \doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ *nuovo\ =\ (\doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ *)malloc(\textcolor{keyword}{sizeof}(\doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}));}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00170}00170\ \ \ \ \ \textcolor{keywordflow}{if}\ (!nuovo)}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00171}00171\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00172}00172\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00173}00173\ \ \ \ \ \textcolor{comment}{//\ Leggi\ i\ 3\ campi\ (ID,\ timestamp,\ dati\_giocatore)}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00174}00174\ \ \ \ \ \textcolor{keywordflow}{if}\ (fread(\&nuovo-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_aba96c9f35a462294c983722d54572325}{id}},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}),\ 1,\ f)\ !=\ 1)}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00175}00175\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00176}00176\ \ \ \ \ \ \ free(nuovo);\ \textcolor{comment}{//\ Dealloca\ se\ fallisce\ la\ lettura}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00177}00177\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00178}00178\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00180}00180\ \ \ \ \ fread(nuovo-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_a7fcede169e480b3730937c948a1d99aa}{timestamp}},\ \textcolor{keyword}{sizeof}(nuovo-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_a7fcede169e480b3730937c948a1d99aa}{timestamp}}),\ 1,\ f);}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00181}00181\ \ \ \ \ fread(\&nuovo-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_ac1069992878eb0bdc0830cf10f856880}{dati\_giocatore}},\ \textcolor{keyword}{sizeof}(\doxymbox{\hyperlink{struct_giocatore}{Giocatore}}),\ 1,\ f);}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00183}00183\ \ \ \ \ nuovo-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_ab49ebcdfa8ffe731283346da8692f9e6}{prossimo}}\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00184}00184\ \ \ \ \ \textcolor{keywordflow}{if}\ (*testa\ ==\ NULL)}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00185}00185\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00186}00186\ \ \ \ \ \ \ *testa\ =\ nuovo;}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00187}00187\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00188}00188\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00189}00189\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00190}00190\ \ \ \ \ \ \ \doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ *temp\ =\ *testa;}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00191}00191\ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (temp-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_ab49ebcdfa8ffe731283346da8692f9e6}{prossimo}})}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00192}00192\ \ \ \ \ \ \ \ \ temp\ =\ temp-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_ab49ebcdfa8ffe731283346da8692f9e6}{prossimo}};}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00193}00193\ \ \ \ \ \ \ temp-\/>\doxymbox{\hyperlink{struct_nodo_salvataggio_ab49ebcdfa8ffe731283346da8692f9e6}{prossimo}}\ =\ nuovo;}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00194}00194\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00195}00195\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00196}00196\ \ \ fclose(f);}
+\DoxyCodeLine{\Hypertarget{salvataggio_8c_source_l00197}00197\ \}}
+
+\end{DoxyCode}

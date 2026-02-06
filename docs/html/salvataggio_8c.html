@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CDungeon: Riferimenti per il file src/salvataggio.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">CDungeon<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Un gioco dungeon crawler testuale in C</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Cerca',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('salvataggio_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Riferimenti per il file salvataggio.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementazione del sistema di persistenza dei dati.  
+<a href="#details">Continua...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="salvataggio_8h_source.html">salvataggio.h</a>&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
+</div>
+<p><a href="salvataggio_8c_source.html">Vai al codice sorgente di questo file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:aa4a1d89688203fc7c1e7f49237f276d5" id="r_aa4a1d89688203fc7c1e7f49237f276d5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa4a1d89688203fc7c1e7f49237f276d5">ottieni_data_corrente</a> (char *buffer, size_t size)</td></tr>
+<tr class="memitem:a0a65de886844282d1821ce57740562fc" id="r_a0a65de886844282d1821ce57740562fc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0a65de886844282d1821ce57740562fc">salva_tutto_su_file</a> (<a class="el" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> *testa)</td></tr>
+<tr class="memdesc:a0a65de886844282d1821ce57740562fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Salva l'intera lista dei salvataggi su file.  <br /></td></tr>
+<tr class="memitem:a36b6eb609318283fd72c76bcee64bc5b" id="r_a36b6eb609318283fd72c76bcee64bc5b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a36b6eb609318283fd72c76bcee64bc5b">aggiungi_salvataggio</a> (<a class="el" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> **testa, <a class="el" href="struct_giocatore.html">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:a36b6eb609318283fd72c76bcee64bc5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggiunge un nuovo salvataggio alla lista e al file.  <br /></td></tr>
+<tr class="memitem:aa25228e7cfe267ee45f86f33c3924eec" id="r_aa25228e7cfe267ee45f86f33c3924eec"><td class="memItemLeft"><a class="el" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> *&#160;</td><td class="memItemRight"><a class="el" href="#aa25228e7cfe267ee45f86f33c3924eec">carica_salvataggio</a> (<a class="el" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> *testa, int id)</td></tr>
+<tr class="memdesc:aa25228e7cfe267ee45f86f33c3924eec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cerca un salvataggio nella lista tramite ID.  <br /></td></tr>
+<tr class="memitem:a2ce4f5bea730900b1014154c2673d38f" id="r_a2ce4f5bea730900b1014154c2673d38f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2ce4f5bea730900b1014154c2673d38f">elimina_salvataggio</a> (<a class="el" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> **testa, int id)</td></tr>
+<tr class="memdesc:a2ce4f5bea730900b1014154c2673d38f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina un salvataggio dalla lista e dal file.  <br /></td></tr>
+<tr class="memitem:a75ff6e1d6bcb76a4a5e1391443e2d3d4" id="r_a75ff6e1d6bcb76a4a5e1391443e2d3d4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a75ff6e1d6bcb76a4a5e1391443e2d3d4">stampa_salvataggi</a> (<a class="el" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> *testa)</td></tr>
+<tr class="memdesc:a75ff6e1d6bcb76a4a5e1391443e2d3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stampa a video l'elenco dei salvataggi disponibili.  <br /></td></tr>
+<tr class="memitem:a36012a180284fda158e06cb830e22d93" id="r_a36012a180284fda158e06cb830e22d93"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a36012a180284fda158e06cb830e22d93">libera_salvataggi</a> (<a class="el" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> *testa)</td></tr>
+<tr class="memdesc:a36012a180284fda158e06cb830e22d93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libera la memoria allocata per la lista dei salvataggi.  <br /></td></tr>
+<tr class="memitem:a92740f4aae86090fc8fdfc5023ffa5f4" id="r_a92740f4aae86090fc8fdfc5023ffa5f4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a92740f4aae86090fc8fdfc5023ffa5f4">carica_salvataggi_da_file</a> (<a class="el" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> **testa)</td></tr>
+<tr class="memdesc:a92740f4aae86090fc8fdfc5023ffa5f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carica tutti i salvataggi dal file binario all'avvio.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Implementazione del sistema di persistenza dei dati. </p>
+
+<p class="definition">Definizione nel file <a class="el" href="salvataggio_8c_source.html">salvataggio.c</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
+<a id="a36b6eb609318283fd72c76bcee64bc5b" name="a36b6eb609318283fd72c76bcee64bc5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36b6eb609318283fd72c76bcee64bc5b">&#9670;&#160;</a></span>aggiungi_salvataggio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void aggiungi_salvataggio </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> **</td>          <td class="paramname"><span class="paramname"><em>testa</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_giocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Aggiunge un nuovo salvataggio alla lista e al file. </p>
+<p>Crea un nuovo nodo con i dati attuali del giocatore, genera un nuovo ID, lo aggiunge in testa alla lista e aggiorna il file di salvataggio.</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">testa</td><td>Puntatore doppio alla testa della lista. </td></tr>
+    <tr><td class="paramname">g</td><td>Puntatore ai dati del giocatore da salvare. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definizione alla linea <a class="el" href="salvataggio_8c_source.html#l00044">44</a> del file <a class="el" href="salvataggio_8c_source.html">salvataggio.c</a>.</p>
+
+<p class="reference">Referenzia <a class="el" href="salvataggio_8h_source.html#l00018">NodoSalvataggio::dati_giocatore</a>, <a class="el" href="salvataggio_8h_source.html#l00016">NodoSalvataggio::id</a>, <a class="el" href="salvataggio_8c_source.html#l00013">ottieni_data_corrente()</a>, <a class="el" href="salvataggio_8h_source.html#l00019">NodoSalvataggio::prossimo</a>, <a class="el" href="salvataggio_8c_source.html#l00022">salva_tutto_su_file()</a>, e <a class="el" href="salvataggio_8h_source.html#l00017">NodoSalvataggio::timestamp</a>.</p>
+
+<p class="reference">Referenziato da <a class="el" href="menu_8c_source.html#l00130">mostra_menu_villaggio()</a>.</p>
+
+</div>
+</div>
+<a id="a92740f4aae86090fc8fdfc5023ffa5f4" name="a92740f4aae86090fc8fdfc5023ffa5f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92740f4aae86090fc8fdfc5023ffa5f4">&#9670;&#160;</a></span>carica_salvataggi_da_file()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void carica_salvataggi_da_file </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> **</td>          <td class="paramname"><span class="paramname"><em>testa</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Carica tutti i salvataggi dal file binario all'avvio. </p>
+<p>Legge il file "salvataggi.bin" e ricostruisce la lista concatenata in memoria.</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">testa</td><td>Puntatore doppio alla testa della lista (verrà inizializzata). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definizione alla linea <a class="el" href="salvataggio_8c_source.html#l00157">157</a> del file <a class="el" href="salvataggio_8c_source.html">salvataggio.c</a>.</p>
+
+<p class="reference">Referenzia <a class="el" href="salvataggio_8h_source.html#l00018">NodoSalvataggio::dati_giocatore</a>, <a class="el" href="salvataggio_8h_source.html#l00016">NodoSalvataggio::id</a>, <a class="el" href="salvataggio_8c_source.html#l00145">libera_salvataggi()</a>, <a class="el" href="salvataggio_8h_source.html#l00019">NodoSalvataggio::prossimo</a>, e <a class="el" href="salvataggio_8h_source.html#l00017">NodoSalvataggio::timestamp</a>.</p>
+
+<p class="reference">Referenziato da <a class="el" href="main_8c_source.html#l00020">main()</a>.</p>
+
+</div>
+</div>
+<a id="aa25228e7cfe267ee45f86f33c3924eec" name="aa25228e7cfe267ee45f86f33c3924eec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa25228e7cfe267ee45f86f33c3924eec">&#9670;&#160;</a></span>carica_salvataggio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> * carica_salvataggio </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> *</td>          <td class="paramname"><span class="paramname"><em>testa</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cerca un salvataggio nella lista tramite ID. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">testa</td><td>Testa della lista dei salvataggi. </td></tr>
+    <tr><td class="paramname">id</td><td>ID del salvataggio da cercare. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Puntatore al nodo trovato, o NULL se non esiste. </dd></dl>
+
+<p class="definition">Definizione alla linea <a class="el" href="salvataggio_8c_source.html#l00079">79</a> del file <a class="el" href="salvataggio_8c_source.html">salvataggio.c</a>.</p>
+
+<p class="reference">Referenzia <a class="el" href="salvataggio_8h_source.html#l00016">NodoSalvataggio::id</a>, e <a class="el" href="salvataggio_8h_source.html#l00019">NodoSalvataggio::prossimo</a>.</p>
+
+<p class="reference">Referenziato da <a class="el" href="menu_8c_source.html#l00308">gestisci_trucchi()</a>, e <a class="el" href="menu_8c_source.html#l00082">mostra_menu_salvataggi()</a>.</p>
+
+</div>
+</div>
+<a id="a2ce4f5bea730900b1014154c2673d38f" name="a2ce4f5bea730900b1014154c2673d38f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ce4f5bea730900b1014154c2673d38f">&#9670;&#160;</a></span>elimina_salvataggio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void elimina_salvataggio </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> **</td>          <td class="paramname"><span class="paramname"><em>testa</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elimina un salvataggio dalla lista e dal file. </p>
+<p>Rimuove il nodo corrispondente all'ID specificato e riscrive il file binario.</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">testa</td><td>Puntatore doppio alla testa della lista. </td></tr>
+    <tr><td class="paramname">id</td><td>ID del salvataggio da eliminare. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definizione alla linea <a class="el" href="salvataggio_8c_source.html#l00093">93</a> del file <a class="el" href="salvataggio_8c_source.html">salvataggio.c</a>.</p>
+
+<p class="reference">Referenzia <a class="el" href="salvataggio_8h_source.html#l00016">NodoSalvataggio::id</a>, <a class="el" href="salvataggio_8h_source.html#l00019">NodoSalvataggio::prossimo</a>, e <a class="el" href="salvataggio_8c_source.html#l00022">salva_tutto_su_file()</a>.</p>
+
+<p class="reference">Referenziato da <a class="el" href="menu_8c_source.html#l00082">mostra_menu_salvataggi()</a>.</p>
+
+</div>
+</div>
+<a id="a36012a180284fda158e06cb830e22d93" name="a36012a180284fda158e06cb830e22d93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36012a180284fda158e06cb830e22d93">&#9670;&#160;</a></span>libera_salvataggi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void libera_salvataggi </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> *</td>          <td class="paramname"><span class="paramname"><em>testa</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Libera la memoria allocata per la lista dei salvataggi. </p>
+<p>Da chiamare alla chiusura del programma.</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">testa</td><td>Testa della lista da deallocare. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definizione alla linea <a class="el" href="salvataggio_8c_source.html#l00145">145</a> del file <a class="el" href="salvataggio_8c_source.html">salvataggio.c</a>.</p>
+
+<p class="reference">Referenzia <a class="el" href="salvataggio_8h_source.html#l00019">NodoSalvataggio::prossimo</a>.</p>
+
+<p class="reference">Referenziato da <a class="el" href="salvataggio_8c_source.html#l00157">carica_salvataggi_da_file()</a>, e <a class="el" href="main_8c_source.html#l00020">main()</a>.</p>
+
+</div>
+</div>
+<a id="aa4a1d89688203fc7c1e7f49237f276d5" name="aa4a1d89688203fc7c1e7f49237f276d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4a1d89688203fc7c1e7f49237f276d5">&#9670;&#160;</a></span>ottieni_data_corrente()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ottieni_data_corrente </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definizione alla linea <a class="el" href="salvataggio_8c_source.html#l00013">13</a> del file <a class="el" href="salvataggio_8c_source.html">salvataggio.c</a>.</p>
+
+<p class="reference">Referenziato da <a class="el" href="salvataggio_8c_source.html#l00044">aggiungi_salvataggio()</a>.</p>
+
+</div>
+</div>
+<a id="a0a65de886844282d1821ce57740562fc" name="a0a65de886844282d1821ce57740562fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a65de886844282d1821ce57740562fc">&#9670;&#160;</a></span>salva_tutto_su_file()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void salva_tutto_su_file </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> *</td>          <td class="paramname"><span class="paramname"><em>testa</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Salva l'intera lista dei salvataggi su file. </p>
+<p>Sovrascrive il file "salvataggi.bin" con il contenuto attuale della lista.</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">testa</td><td>Testa della lista dei salvataggi. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definizione alla linea <a class="el" href="salvataggio_8c_source.html#l00022">22</a> del file <a class="el" href="salvataggio_8c_source.html">salvataggio.c</a>.</p>
+
+<p class="reference">Referenzia <a class="el" href="salvataggio_8h_source.html#l00018">NodoSalvataggio::dati_giocatore</a>, <a class="el" href="salvataggio_8h_source.html#l00016">NodoSalvataggio::id</a>, <a class="el" href="salvataggio_8h_source.html#l00019">NodoSalvataggio::prossimo</a>, e <a class="el" href="salvataggio_8h_source.html#l00017">NodoSalvataggio::timestamp</a>.</p>
+
+<p class="reference">Referenziato da <a class="el" href="salvataggio_8c_source.html#l00044">aggiungi_salvataggio()</a>, <a class="el" href="salvataggio_8c_source.html#l00093">elimina_salvataggio()</a>, e <a class="el" href="menu_8c_source.html#l00308">gestisci_trucchi()</a>.</p>
+
+</div>
+</div>
+<a id="a75ff6e1d6bcb76a4a5e1391443e2d3d4" name="a75ff6e1d6bcb76a4a5e1391443e2d3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75ff6e1d6bcb76a4a5e1391443e2d3d4">&#9670;&#160;</a></span>stampa_salvataggi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stampa_salvataggi </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> *</td>          <td class="paramname"><span class="paramname"><em>testa</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stampa a video l'elenco dei salvataggi disponibili. </p>
+<p>Mostra ID, timestamp e riepilogo delle statistiche per ogni salvataggio.</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">testa</td><td>Testa della lista dei salvataggi. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definizione alla linea <a class="el" href="salvataggio_8c_source.html#l00124">124</a> del file <a class="el" href="salvataggio_8c_source.html">salvataggio.c</a>.</p>
+
+<p class="reference">Referenzia <a class="el" href="salvataggio_8h_source.html#l00018">NodoSalvataggio::dati_giocatore</a>, <a class="el" href="salvataggio_8h_source.html#l00016">NodoSalvataggio::id</a>, <a class="el" href="giocatore_8h_source.html#l00022">Giocatore::missione_grotta</a>, <a class="el" href="giocatore_8h_source.html#l00021">Giocatore::missione_magione</a>, <a class="el" href="giocatore_8h_source.html#l00020">Giocatore::missione_palude</a>, <a class="el" href="giocatore_8h_source.html#l00016">Giocatore::monete</a>, <a class="el" href="giocatore_8h_source.html#l00017">Giocatore::numero_oggetti</a>, <a class="el" href="salvataggio_8h_source.html#l00019">NodoSalvataggio::prossimo</a>, <a class="el" href="giocatore_8h_source.html#l00014">Giocatore::punti_vita</a>, e <a class="el" href="salvataggio_8h_source.html#l00017">NodoSalvataggio::timestamp</a>.</p>
+
+<p class="reference">Referenziato da <a class="el" href="menu_8c_source.html#l00308">gestisci_trucchi()</a>, e <a class="el" href="menu_8c_source.html#l00082">mostra_menu_salvataggi()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="salvataggio_8c.html">salvataggio.c</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

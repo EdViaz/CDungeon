@@ -1,0 +1,107 @@
+\doxysection{utilita.\+c}
+\hypertarget{utilita_8c_source}{}\label{utilita_8c_source}\index{src/utilita.c@{src/utilita.c}}
+\doxymbox{\hyperlink{utilita_8c}{Vai alla documentazione di questo file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{utilita_8h}{utilita.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <ctype.h>}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00012}\doxymbox{\hyperlink{utilita_8c_a4b4b7026a8200115f8cd165bc3210023}{00012}}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{utilita_8c_a4b4b7026a8200115f8cd165bc3210023}{lancia\_dado}}(\textcolor{keywordtype}{int}\ facce)\ \{\ \textcolor{keywordflow}{return}\ (rand()\ \%\ facce)\ +\ 1;\ \}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00014}00014\ \textcolor{comment}{//\ P(n)\ =\ P(n-\/2)\ +\ P(n-\/3)}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00015}00015\ \textcolor{comment}{//\ P(0)=1,\ P(1)=1,\ P(2)=1}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00016}\doxymbox{\hyperlink{utilita_8c_ae7c83e4d97d50567cda5b807d89d6652}{00016}}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{utilita_8c_ae7c83e4d97d50567cda5b807d89d6652}{padovan}}(\textcolor{keywordtype}{int}\ n)}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00017}00017\ \{}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00018}00018\ \ \ \textcolor{keywordflow}{if}\ (n\ <\ 0)}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00020}00020\ \ \ \textcolor{keywordflow}{if}\ (n\ <=\ 2)}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00022}00022\ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{utilita_8c_ae7c83e4d97d50567cda5b807d89d6652}{padovan}}(n\ -\/\ 2)\ +\ \doxymbox{\hyperlink{utilita_8c_ae7c83e4d97d50567cda5b807d89d6652}{padovan}}(n\ -\/\ 3);}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00023}00023\ \}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00025}\doxymbox{\hyperlink{utilita_8c_aebe1eb385b2dceac51255099bfd31b57}{00025}}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{utilita_8c_aebe1eb385b2dceac51255099bfd31b57}{controlla\_padovan}}(\textcolor{keywordtype}{int}\ num)}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00026}00026\ \{}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00027}00027\ \ \ \textcolor{keywordflow}{if}\ (num\ <\ 1)}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00028}00028\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00029}00029\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 25;\ i++)}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00030}00030\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{int}\ p\ =\ \doxymbox{\hyperlink{utilita_8c_ae7c83e4d97d50567cda5b807d89d6652}{padovan}}(i);}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{if}\ (p\ ==\ num)}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00033}00033\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{if}\ (p\ >\ num)}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00035}00035\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00036}00036\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00037}00037\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00038}00038\ \}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00040}\doxymbox{\hyperlink{utilita_8c_a430562fd5d83996886377c50f56c41d7}{00040}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{utilita_8c_a430562fd5d83996886377c50f56c41d7}{pulisci\_schermo}}()}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00041}00041\ \{}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00042}00042\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00043}00043\ \ \ system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00044}00044\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00045}00045\ \ \ system(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00046}00046\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00047}00047\ \}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00049}00049\ \textcolor{comment}{//\ Legge\ un\ singolo\ carattere\ dall'input\ dell'utente\ e\ lo\ restituisce\ in\ minuscolo}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00050}\doxymbox{\hyperlink{utilita_8c_ae3ac40b3cf9c5e690d16a0ad5cfebd9e}{00050}}\ \textcolor{keywordtype}{char}\ \doxymbox{\hyperlink{utilita_8c_ae3ac40b3cf9c5e690d16a0ad5cfebd9e}{leggi\_input\_char}}()}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00051}00051\ \{}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00052}00052\ \ \ \textcolor{keywordtype}{char}\ b[100];\ \textcolor{comment}{//\ Buffer\ per\ memorizzare\ l'input\ (100\ caratteri\ max)}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00054}00054\ \ \ \textcolor{comment}{//\ Legge\ una\ linea\ intera\ da\ stdin\ in\ modo\ sicuro}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00055}00055\ \ \ \textcolor{keywordflow}{if}\ (fgets(b,\ \textcolor{keyword}{sizeof}(b),\ stdin))}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00056}00056\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00057}00057\ \ \ \ \ \textcolor{comment}{//\ Rimuove\ il\ carattere\ di\ newline\ inserito\ automaticamente\ da\ fgets}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00058}00058\ \ \ \ \ b[strcspn(b,\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}})]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00060}00060\ \ \ \ \ \textcolor{comment}{//\ Se\ l'utente\ ha\ premuto\ solo\ invio\ (input\ vuoto),\ restituisce\ 0}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{if}\ (strlen(b)\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00062}00062\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00064}00064\ \ \ \ \ \textcolor{comment}{//\ Se\ l'utente\ ha\ inserito\ solo\ uno\ spazio,\ lo\ restituisce}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00065}00065\ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(b,\ \textcolor{stringliteral}{"{}\ "{}})\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00066}00066\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00068}00068\ \ \ \ \ \textcolor{comment}{//\ Restituisce\ il\ primo\ carattere\ convertito\ a\ minuscolo}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{return}\ tolower(b[0]);}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00070}00070\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00072}00072\ \ \ \textcolor{comment}{//\ Se\ fgets\ fallisce,\ restituisce\ 0}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00073}00073\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00074}00074\ \}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00076}\doxymbox{\hyperlink{utilita_8c_aa765f343379c735d433c7108926967c4}{00076}}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{utilita_8c_aa765f343379c735d433c7108926967c4}{leggi\_intero}}()}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00077}00077\ \{}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00078}00078\ \ \ \textcolor{keywordtype}{int}\ valore;}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00079}00079\ \ \ \textcolor{keywordflow}{while}\ (scanf(\textcolor{stringliteral}{"{}\%d"{}},\ \&valore)\ !=\ 1)}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00080}00080\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00081}00081\ \ \ \ \ \textcolor{keywordflow}{while}\ (getchar()\ !=\ \textcolor{charliteral}{'\(\backslash\)n'})}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00082}00082\ \ \ \ \ \ \ ;\ \textcolor{comment}{//\ Pulisci\ buffer}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00083}00083\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Input\ non\ valido.\ Inserisci\ un\ numero:\ "{}});}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00084}00084\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00085}00085\ \ \ \textcolor{keywordflow}{while}\ (getchar()\ !=\ \textcolor{charliteral}{'\(\backslash\)n'})}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00086}00086\ \ \ \ \ ;\ \textcolor{comment}{//\ Pulisci\ fine\ riga}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00087}00087\ \ \ \textcolor{keywordflow}{return}\ valore;}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00088}00088\ \}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00090}00090\ \textcolor{comment}{//\ 1:\ Scudo,\ 2:\ Magia,\ 3:\ Spada}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00091}\doxymbox{\hyperlink{utilita_8c_aa2f404fe5fae3024fb795eb6e84e62c9}{00091}}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{utilita_8c_aa2f404fe5fae3024fb795eb6e84e62c9}{valuta\_vittoria\_morra}}(\textcolor{keywordtype}{int}\ m1,\ \textcolor{keywordtype}{int}\ m2)}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00092}00092\ \{}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00093}00093\ \ \ \textcolor{keywordflow}{if}\ (m1\ ==\ m2)}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00094}00094\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00096}00096\ \ \ \textcolor{comment}{//\ Scudo(1)\ >\ Spada(3)}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00097}00097\ \ \ \textcolor{comment}{//\ Magia(2)\ >\ Scudo(1)}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00098}00098\ \ \ \textcolor{comment}{//\ Spada(3)\ >\ Magia(2)}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00099}00099\ \ \ \textcolor{keywordflow}{if}\ ((m1\ ==\ 1\ \&\&\ m2\ ==\ 3)\ ||\ (m1\ ==\ 2\ \&\&\ m2\ ==\ 1)\ ||\ (m1\ ==\ 3\ \&\&\ m2\ ==\ 2))}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00100}00100\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00101}00101\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00102}00102\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00103}00103\ \ \ \textcolor{keywordflow}{return}\ 2;}
+\DoxyCodeLine{\Hypertarget{utilita_8c_source_l00104}00104\ \}}
+
+\end{DoxyCode}

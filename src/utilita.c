@@ -1,3 +1,8 @@
+/**
+ * @file utilita.c
+ * @brief Implementazione delle funzioni di utilità.
+ */
+
 #include "utilita.h"
 #include <stdio.h>
 #include <stdlib.h>

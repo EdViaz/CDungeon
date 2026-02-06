@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CDungeon:  File sorgente src/salvataggio.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">CDungeon<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Un gioco dungeon crawler testuale in C</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Cerca',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('salvataggio_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">salvataggio.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="salvataggio_8h.html">Vai alla documentazione di questo file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef SALVATAGGIO_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define SALVATAGGIO_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="giocatore_8h.html">giocatore.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_nodo_salvataggio.html">   14</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_nodo_salvataggio.html">NodoSalvataggio</a></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="struct_nodo_salvataggio.html#aba96c9f35a462294c983722d54572325">   16</a></span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_nodo_salvataggio.html#aba96c9f35a462294c983722d54572325">id</a>;                  </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="struct_nodo_salvataggio.html#a7fcede169e480b3730937c948a1d99aa">   17</a></span>  <span class="keywordtype">char</span> <a class="code hl_variable" href="struct_nodo_salvataggio.html#a7fcede169e480b3730937c948a1d99aa">timestamp</a>[32];      </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="struct_nodo_salvataggio.html#ac1069992878eb0bdc0830cf10f856880">   18</a></span>  <a class="code hl_struct" href="struct_giocatore.html">Giocatore</a> <a class="code hl_variable" href="struct_nodo_salvataggio.html#ac1069992878eb0bdc0830cf10f856880">dati_giocatore</a>; </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="struct_nodo_salvataggio.html#ab49ebcdfa8ffe731283346da8692f9e6">   19</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> *<a class="code hl_variable" href="struct_nodo_salvataggio.html#ab49ebcdfa8ffe731283346da8692f9e6">prossimo</a>; </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="salvataggio_8h.html#a12b808ab7a9d0c0adad67887b1c2298c">   20</a></span>} <a class="code hl_struct" href="struct_nodo_salvataggio.html">NodoSalvataggio</a>;</div>
+</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keywordtype">void</span> <a class="code hl_function" href="salvataggio_8h.html#a36b6eb609318283fd72c76bcee64bc5b">aggiungi_salvataggio</a>(<a class="code hl_struct" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> **testa, <a class="code hl_struct" href="struct_giocatore.html">Giocatore</a> *g);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><a class="code hl_struct" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> *<a class="code hl_function" href="salvataggio_8h.html#aa25228e7cfe267ee45f86f33c3924eec">carica_salvataggio</a>(<a class="code hl_struct" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> *testa, <span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keywordtype">void</span> <a class="code hl_function" href="salvataggio_8h.html#a2ce4f5bea730900b1014154c2673d38f">elimina_salvataggio</a>(<a class="code hl_struct" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> **testa, <span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keywordtype">void</span> <a class="code hl_function" href="salvataggio_8h.html#a75ff6e1d6bcb76a4a5e1391443e2d3d4">stampa_salvataggi</a>(<a class="code hl_struct" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> *testa);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keywordtype">void</span> <a class="code hl_function" href="salvataggio_8h.html#a92740f4aae86090fc8fdfc5023ffa5f4">carica_salvataggi_da_file</a>(<a class="code hl_struct" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> **testa);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keywordtype">void</span> <a class="code hl_function" href="salvataggio_8h.html#a0a65de886844282d1821ce57740562fc">salva_tutto_su_file</a>(<a class="code hl_struct" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> *testa);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="keywordtype">void</span> <a class="code hl_function" href="salvataggio_8h.html#a36012a180284fda158e06cb830e22d93">libera_salvataggi</a>(<a class="code hl_struct" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> *testa);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="agiocatore_8h_html"><div class="ttname"><a href="giocatore_8h.html">giocatore.h</a></div><div class="ttdoc">Definizione della struttura Giocatore e funzioni correlate.</div></div>
+<div class="ttc" id="asalvataggio_8h_html_a0a65de886844282d1821ce57740562fc"><div class="ttname"><a href="salvataggio_8h.html#a0a65de886844282d1821ce57740562fc">salva_tutto_su_file</a></div><div class="ttdeci">void salva_tutto_su_file(NodoSalvataggio *testa)</div><div class="ttdoc">Salva l&#39;intera lista dei salvataggi su file.</div><div class="ttdef"><b>Definition</b> <a href="salvataggio_8c_source.html#l00022">salvataggio.c:22</a></div></div>
+<div class="ttc" id="asalvataggio_8h_html_a2ce4f5bea730900b1014154c2673d38f"><div class="ttname"><a href="salvataggio_8h.html#a2ce4f5bea730900b1014154c2673d38f">elimina_salvataggio</a></div><div class="ttdeci">void elimina_salvataggio(NodoSalvataggio **testa, int id)</div><div class="ttdoc">Elimina un salvataggio dalla lista e dal file.</div><div class="ttdef"><b>Definition</b> <a href="salvataggio_8c_source.html#l00093">salvataggio.c:93</a></div></div>
+<div class="ttc" id="asalvataggio_8h_html_a36012a180284fda158e06cb830e22d93"><div class="ttname"><a href="salvataggio_8h.html#a36012a180284fda158e06cb830e22d93">libera_salvataggi</a></div><div class="ttdeci">void libera_salvataggi(NodoSalvataggio *testa)</div><div class="ttdoc">Libera la memoria allocata per la lista dei salvataggi.</div><div class="ttdef"><b>Definition</b> <a href="salvataggio_8c_source.html#l00145">salvataggio.c:145</a></div></div>
+<div class="ttc" id="asalvataggio_8h_html_a36b6eb609318283fd72c76bcee64bc5b"><div class="ttname"><a href="salvataggio_8h.html#a36b6eb609318283fd72c76bcee64bc5b">aggiungi_salvataggio</a></div><div class="ttdeci">void aggiungi_salvataggio(NodoSalvataggio **testa, Giocatore *g)</div><div class="ttdoc">Aggiunge un nuovo salvataggio alla lista e al file.</div><div class="ttdef"><b>Definition</b> <a href="salvataggio_8c_source.html#l00044">salvataggio.c:44</a></div></div>
+<div class="ttc" id="asalvataggio_8h_html_a75ff6e1d6bcb76a4a5e1391443e2d3d4"><div class="ttname"><a href="salvataggio_8h.html#a75ff6e1d6bcb76a4a5e1391443e2d3d4">stampa_salvataggi</a></div><div class="ttdeci">void stampa_salvataggi(NodoSalvataggio *testa)</div><div class="ttdoc">Stampa a video l&#39;elenco dei salvataggi disponibili.</div><div class="ttdef"><b>Definition</b> <a href="salvataggio_8c_source.html#l00124">salvataggio.c:124</a></div></div>
+<div class="ttc" id="asalvataggio_8h_html_a92740f4aae86090fc8fdfc5023ffa5f4"><div class="ttname"><a href="salvataggio_8h.html#a92740f4aae86090fc8fdfc5023ffa5f4">carica_salvataggi_da_file</a></div><div class="ttdeci">void carica_salvataggi_da_file(NodoSalvataggio **testa)</div><div class="ttdoc">Carica tutti i salvataggi dal file binario all&#39;avvio.</div><div class="ttdef"><b>Definition</b> <a href="salvataggio_8c_source.html#l00157">salvataggio.c:157</a></div></div>
+<div class="ttc" id="asalvataggio_8h_html_aa25228e7cfe267ee45f86f33c3924eec"><div class="ttname"><a href="salvataggio_8h.html#aa25228e7cfe267ee45f86f33c3924eec">carica_salvataggio</a></div><div class="ttdeci">NodoSalvataggio * carica_salvataggio(NodoSalvataggio *testa, int id)</div><div class="ttdoc">Cerca un salvataggio nella lista tramite ID.</div><div class="ttdef"><b>Definition</b> <a href="salvataggio_8c_source.html#l00079">salvataggio.c:79</a></div></div>
+<div class="ttc" id="astruct_giocatore_html"><div class="ttname"><a href="struct_giocatore.html">Giocatore</a></div><div class="ttdoc">Struttura che rappresenta lo stato del giocatore.</div><div class="ttdef"><b>Definition</b> <a href="giocatore_8h_source.html#l00012">giocatore.h:13</a></div></div>
+<div class="ttc" id="astruct_nodo_salvataggio_html"><div class="ttname"><a href="struct_nodo_salvataggio.html">NodoSalvataggio</a></div><div class="ttdoc">Nodo di una lista concatenata per memorizzare i salvataggi.</div><div class="ttdef"><b>Definition</b> <a href="#l00014">salvataggio.h:15</a></div></div>
+<div class="ttc" id="astruct_nodo_salvataggio_html_a7fcede169e480b3730937c948a1d99aa"><div class="ttname"><a href="struct_nodo_salvataggio.html#a7fcede169e480b3730937c948a1d99aa">NodoSalvataggio::timestamp</a></div><div class="ttdeci">char timestamp[32]</div><div class="ttdef"><b>Definition</b> <a href="#l00017">salvataggio.h:17</a></div></div>
+<div class="ttc" id="astruct_nodo_salvataggio_html_ab49ebcdfa8ffe731283346da8692f9e6"><div class="ttname"><a href="struct_nodo_salvataggio.html#ab49ebcdfa8ffe731283346da8692f9e6">NodoSalvataggio::prossimo</a></div><div class="ttdeci">struct NodoSalvataggio * prossimo</div><div class="ttdef"><b>Definition</b> <a href="#l00019">salvataggio.h:19</a></div></div>
+<div class="ttc" id="astruct_nodo_salvataggio_html_aba96c9f35a462294c983722d54572325"><div class="ttname"><a href="struct_nodo_salvataggio.html#aba96c9f35a462294c983722d54572325">NodoSalvataggio::id</a></div><div class="ttdeci">int id</div><div class="ttdef"><b>Definition</b> <a href="#l00016">salvataggio.h:16</a></div></div>
+<div class="ttc" id="astruct_nodo_salvataggio_html_ac1069992878eb0bdc0830cf10f856880"><div class="ttname"><a href="struct_nodo_salvataggio.html#ac1069992878eb0bdc0830cf10f856880">NodoSalvataggio::dati_giocatore</a></div><div class="ttdeci">Giocatore dati_giocatore</div><div class="ttdef"><b>Definition</b> <a href="#l00018">salvataggio.h:18</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="salvataggio_8h.html">salvataggio.h</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,3 +1,7 @@
+/**
+ * @file dungeon.c
+ * @brief Implementazione della logica del dungeon e delle missioni.
+ */
 #include "dungeon.h"
 #include "combattimento.h"
 #include "menu.h"

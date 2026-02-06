@@ -1,0 +1,338 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CDungeon: Riferimenti per il file src/menu.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">CDungeon<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Un gioco dungeon crawler testuale in C</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Cerca',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('menu_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Riferimenti per il file menu.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementazione dei menu e dell'interfaccia utente.  
+<a href="#details">Continua...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="menu_8h_source.html">menu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="combattimento_8h_source.html">combattimento.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="dungeon_8h_source.html">dungeon.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="giocatore_8h_source.html">giocatore.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="salvataggio_8h_source.html">salvataggio.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="utilita_8h_source.html">utilita.h</a>&quot;</code><br />
+<code>#include &lt;ctype.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+</div>
+<p><a href="menu_8c_source.html">Vai al codice sorgente di questo file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:a3e5f1d895295d6b89c3d07beb33e7037" id="r_a3e5f1d895295d6b89c3d07beb33e7037"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3e5f1d895295d6b89c3d07beb33e7037">gestisci_trucchi</a> (<a class="el" href="struct_giocatore.html">Giocatore</a> *g, <a class="el" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> **lista)</td></tr>
+<tr class="memitem:a11de43b02b60e35143787ae178496f61" id="r_a11de43b02b60e35143787ae178496f61"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a11de43b02b60e35143787ae178496f61">mostra_menu_salvataggi</a> (<a class="el" href="struct_giocatore.html">Giocatore</a> *g, <a class="el" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> **lista)</td></tr>
+<tr class="memitem:ad1ed83d16ec7e745c6d69d8105c556d2" id="r_ad1ed83d16ec7e745c6d69d8105c556d2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad1ed83d16ec7e745c6d69d8105c556d2">mostra_menu_principale</a> (<a class="el" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> **lista, <a class="el" href="struct_giocatore.html">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:ad1ed83d16ec7e745c6d69d8105c556d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mostra il menu principale del gioco.  <br /></td></tr>
+<tr class="memitem:ad53023e0f45953e91c154e71ce044895" id="r_ad53023e0f45953e91c154e71ce044895"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad53023e0f45953e91c154e71ce044895">mostra_menu_villaggio</a> (<a class="el" href="struct_giocatore.html">Giocatore</a> *g, <a class="el" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> **lista)</td></tr>
+<tr class="memdesc:ad53023e0f45953e91c154e71ce044895"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mostra il menu del villaggio.  <br /></td></tr>
+<tr class="memitem:a766d1a4f4f110e4a70674dabe6152c96" id="r_a766d1a4f4f110e4a70674dabe6152c96"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a766d1a4f4f110e4a70674dabe6152c96">mostra_menu_missione</a> (<a class="el" href="struct_giocatore.html">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:a766d1a4f4f110e4a70674dabe6152c96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mostra il menu di selezione delle missioni.  <br /></td></tr>
+<tr class="memitem:ac5915507336363849f340947c49ab5ed" id="r_ac5915507336363849f340947c49ab5ed"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac5915507336363849f340947c49ab5ed">mostra_negozio</a> (<a class="el" href="struct_giocatore.html">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:ac5915507336363849f340947c49ab5ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mostra il negozio del villaggio.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Implementazione dei menu e dell'interfaccia utente. </p>
+
+<p class="definition">Definizione nel file <a class="el" href="menu_8c_source.html">menu.c</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
+<a id="a3e5f1d895295d6b89c3d07beb33e7037" name="a3e5f1d895295d6b89c3d07beb33e7037"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e5f1d895295d6b89c3d07beb33e7037">&#9670;&#160;</a></span>gestisci_trucchi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gestisci_trucchi </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_giocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> **</td>          <td class="paramname"><span class="paramname"><em>lista</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definizione alla linea <a class="el" href="menu_8c_source.html#l00308">308</a> del file <a class="el" href="menu_8c_source.html">menu.c</a>.</p>
+
+<p class="reference">Referenzia <a class="el" href="salvataggio_8c_source.html#l00079">carica_salvataggio()</a>, <a class="el" href="salvataggio_8h_source.html#l00018">NodoSalvataggio::dati_giocatore</a>, <a class="el" href="utilita_8c_source.html#l00076">leggi_intero()</a>, <a class="el" href="giocatore_8h_source.html#l00015">Giocatore::max_punti_vita</a>, <a class="el" href="giocatore_8h_source.html#l00022">Giocatore::missione_grotta</a>, <a class="el" href="giocatore_8h_source.html#l00021">Giocatore::missione_magione</a>, <a class="el" href="giocatore_8h_source.html#l00020">Giocatore::missione_palude</a>, <a class="el" href="giocatore_8h_source.html#l00016">Giocatore::monete</a>, <a class="el" href="utilita_8c_source.html#l00040">pulisci_schermo()</a>, <a class="el" href="giocatore_8h_source.html#l00014">Giocatore::punti_vita</a>, <a class="el" href="salvataggio_8c_source.html#l00022">salva_tutto_su_file()</a>, e <a class="el" href="salvataggio_8c_source.html#l00124">stampa_salvataggi()</a>.</p>
+
+<p class="reference">Referenziato da <a class="el" href="menu_8c_source.html#l00020">mostra_menu_principale()</a>.</p>
+
+</div>
+</div>
+<a id="a766d1a4f4f110e4a70674dabe6152c96" name="a766d1a4f4f110e4a70674dabe6152c96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a766d1a4f4f110e4a70674dabe6152c96">&#9670;&#160;</a></span>mostra_menu_missione()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mostra_menu_missione </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_giocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mostra il menu di selezione delle missioni. </p>
+<p>Elenca le missioni disponibili e avviabili dal giocatore.</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Puntatore al giocatore. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definizione alla linea <a class="el" href="menu_8c_source.html#l00177">177</a> del file <a class="el" href="menu_8c_source.html">menu.c</a>.</p>
+
+<p class="reference">Referenzia <a class="el" href="combattimento_8c_source.html#l00106">combattimento_boss_finale()</a>, <a class="el" href="dungeon_8c_source.html#l00174">esegui_missione()</a>, <a class="el" href="utilita_8c_source.html#l00076">leggi_intero()</a>, <a class="el" href="giocatore_8h_source.html#l00022">Giocatore::missione_grotta</a>, <a class="el" href="giocatore_8h_source.html#l00021">Giocatore::missione_magione</a>, <a class="el" href="giocatore_8h_source.html#l00020">Giocatore::missione_palude</a>, <a class="el" href="utilita_8c_source.html#l00040">pulisci_schermo()</a>, e <a class="el" href="giocatore_8h_source.html#l00014">Giocatore::punti_vita</a>.</p>
+
+<p class="reference">Referenziato da <a class="el" href="menu_8c_source.html#l00130">mostra_menu_villaggio()</a>.</p>
+
+</div>
+</div>
+<a id="ad1ed83d16ec7e745c6d69d8105c556d2" name="ad1ed83d16ec7e745c6d69d8105c556d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1ed83d16ec7e745c6d69d8105c556d2">&#9670;&#160;</a></span>mostra_menu_principale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mostra_menu_principale </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> **</td>          <td class="paramname"><span class="paramname"><em>lista_salvataggi</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_giocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>giocatore_corrente</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mostra il menu principale del gioco. </p>
+<p>Permette di iniziare una nuova partita, caricare un salvataggio o uscire. Contiene anche la gestione dei trucchi tramite codice segreto.</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista_salvataggi</td><td>Puntatore alla lista dei salvataggi. </td></tr>
+    <tr><td class="paramname">giocatore_corrente</td><td>Puntatore alla struttura dati del giocatore corrente. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definizione alla linea <a class="el" href="menu_8c_source.html#l00020">20</a> del file <a class="el" href="menu_8c_source.html">menu.c</a>.</p>
+
+<p class="reference">Referenzia <a class="el" href="menu_8c_source.html#l00308">gestisci_trucchi()</a>, <a class="el" href="giocatore_8c_source.html#l00009">inizializza_giocatore()</a>, <a class="el" href="utilita_8c_source.html#l00050">leggi_input_char()</a>, <a class="el" href="menu_8c_source.html#l00082">mostra_menu_salvataggi()</a>, <a class="el" href="menu_8c_source.html#l00130">mostra_menu_villaggio()</a>, e <a class="el" href="utilita_8c_source.html#l00040">pulisci_schermo()</a>.</p>
+
+<p class="reference">Referenziato da <a class="el" href="main_8c_source.html#l00020">main()</a>, e <a class="el" href="menu_8c_source.html#l00130">mostra_menu_villaggio()</a>.</p>
+
+</div>
+</div>
+<a id="a11de43b02b60e35143787ae178496f61" name="a11de43b02b60e35143787ae178496f61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11de43b02b60e35143787ae178496f61">&#9670;&#160;</a></span>mostra_menu_salvataggi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mostra_menu_salvataggi </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_giocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> **</td>          <td class="paramname"><span class="paramname"><em>lista</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definizione alla linea <a class="el" href="menu_8c_source.html#l00082">82</a> del file <a class="el" href="menu_8c_source.html">menu.c</a>.</p>
+
+<p class="reference">Referenzia <a class="el" href="salvataggio_8c_source.html#l00079">carica_salvataggio()</a>, <a class="el" href="salvataggio_8h_source.html#l00018">NodoSalvataggio::dati_giocatore</a>, <a class="el" href="salvataggio_8c_source.html#l00093">elimina_salvataggio()</a>, <a class="el" href="utilita_8c_source.html#l00050">leggi_input_char()</a>, <a class="el" href="utilita_8c_source.html#l00076">leggi_intero()</a>, <a class="el" href="menu_8c_source.html#l00130">mostra_menu_villaggio()</a>, e <a class="el" href="salvataggio_8c_source.html#l00124">stampa_salvataggi()</a>.</p>
+
+<p class="reference">Referenziato da <a class="el" href="menu_8c_source.html#l00020">mostra_menu_principale()</a>.</p>
+
+</div>
+</div>
+<a id="ad53023e0f45953e91c154e71ce044895" name="ad53023e0f45953e91c154e71ce044895"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad53023e0f45953e91c154e71ce044895">&#9670;&#160;</a></span>mostra_menu_villaggio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mostra_menu_villaggio </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_giocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_nodo_salvataggio.html">NodoSalvataggio</a> **</td>          <td class="paramname"><span class="paramname"><em>lista_salvataggi</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mostra il menu del villaggio. </p>
+<p>Hub principale per il giocatore tra le missioni. Permette di curarsi, gestire l'inventario, salvare o intraprendere nuove missioni.</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Puntatore al giocatore. </td></tr>
+    <tr><td class="paramname">lista_salvataggi</td><td>Puntatore alla lista dei salvataggi per il salvataggio manuale. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definizione alla linea <a class="el" href="menu_8c_source.html#l00130">130</a> del file <a class="el" href="menu_8c_source.html">menu.c</a>.</p>
+
+<p class="reference">Referenzia <a class="el" href="salvataggio_8c_source.html#l00044">aggiungi_salvataggio()</a>, <a class="el" href="utilita_8c_source.html#l00050">leggi_input_char()</a>, <a class="el" href="utilita_8c_source.html#l00076">leggi_intero()</a>, <a class="el" href="giocatore_8h_source.html#l00015">Giocatore::max_punti_vita</a>, <a class="el" href="giocatore_8h_source.html#l00016">Giocatore::monete</a>, <a class="el" href="menu_8c_source.html#l00177">mostra_menu_missione()</a>, <a class="el" href="menu_8c_source.html#l00020">mostra_menu_principale()</a>, <a class="el" href="utilita_8c_source.html#l00040">pulisci_schermo()</a>, <a class="el" href="giocatore_8h_source.html#l00014">Giocatore::punti_vita</a>, e <a class="el" href="giocatore_8c_source.html#l00024">stampa_statistiche_giocatore()</a>.</p>
+
+<p class="reference">Referenziato da <a class="el" href="menu_8c_source.html#l00020">mostra_menu_principale()</a>, e <a class="el" href="menu_8c_source.html#l00082">mostra_menu_salvataggi()</a>.</p>
+
+</div>
+</div>
+<a id="ac5915507336363849f340947c49ab5ed" name="ac5915507336363849f340947c49ab5ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5915507336363849f340947c49ab5ed">&#9670;&#160;</a></span>mostra_negozio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mostra_negozio </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_giocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mostra il negozio del villaggio. </p>
+<p>Permette al giocatore di acquistare oggetti e cure in cambio di monete.</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Puntatore al giocatore. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definizione alla linea <a class="el" href="menu_8c_source.html#l00250">250</a> del file <a class="el" href="menu_8c_source.html">menu.c</a>.</p>
+
+<p class="reference">Referenzia <a class="el" href="giocatore_8h_source.html#l00026">Giocatore::ha_armatura</a>, <a class="el" href="giocatore_8h_source.html#l00025">Giocatore::ha_spada</a>, <a class="el" href="utilita_8c_source.html#l00012">lancia_dado()</a>, <a class="el" href="utilita_8c_source.html#l00076">leggi_intero()</a>, <a class="el" href="giocatore_8h_source.html#l00015">Giocatore::max_punti_vita</a>, <a class="el" href="giocatore_8h_source.html#l00016">Giocatore::monete</a>, <a class="el" href="giocatore_8h_source.html#l00017">Giocatore::numero_oggetti</a>, <a class="el" href="utilita_8c_source.html#l00040">pulisci_schermo()</a>, e <a class="el" href="giocatore_8h_source.html#l00014">Giocatore::punti_vita</a>.</p>
+
+<p class="reference">Referenziato da <a class="el" href="dungeon_8c_source.html#l00174">esegui_missione()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="menu_8c.html">menu.c</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

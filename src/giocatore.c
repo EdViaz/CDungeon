@@ -1,3 +1,8 @@
+/**
+ * @file giocatore.c
+ * @brief Implementazione delle funzioni relative al giocatore.
+ */
+
 #include "giocatore.h"
 #include <stdio.h>
 

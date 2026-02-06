@@ -1,0 +1,33 @@
+\doxysection{main.\+c}
+\hypertarget{main_8c_source}{}\label{main_8c_source}\index{src/main.c@{src/main.c}}
+\doxymbox{\hyperlink{main_8c}{Vai alla documentazione di questo file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{giocatore_8h}{giocatore.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{menu_8h}{menu.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{salvataggio_8h}{salvataggio.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00020}\doxymbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{00020}}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00021}00021\ \ \ \doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ *lista\_salvataggi\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00022}00022\ \ \ \doxymbox{\hyperlink{struct_giocatore}{Giocatore}}\ giocatore\_corrente;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00024}00024\ \ \ \textcolor{comment}{//\ Carica\ i\ salvataggi\ esistenti\ da\ file}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00025}00025\ \ \ \doxymbox{\hyperlink{salvataggio_8c_a92740f4aae86090fc8fdfc5023ffa5f4}{carica\_salvataggi\_da\_file}}(\&lista\_salvataggi);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00027}00027\ \ \ \textcolor{comment}{//\ Inizializza\ seed\ random}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00028}00028\ \ \ srand(time(NULL));}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00030}00030\ \ \ printf(\textcolor{stringliteral}{"{}Benvenuto\ in\ CDungeon!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00031}00031\ \ \ getchar();}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00032}00032\ \ \ \doxymbox{\hyperlink{menu_8c_ad1ed83d16ec7e745c6d69d8105c556d2}{mostra\_menu\_principale}}(\&lista\_salvataggi,\ \&giocatore\_corrente);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00034}00034\ \ \ \textcolor{comment}{//\ Pulizia\ della\ memoria\ alla\ chiusura}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00035}00035\ \ \ \doxymbox{\hyperlink{salvataggio_8c_a36012a180284fda158e06cb830e22d93}{libera\_salvataggi}}(lista\_salvataggi);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00037}00037\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00038}00038\ \}}
+
+\end{DoxyCode}

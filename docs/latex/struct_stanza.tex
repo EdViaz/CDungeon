@@ -1,0 +1,127 @@
+\doxysection{Riferimenti per la struct Stanza}
+\hypertarget{struct_stanza}{}\label{struct_stanza}\index{Stanza@{Stanza}}
+
+
+Struttura che rappresenta una stanza del dungeon.  
+
+
+
+
+{\ttfamily \+\#include $<$stanza.\+h$>$}
+
+\doxysubsubsection*{Campi}
+\begin{DoxyCompactItemize}
+\item 
+char \doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}} \+[32]\+
+\item 
+\doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6}{Tipo\+Stanza}} \doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}
+\item 
+int \doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}
+\item 
+int \doxymbox{\hyperlink{struct_stanza_ae9293aeee552ad6fa5be9bd057a0bbad}{colpo\+\_\+fatale}}
+\item 
+int \doxymbox{\hyperlink{struct_stanza_ab6d3a43ba66225ffecebe3f70286f4c3}{ricompensa\+\_\+monete}}
+\item 
+int \doxymbox{\hyperlink{struct_stanza_a1dd41141a23b7e75521bbdf5dc9c22c8}{is\+\_\+boss}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrizione dettagliata}
+Struttura che rappresenta una stanza del dungeon. 
+
+Definizione alla linea \doxymbox{\hyperlink{stanza_8h_source_l00023}{23}} del file \doxymbox{\hyperlink{stanza_8h_source}{stanza.\+h}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_stanza_doc-variable-members}
+\doxysubsection{Documentazione dei campi}
+\Hypertarget{struct_stanza_ae9293aeee552ad6fa5be9bd057a0bbad}\index{Stanza@{Stanza}!colpo\_fatale@{colpo\_fatale}}
+\index{colpo\_fatale@{colpo\_fatale}!Stanza@{Stanza}}
+\doxysubsubsection{\texorpdfstring{colpo\_fatale}{colpo\_fatale}}
+{\footnotesize\ttfamily \label{struct_stanza_ae9293aeee552ad6fa5be9bd057a0bbad} 
+int Stanza::\+colpo\+\_\+fatale}
+
+Soglia per il colpo critico/\+fatale del nemico 
+
+Definizione alla linea \doxymbox{\hyperlink{stanza_8h_source_l00028}{28}} del file \doxymbox{\hyperlink{stanza_8h_source}{stanza.\+h}}.
+
+
+
+Referenziato da \doxymbox{\hyperlink{dungeon_8c_source_l00014}{genera\+\_\+stanza\+\_\+missione()}}, e \doxymbox{\hyperlink{combattimento_8c_source_l00013}{inizia\+\_\+combattimento()}}.
+
+\Hypertarget{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}\index{Stanza@{Stanza}!danno@{danno}}
+\index{danno@{danno}!Stanza@{Stanza}}
+\doxysubsubsection{\texorpdfstring{danno}{danno}}
+{\footnotesize\ttfamily \label{struct_stanza_a78b1b25620cb462c61e6c88618ad282e} 
+int Stanza::\+danno}
+
+Danno potenziale della trappola o attacco nemico 
+
+Definizione alla linea \doxymbox{\hyperlink{stanza_8h_source_l00027}{27}} del file \doxymbox{\hyperlink{stanza_8h_source}{stanza.\+h}}.
+
+
+
+Referenziato da \doxymbox{\hyperlink{combattimento_8c_source_l00088}{applica\+\_\+danno\+\_\+trappola()}}, \doxymbox{\hyperlink{dungeon_8c_source_l00174}{esegui\+\_\+missione()}}, \doxymbox{\hyperlink{dungeon_8c_source_l00014}{genera\+\_\+stanza\+\_\+missione()}}, e \doxymbox{\hyperlink{combattimento_8c_source_l00013}{inizia\+\_\+combattimento()}}.
+
+\Hypertarget{struct_stanza_a1dd41141a23b7e75521bbdf5dc9c22c8}\index{Stanza@{Stanza}!is\_boss@{is\_boss}}
+\index{is\_boss@{is\_boss}!Stanza@{Stanza}}
+\doxysubsubsection{\texorpdfstring{is\_boss}{is\_boss}}
+{\footnotesize\ttfamily \label{struct_stanza_a1dd41141a23b7e75521bbdf5dc9c22c8} 
+int Stanza::\+is\+\_\+boss}
+
+1 se la stanza contiene un boss, 0 altrimenti 
+
+Definizione alla linea \doxymbox{\hyperlink{stanza_8h_source_l00030}{30}} del file \doxymbox{\hyperlink{stanza_8h_source}{stanza.\+h}}.
+
+
+
+Referenziato da \doxymbox{\hyperlink{dungeon_8c_source_l00174}{esegui\+\_\+missione()}}, e \doxymbox{\hyperlink{dungeon_8c_source_l00014}{genera\+\_\+stanza\+\_\+missione()}}.
+
+\Hypertarget{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}\index{Stanza@{Stanza}!nome@{nome}}
+\index{nome@{nome}!Stanza@{Stanza}}
+\doxysubsubsection{\texorpdfstring{nome}{nome}}
+{\footnotesize\ttfamily \label{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8} 
+char Stanza::\+nome\+[32]\+}
+
+Nome descrittivo della stanza 
+
+Definizione alla linea \doxymbox{\hyperlink{stanza_8h_source_l00025}{25}} del file \doxymbox{\hyperlink{stanza_8h_source}{stanza.\+h}}.
+
+
+
+Referenziato da \doxymbox{\hyperlink{combattimento_8c_source_l00088}{applica\+\_\+danno\+\_\+trappola()}}, \doxymbox{\hyperlink{dungeon_8c_source_l00174}{esegui\+\_\+missione()}}, \doxymbox{\hyperlink{dungeon_8c_source_l00014}{genera\+\_\+stanza\+\_\+missione()}}, e \doxymbox{\hyperlink{combattimento_8c_source_l00013}{inizia\+\_\+combattimento()}}.
+
+\Hypertarget{struct_stanza_ab6d3a43ba66225ffecebe3f70286f4c3}\index{Stanza@{Stanza}!ricompensa\_monete@{ricompensa\_monete}}
+\index{ricompensa\_monete@{ricompensa\_monete}!Stanza@{Stanza}}
+\doxysubsubsection{\texorpdfstring{ricompensa\_monete}{ricompensa\_monete}}
+{\footnotesize\ttfamily \label{struct_stanza_ab6d3a43ba66225ffecebe3f70286f4c3} 
+int Stanza::\+ricompensa\+\_\+monete}
+
+Monete ottenibili completando la stanza 
+
+Definizione alla linea \doxymbox{\hyperlink{stanza_8h_source_l00029}{29}} del file \doxymbox{\hyperlink{stanza_8h_source}{stanza.\+h}}.
+
+
+
+Referenziato da \doxymbox{\hyperlink{dungeon_8c_source_l00174}{esegui\+\_\+missione()}}, \doxymbox{\hyperlink{dungeon_8c_source_l00014}{genera\+\_\+stanza\+\_\+missione()}}, e \doxymbox{\hyperlink{combattimento_8c_source_l00013}{inizia\+\_\+combattimento()}}.
+
+\Hypertarget{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}\index{Stanza@{Stanza}!tipo@{tipo}}
+\index{tipo@{tipo}!Stanza@{Stanza}}
+\doxysubsubsection{\texorpdfstring{tipo}{tipo}}
+{\footnotesize\ttfamily \label{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a} 
+\doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6}{Tipo\+Stanza}} Stanza::\+tipo}
+
+Tipo di stanza (nemico, trappola, ecc.) 
+
+Definizione alla linea \doxymbox{\hyperlink{stanza_8h_source_l00026}{26}} del file \doxymbox{\hyperlink{stanza_8h_source}{stanza.\+h}}.
+
+
+
+Referenziato da \doxymbox{\hyperlink{dungeon_8c_source_l00174}{esegui\+\_\+missione()}}, e \doxymbox{\hyperlink{dungeon_8c_source_l00014}{genera\+\_\+stanza\+\_\+missione()}}.
+
+
+
+La documentazione per questa struct è stata generata a partire dal seguente file:\+\begin{DoxyCompactItemize}
+\item 
+src/\+\doxymbox{\hyperlink{stanza_8h}{stanza.\+h}}\end{DoxyCompactItemize}

@@ -1,3 +1,8 @@
+/**
+ * @file menu.c
+ * @brief Implementazione dei menu e dell'interfaccia utente.
+ */
+
 #include "menu.h"
 #include "combattimento.h"
 #include "dungeon.h"

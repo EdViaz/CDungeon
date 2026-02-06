@@ -1,0 +1,95 @@
+\doxysection{Riferimenti per la struct Nodo\+Salvataggio}
+\hypertarget{struct_nodo_salvataggio}{}\label{struct_nodo_salvataggio}\index{NodoSalvataggio@{NodoSalvataggio}}
+
+
+Nodo di una lista concatenata per memorizzare i salvataggi.  
+
+
+
+
+{\ttfamily \+\#include $<$salvataggio.\+h$>$}
+
+\doxysubsubsection*{Campi}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{struct_nodo_salvataggio_aba96c9f35a462294c983722d54572325}{id}}
+\item 
+char \doxymbox{\hyperlink{struct_nodo_salvataggio_a7fcede169e480b3730937c948a1d99aa}{timestamp}} \+[32]\+
+\item 
+\doxymbox{\hyperlink{struct_giocatore}{Giocatore}} \doxymbox{\hyperlink{struct_nodo_salvataggio_ac1069992878eb0bdc0830cf10f856880}{dati\+\_\+giocatore}}
+\item 
+struct \doxymbox{\hyperlink{struct_nodo_salvataggio}{Nodo\+Salvataggio}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{struct_nodo_salvataggio_ab49ebcdfa8ffe731283346da8692f9e6}{prossimo}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrizione dettagliata}
+Nodo di una lista concatenata per memorizzare i salvataggi. 
+
+Definizione alla linea \doxymbox{\hyperlink{salvataggio_8h_source_l00014}{14}} del file \doxymbox{\hyperlink{salvataggio_8h_source}{salvataggio.\+h}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_nodo_salvataggio_doc-variable-members}
+\doxysubsection{Documentazione dei campi}
+\Hypertarget{struct_nodo_salvataggio_ac1069992878eb0bdc0830cf10f856880}\index{NodoSalvataggio@{NodoSalvataggio}!dati\_giocatore@{dati\_giocatore}}
+\index{dati\_giocatore@{dati\_giocatore}!NodoSalvataggio@{NodoSalvataggio}}
+\doxysubsubsection{\texorpdfstring{dati\_giocatore}{dati\_giocatore}}
+{\footnotesize\ttfamily \label{struct_nodo_salvataggio_ac1069992878eb0bdc0830cf10f856880} 
+\doxymbox{\hyperlink{struct_giocatore}{Giocatore}} Nodo\+Salvataggio::\+dati\+\_\+giocatore}
+
+Copia dello stato del giocatore 
+
+Definizione alla linea \doxymbox{\hyperlink{salvataggio_8h_source_l00018}{18}} del file \doxymbox{\hyperlink{salvataggio_8h_source}{salvataggio.\+h}}.
+
+
+
+Referenziato da \doxymbox{\hyperlink{salvataggio_8c_source_l00044}{aggiungi\+\_\+salvataggio()}}, \doxymbox{\hyperlink{salvataggio_8c_source_l00157}{carica\+\_\+salvataggi\+\_\+da\+\_\+file()}}, \doxymbox{\hyperlink{menu_8c_source_l00308}{gestisci\+\_\+trucchi()}}, \doxymbox{\hyperlink{menu_8c_source_l00082}{mostra\+\_\+menu\+\_\+salvataggi()}}, \doxymbox{\hyperlink{salvataggio_8c_source_l00022}{salva\+\_\+tutto\+\_\+su\+\_\+file()}}, e \doxymbox{\hyperlink{salvataggio_8c_source_l00124}{stampa\+\_\+salvataggi()}}.
+
+\Hypertarget{struct_nodo_salvataggio_aba96c9f35a462294c983722d54572325}\index{NodoSalvataggio@{NodoSalvataggio}!id@{id}}
+\index{id@{id}!NodoSalvataggio@{NodoSalvataggio}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily \label{struct_nodo_salvataggio_aba96c9f35a462294c983722d54572325} 
+int Nodo\+Salvataggio::\+id}
+
+Identificativo univoco del salvataggio 
+
+Definizione alla linea \doxymbox{\hyperlink{salvataggio_8h_source_l00016}{16}} del file \doxymbox{\hyperlink{salvataggio_8h_source}{salvataggio.\+h}}.
+
+
+
+Referenziato da \doxymbox{\hyperlink{salvataggio_8c_source_l00044}{aggiungi\+\_\+salvataggio()}}, \doxymbox{\hyperlink{salvataggio_8c_source_l00157}{carica\+\_\+salvataggi\+\_\+da\+\_\+file()}}, \doxymbox{\hyperlink{salvataggio_8c_source_l00079}{carica\+\_\+salvataggio()}}, \doxymbox{\hyperlink{salvataggio_8c_source_l00093}{elimina\+\_\+salvataggio()}}, \doxymbox{\hyperlink{salvataggio_8c_source_l00022}{salva\+\_\+tutto\+\_\+su\+\_\+file()}}, e \doxymbox{\hyperlink{salvataggio_8c_source_l00124}{stampa\+\_\+salvataggi()}}.
+
+\Hypertarget{struct_nodo_salvataggio_ab49ebcdfa8ffe731283346da8692f9e6}\index{NodoSalvataggio@{NodoSalvataggio}!prossimo@{prossimo}}
+\index{prossimo@{prossimo}!NodoSalvataggio@{NodoSalvataggio}}
+\doxysubsubsection{\texorpdfstring{prossimo}{prossimo}}
+{\footnotesize\ttfamily \label{struct_nodo_salvataggio_ab49ebcdfa8ffe731283346da8692f9e6} 
+struct \doxymbox{\hyperlink{struct_nodo_salvataggio}{Nodo\+Salvataggio}}\texorpdfstring{$\ast$}{*} Nodo\+Salvataggio::\+prossimo}
+
+Puntatore al prossimo nodo della lista 
+
+Definizione alla linea \doxymbox{\hyperlink{salvataggio_8h_source_l00019}{19}} del file \doxymbox{\hyperlink{salvataggio_8h_source}{salvataggio.\+h}}.
+
+
+
+Referenziato da \doxymbox{\hyperlink{salvataggio_8c_source_l00044}{aggiungi\+\_\+salvataggio()}}, \doxymbox{\hyperlink{salvataggio_8c_source_l00157}{carica\+\_\+salvataggi\+\_\+da\+\_\+file()}}, \doxymbox{\hyperlink{salvataggio_8c_source_l00079}{carica\+\_\+salvataggio()}}, \doxymbox{\hyperlink{salvataggio_8c_source_l00093}{elimina\+\_\+salvataggio()}}, \doxymbox{\hyperlink{salvataggio_8c_source_l00145}{libera\+\_\+salvataggi()}}, \doxymbox{\hyperlink{salvataggio_8c_source_l00022}{salva\+\_\+tutto\+\_\+su\+\_\+file()}}, e \doxymbox{\hyperlink{salvataggio_8c_source_l00124}{stampa\+\_\+salvataggi()}}.
+
+\Hypertarget{struct_nodo_salvataggio_a7fcede169e480b3730937c948a1d99aa}\index{NodoSalvataggio@{NodoSalvataggio}!timestamp@{timestamp}}
+\index{timestamp@{timestamp}!NodoSalvataggio@{NodoSalvataggio}}
+\doxysubsubsection{\texorpdfstring{timestamp}{timestamp}}
+{\footnotesize\ttfamily \label{struct_nodo_salvataggio_a7fcede169e480b3730937c948a1d99aa} 
+char Nodo\+Salvataggio::\+timestamp\+[32]\+}
+
+Data e ora di creazione del salvataggio 
+
+Definizione alla linea \doxymbox{\hyperlink{salvataggio_8h_source_l00017}{17}} del file \doxymbox{\hyperlink{salvataggio_8h_source}{salvataggio.\+h}}.
+
+
+
+Referenziato da \doxymbox{\hyperlink{salvataggio_8c_source_l00044}{aggiungi\+\_\+salvataggio()}}, \doxymbox{\hyperlink{salvataggio_8c_source_l00157}{carica\+\_\+salvataggi\+\_\+da\+\_\+file()}}, \doxymbox{\hyperlink{salvataggio_8c_source_l00022}{salva\+\_\+tutto\+\_\+su\+\_\+file()}}, e \doxymbox{\hyperlink{salvataggio_8c_source_l00124}{stampa\+\_\+salvataggi()}}.
+
+
+
+La documentazione per questa struct è stata generata a partire dal seguente file:\+\begin{DoxyCompactItemize}
+\item 
+src/\+\doxymbox{\hyperlink{salvataggio_8h}{salvataggio.\+h}}\end{DoxyCompactItemize}

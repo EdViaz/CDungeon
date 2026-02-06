@@ -1,0 +1,88 @@
+\doxysection{Riferimenti per il file src/\+giocatore.c}
+\hypertarget{giocatore_8c}{}\label{giocatore_8c}\index{src/giocatore.c@{src/giocatore.c}}
+
+
+Implementazione delle funzioni relative al giocatore.  
+
+
+{\ttfamily \+\#include "{}giocatore.\+h"{}}\newline
+{\ttfamily \+\#include $<$stdio.\+h$>$}\newline
+\doxysubsubsection*{Funzioni}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{giocatore_8c_a1ad218a63bbf715985eea9f583776bd0}{inizializza\+\_\+giocatore}} (\doxymbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}g)
+\begin{DoxyCompactList}\small\item\em Inizializza un nuovo giocatore con valori di default. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{giocatore_8c_a15bcfdd0b9faa189cf065df896071b50}{stampa\+\_\+statistiche\+\_\+giocatore}} (const \doxymbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}g)
+\begin{DoxyCompactList}\small\item\em Stampa a video le statistiche e l\textquotesingle{}inventario del giocatore. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrizione dettagliata}
+Implementazione delle funzioni relative al giocatore. 
+
+
+
+Definizione nel file \doxymbox{\hyperlink{giocatore_8c_source}{giocatore.\+c}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{giocatore_8c_doc-func-members}
+\doxysubsection{Documentazione delle funzioni}
+\Hypertarget{giocatore_8c_a1ad218a63bbf715985eea9f583776bd0}\index{giocatore.c@{giocatore.c}!inizializza\_giocatore@{inizializza\_giocatore}}
+\index{inizializza\_giocatore@{inizializza\_giocatore}!giocatore.c@{giocatore.c}}
+\doxysubsubsection{\texorpdfstring{inizializza\_giocatore()}{inizializza\_giocatore()}}
+{\footnotesize\ttfamily \label{giocatore_8c_a1ad218a63bbf715985eea9f583776bd0} 
+void inizializza\+\_\+giocatore (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{g}{}\end{DoxyParamCaption})}
+
+
+
+Inizializza un nuovo giocatore con valori di default. 
+
+Imposta HP a 20, monete a 0 e resetta missioni e inventario.
+
+
+\begin{DoxyParams}{Parametri}
+{\em g} & Puntatore alla struttura \doxylink{struct_giocatore}{Giocatore} da inizializzare. \\
+\hline
+\end{DoxyParams}
+
+
+Definizione alla linea \doxymbox{\hyperlink{giocatore_8c_source_l00009}{9}} del file \doxymbox{\hyperlink{giocatore_8c_source}{giocatore.\+c}}.
+
+
+
+Referenzia \doxymbox{\hyperlink{giocatore_8h_source_l00026}{Giocatore::\+ha\+\_\+armatura}}, \doxymbox{\hyperlink{giocatore_8h_source_l00028}{Giocatore::\+ha\+\_\+chiave\+\_\+castello}}, \doxymbox{\hyperlink{giocatore_8h_source_l00025}{Giocatore::\+ha\+\_\+spada}}, \doxymbox{\hyperlink{giocatore_8h_source_l00027}{Giocatore::\+ha\+\_\+spada\+\_\+eroe}}, \doxymbox{\hyperlink{giocatore_8h_source_l00015}{Giocatore::\+max\+\_\+punti\+\_\+vita}}, \doxymbox{\hyperlink{giocatore_8h_source_l00022}{Giocatore::\+missione\+\_\+grotta}}, \doxymbox{\hyperlink{giocatore_8h_source_l00021}{Giocatore::\+missione\+\_\+magione}}, \doxymbox{\hyperlink{giocatore_8h_source_l00020}{Giocatore::\+missione\+\_\+palude}}, \doxymbox{\hyperlink{giocatore_8h_source_l00016}{Giocatore::\+monete}}, \doxymbox{\hyperlink{giocatore_8h_source_l00017}{Giocatore::\+numero\+\_\+oggetti}}, e \doxymbox{\hyperlink{giocatore_8h_source_l00014}{Giocatore::\+punti\+\_\+vita}}.
+
+
+
+Referenziato da \doxymbox{\hyperlink{menu_8c_source_l00020}{mostra\+\_\+menu\+\_\+principale()}}.
+
+\Hypertarget{giocatore_8c_a15bcfdd0b9faa189cf065df896071b50}\index{giocatore.c@{giocatore.c}!stampa\_statistiche\_giocatore@{stampa\_statistiche\_giocatore}}
+\index{stampa\_statistiche\_giocatore@{stampa\_statistiche\_giocatore}!giocatore.c@{giocatore.c}}
+\doxysubsubsection{\texorpdfstring{stampa\_statistiche\_giocatore()}{stampa\_statistiche\_giocatore()}}
+{\footnotesize\ttfamily \label{giocatore_8c_a15bcfdd0b9faa189cf065df896071b50} 
+void stampa\+\_\+statistiche\+\_\+giocatore (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{g}{}\end{DoxyParamCaption})}
+
+
+
+Stampa a video le statistiche e l\textquotesingle{}inventario del giocatore. 
+
+Mostra HP, monete, missioni completate ed equipaggiamento attuale.
+
+
+\begin{DoxyParams}{Parametri}
+{\em g} & Puntatore alla struttura \doxylink{struct_giocatore}{Giocatore} costante. \\
+\hline
+\end{DoxyParams}
+
+
+Definizione alla linea \doxymbox{\hyperlink{giocatore_8c_source_l00024}{24}} del file \doxymbox{\hyperlink{giocatore_8c_source}{giocatore.\+c}}.
+
+
+
+Referenzia \doxymbox{\hyperlink{giocatore_8h_source_l00026}{Giocatore::\+ha\+\_\+armatura}}, \doxymbox{\hyperlink{giocatore_8h_source_l00028}{Giocatore::\+ha\+\_\+chiave\+\_\+castello}}, \doxymbox{\hyperlink{giocatore_8h_source_l00025}{Giocatore::\+ha\+\_\+spada}}, \doxymbox{\hyperlink{giocatore_8h_source_l00027}{Giocatore::\+ha\+\_\+spada\+\_\+eroe}}, \doxymbox{\hyperlink{giocatore_8h_source_l00015}{Giocatore::\+max\+\_\+punti\+\_\+vita}}, \doxymbox{\hyperlink{giocatore_8h_source_l00022}{Giocatore::\+missione\+\_\+grotta}}, \doxymbox{\hyperlink{giocatore_8h_source_l00021}{Giocatore::\+missione\+\_\+magione}}, \doxymbox{\hyperlink{giocatore_8h_source_l00020}{Giocatore::\+missione\+\_\+palude}}, \doxymbox{\hyperlink{giocatore_8h_source_l00016}{Giocatore::\+monete}}, \doxymbox{\hyperlink{giocatore_8h_source_l00017}{Giocatore::\+numero\+\_\+oggetti}}, e \doxymbox{\hyperlink{giocatore_8h_source_l00014}{Giocatore::\+punti\+\_\+vita}}.
+
+
+
+Referenziato da \doxymbox{\hyperlink{dungeon_8c_source_l00174}{esegui\+\_\+missione()}}, e \doxymbox{\hyperlink{menu_8c_source_l00130}{mostra\+\_\+menu\+\_\+villaggio()}}.
+

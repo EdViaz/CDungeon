@@ -1,0 +1,269 @@
+\doxysection{Riferimenti per il file src/\+salvataggio.c}
+\hypertarget{salvataggio_8c}{}\label{salvataggio_8c}\index{src/salvataggio.c@{src/salvataggio.c}}
+
+
+Implementazione del sistema di persistenza dei dati.  
+
+
+{\ttfamily \+\#include "{}salvataggio.\+h"{}}\newline
+{\ttfamily \+\#include $<$stdio.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \+\#include $<$string.\+h$>$}\newline
+{\ttfamily \+\#include $<$time.\+h$>$}\newline
+\doxysubsubsection*{Funzioni}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{salvataggio_8c_aa4a1d89688203fc7c1e7f49237f276d5}{ottieni\+\_\+data\+\_\+corrente}} (char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t size)
+\item 
+void \doxymbox{\hyperlink{salvataggio_8c_a0a65de886844282d1821ce57740562fc}{salva\+\_\+tutto\+\_\+su\+\_\+file}} (\doxymbox{\hyperlink{struct_nodo_salvataggio}{Nodo\+Salvataggio}} \texorpdfstring{$\ast$}{*}testa)
+\begin{DoxyCompactList}\small\item\em Salva l\textquotesingle{}intera lista dei salvataggi su file. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{salvataggio_8c_a36b6eb609318283fd72c76bcee64bc5b}{aggiungi\+\_\+salvataggio}} (\doxymbox{\hyperlink{struct_nodo_salvataggio}{Nodo\+Salvataggio}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}testa, \doxymbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}g)
+\begin{DoxyCompactList}\small\item\em Aggiunge un nuovo salvataggio alla lista e al file. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{struct_nodo_salvataggio}{Nodo\+Salvataggio}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{salvataggio_8c_aa25228e7cfe267ee45f86f33c3924eec}{carica\+\_\+salvataggio}} (\doxymbox{\hyperlink{struct_nodo_salvataggio}{Nodo\+Salvataggio}} \texorpdfstring{$\ast$}{*}testa, int id)
+\begin{DoxyCompactList}\small\item\em Cerca un salvataggio nella lista tramite ID. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{salvataggio_8c_a2ce4f5bea730900b1014154c2673d38f}{elimina\+\_\+salvataggio}} (\doxymbox{\hyperlink{struct_nodo_salvataggio}{Nodo\+Salvataggio}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}testa, int id)
+\begin{DoxyCompactList}\small\item\em Elimina un salvataggio dalla lista e dal file. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{salvataggio_8c_a75ff6e1d6bcb76a4a5e1391443e2d3d4}{stampa\+\_\+salvataggi}} (\doxymbox{\hyperlink{struct_nodo_salvataggio}{Nodo\+Salvataggio}} \texorpdfstring{$\ast$}{*}testa)
+\begin{DoxyCompactList}\small\item\em Stampa a video l\textquotesingle{}elenco dei salvataggi disponibili. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{salvataggio_8c_a36012a180284fda158e06cb830e22d93}{libera\+\_\+salvataggi}} (\doxymbox{\hyperlink{struct_nodo_salvataggio}{Nodo\+Salvataggio}} \texorpdfstring{$\ast$}{*}testa)
+\begin{DoxyCompactList}\small\item\em Libera la memoria allocata per la lista dei salvataggi. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{salvataggio_8c_a92740f4aae86090fc8fdfc5023ffa5f4}{carica\+\_\+salvataggi\+\_\+da\+\_\+file}} (\doxymbox{\hyperlink{struct_nodo_salvataggio}{Nodo\+Salvataggio}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}testa)
+\begin{DoxyCompactList}\small\item\em Carica tutti i salvataggi dal file binario all\textquotesingle{}avvio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrizione dettagliata}
+Implementazione del sistema di persistenza dei dati. 
+
+
+
+Definizione nel file \doxymbox{\hyperlink{salvataggio_8c_source}{salvataggio.\+c}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{salvataggio_8c_doc-func-members}
+\doxysubsection{Documentazione delle funzioni}
+\Hypertarget{salvataggio_8c_a36b6eb609318283fd72c76bcee64bc5b}\index{salvataggio.c@{salvataggio.c}!aggiungi\_salvataggio@{aggiungi\_salvataggio}}
+\index{aggiungi\_salvataggio@{aggiungi\_salvataggio}!salvataggio.c@{salvataggio.c}}
+\doxysubsubsection{\texorpdfstring{aggiungi\_salvataggio()}{aggiungi\_salvataggio()}}
+{\footnotesize\ttfamily \label{salvataggio_8c_a36b6eb609318283fd72c76bcee64bc5b} 
+void aggiungi\+\_\+salvataggio (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_nodo_salvataggio}{Nodo\+Salvataggio}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{testa}{, }\item[{\doxymbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{g}{}\end{DoxyParamCaption})}
+
+
+
+Aggiunge un nuovo salvataggio alla lista e al file. 
+
+Crea un nuovo nodo con i dati attuali del giocatore, genera un nuovo ID, lo aggiunge in testa alla lista e aggiorna il file di salvataggio.
+
+
+\begin{DoxyParams}{Parametri}
+{\em testa} & Puntatore doppio alla testa della lista. \\
+\hline
+{\em g} & Puntatore ai dati del giocatore da salvare. \\
+\hline
+\end{DoxyParams}
+
+
+Definizione alla linea \doxymbox{\hyperlink{salvataggio_8c_source_l00044}{44}} del file \doxymbox{\hyperlink{salvataggio_8c_source}{salvataggio.\+c}}.
+
+
+
+Referenzia \doxymbox{\hyperlink{salvataggio_8h_source_l00018}{Nodo\+Salvataggio::\+dati\+\_\+giocatore}}, \doxymbox{\hyperlink{salvataggio_8h_source_l00016}{Nodo\+Salvataggio::\+id}}, \doxymbox{\hyperlink{salvataggio_8c_source_l00013}{ottieni\+\_\+data\+\_\+corrente()}}, \doxymbox{\hyperlink{salvataggio_8h_source_l00019}{Nodo\+Salvataggio::\+prossimo}}, \doxymbox{\hyperlink{salvataggio_8c_source_l00022}{salva\+\_\+tutto\+\_\+su\+\_\+file()}}, e \doxymbox{\hyperlink{salvataggio_8h_source_l00017}{Nodo\+Salvataggio::\+timestamp}}.
+
+
+
+Referenziato da \doxymbox{\hyperlink{menu_8c_source_l00130}{mostra\+\_\+menu\+\_\+villaggio()}}.
+
+\Hypertarget{salvataggio_8c_a92740f4aae86090fc8fdfc5023ffa5f4}\index{salvataggio.c@{salvataggio.c}!carica\_salvataggi\_da\_file@{carica\_salvataggi\_da\_file}}
+\index{carica\_salvataggi\_da\_file@{carica\_salvataggi\_da\_file}!salvataggio.c@{salvataggio.c}}
+\doxysubsubsection{\texorpdfstring{carica\_salvataggi\_da\_file()}{carica\_salvataggi\_da\_file()}}
+{\footnotesize\ttfamily \label{salvataggio_8c_a92740f4aae86090fc8fdfc5023ffa5f4} 
+void carica\+\_\+salvataggi\+\_\+da\+\_\+file (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_nodo_salvataggio}{Nodo\+Salvataggio}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{testa}{}\end{DoxyParamCaption})}
+
+
+
+Carica tutti i salvataggi dal file binario all\textquotesingle{}avvio. 
+
+Legge il file "{}salvataggi.\+bin"{} e ricostruisce la lista concatenata in memoria.
+
+
+\begin{DoxyParams}{Parametri}
+{\em testa} & Puntatore doppio alla testa della lista (verrà inizializzata). \\
+\hline
+\end{DoxyParams}
+
+
+Definizione alla linea \doxymbox{\hyperlink{salvataggio_8c_source_l00157}{157}} del file \doxymbox{\hyperlink{salvataggio_8c_source}{salvataggio.\+c}}.
+
+
+
+Referenzia \doxymbox{\hyperlink{salvataggio_8h_source_l00018}{Nodo\+Salvataggio::\+dati\+\_\+giocatore}}, \doxymbox{\hyperlink{salvataggio_8h_source_l00016}{Nodo\+Salvataggio::\+id}}, \doxymbox{\hyperlink{salvataggio_8c_source_l00145}{libera\+\_\+salvataggi()}}, \doxymbox{\hyperlink{salvataggio_8h_source_l00019}{Nodo\+Salvataggio::\+prossimo}}, e \doxymbox{\hyperlink{salvataggio_8h_source_l00017}{Nodo\+Salvataggio::\+timestamp}}.
+
+
+
+Referenziato da \doxymbox{\hyperlink{main_8c_source_l00020}{main()}}.
+
+\Hypertarget{salvataggio_8c_aa25228e7cfe267ee45f86f33c3924eec}\index{salvataggio.c@{salvataggio.c}!carica\_salvataggio@{carica\_salvataggio}}
+\index{carica\_salvataggio@{carica\_salvataggio}!salvataggio.c@{salvataggio.c}}
+\doxysubsubsection{\texorpdfstring{carica\_salvataggio()}{carica\_salvataggio()}}
+{\footnotesize\ttfamily \label{salvataggio_8c_aa25228e7cfe267ee45f86f33c3924eec} 
+\doxymbox{\hyperlink{struct_nodo_salvataggio}{Nodo\+Salvataggio}} \texorpdfstring{$\ast$}{*} carica\+\_\+salvataggio (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_nodo_salvataggio}{Nodo\+Salvataggio}} \texorpdfstring{$\ast$}{*}}]{testa}{, }\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Cerca un salvataggio nella lista tramite ID. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em testa} & Testa della lista dei salvataggi. \\
+\hline
+{\em id} & ID del salvataggio da cercare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+Puntatore al nodo trovato, o NULL se non esiste. 
+\end{DoxyReturn}
+
+
+Definizione alla linea \doxymbox{\hyperlink{salvataggio_8c_source_l00079}{79}} del file \doxymbox{\hyperlink{salvataggio_8c_source}{salvataggio.\+c}}.
+
+
+
+Referenzia \doxymbox{\hyperlink{salvataggio_8h_source_l00016}{Nodo\+Salvataggio::\+id}}, e \doxymbox{\hyperlink{salvataggio_8h_source_l00019}{Nodo\+Salvataggio::\+prossimo}}.
+
+
+
+Referenziato da \doxymbox{\hyperlink{menu_8c_source_l00308}{gestisci\+\_\+trucchi()}}, e \doxymbox{\hyperlink{menu_8c_source_l00082}{mostra\+\_\+menu\+\_\+salvataggi()}}.
+
+\Hypertarget{salvataggio_8c_a2ce4f5bea730900b1014154c2673d38f}\index{salvataggio.c@{salvataggio.c}!elimina\_salvataggio@{elimina\_salvataggio}}
+\index{elimina\_salvataggio@{elimina\_salvataggio}!salvataggio.c@{salvataggio.c}}
+\doxysubsubsection{\texorpdfstring{elimina\_salvataggio()}{elimina\_salvataggio()}}
+{\footnotesize\ttfamily \label{salvataggio_8c_a2ce4f5bea730900b1014154c2673d38f} 
+void elimina\+\_\+salvataggio (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_nodo_salvataggio}{Nodo\+Salvataggio}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{testa}{, }\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Elimina un salvataggio dalla lista e dal file. 
+
+Rimuove il nodo corrispondente all\textquotesingle{}ID specificato e riscrive il file binario.
+
+
+\begin{DoxyParams}{Parametri}
+{\em testa} & Puntatore doppio alla testa della lista. \\
+\hline
+{\em id} & ID del salvataggio da eliminare. \\
+\hline
+\end{DoxyParams}
+
+
+Definizione alla linea \doxymbox{\hyperlink{salvataggio_8c_source_l00093}{93}} del file \doxymbox{\hyperlink{salvataggio_8c_source}{salvataggio.\+c}}.
+
+
+
+Referenzia \doxymbox{\hyperlink{salvataggio_8h_source_l00016}{Nodo\+Salvataggio::\+id}}, \doxymbox{\hyperlink{salvataggio_8h_source_l00019}{Nodo\+Salvataggio::\+prossimo}}, e \doxymbox{\hyperlink{salvataggio_8c_source_l00022}{salva\+\_\+tutto\+\_\+su\+\_\+file()}}.
+
+
+
+Referenziato da \doxymbox{\hyperlink{menu_8c_source_l00082}{mostra\+\_\+menu\+\_\+salvataggi()}}.
+
+\Hypertarget{salvataggio_8c_a36012a180284fda158e06cb830e22d93}\index{salvataggio.c@{salvataggio.c}!libera\_salvataggi@{libera\_salvataggi}}
+\index{libera\_salvataggi@{libera\_salvataggi}!salvataggio.c@{salvataggio.c}}
+\doxysubsubsection{\texorpdfstring{libera\_salvataggi()}{libera\_salvataggi()}}
+{\footnotesize\ttfamily \label{salvataggio_8c_a36012a180284fda158e06cb830e22d93} 
+void libera\+\_\+salvataggi (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_nodo_salvataggio}{Nodo\+Salvataggio}} \texorpdfstring{$\ast$}{*}}]{testa}{}\end{DoxyParamCaption})}
+
+
+
+Libera la memoria allocata per la lista dei salvataggi. 
+
+Da chiamare alla chiusura del programma.
+
+
+\begin{DoxyParams}{Parametri}
+{\em testa} & Testa della lista da deallocare. \\
+\hline
+\end{DoxyParams}
+
+
+Definizione alla linea \doxymbox{\hyperlink{salvataggio_8c_source_l00145}{145}} del file \doxymbox{\hyperlink{salvataggio_8c_source}{salvataggio.\+c}}.
+
+
+
+Referenzia \doxymbox{\hyperlink{salvataggio_8h_source_l00019}{Nodo\+Salvataggio::\+prossimo}}.
+
+
+
+Referenziato da \doxymbox{\hyperlink{salvataggio_8c_source_l00157}{carica\+\_\+salvataggi\+\_\+da\+\_\+file()}}, e \doxymbox{\hyperlink{main_8c_source_l00020}{main()}}.
+
+\Hypertarget{salvataggio_8c_aa4a1d89688203fc7c1e7f49237f276d5}\index{salvataggio.c@{salvataggio.c}!ottieni\_data\_corrente@{ottieni\_data\_corrente}}
+\index{ottieni\_data\_corrente@{ottieni\_data\_corrente}!salvataggio.c@{salvataggio.c}}
+\doxysubsubsection{\texorpdfstring{ottieni\_data\_corrente()}{ottieni\_data\_corrente()}}
+{\footnotesize\ttfamily \label{salvataggio_8c_aa4a1d89688203fc7c1e7f49237f276d5} 
+void ottieni\+\_\+data\+\_\+corrente (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{buffer}{, }\item[{size\+\_\+t}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Definizione alla linea \doxymbox{\hyperlink{salvataggio_8c_source_l00013}{13}} del file \doxymbox{\hyperlink{salvataggio_8c_source}{salvataggio.\+c}}.
+
+
+
+Referenziato da \doxymbox{\hyperlink{salvataggio_8c_source_l00044}{aggiungi\+\_\+salvataggio()}}.
+
+\Hypertarget{salvataggio_8c_a0a65de886844282d1821ce57740562fc}\index{salvataggio.c@{salvataggio.c}!salva\_tutto\_su\_file@{salva\_tutto\_su\_file}}
+\index{salva\_tutto\_su\_file@{salva\_tutto\_su\_file}!salvataggio.c@{salvataggio.c}}
+\doxysubsubsection{\texorpdfstring{salva\_tutto\_su\_file()}{salva\_tutto\_su\_file()}}
+{\footnotesize\ttfamily \label{salvataggio_8c_a0a65de886844282d1821ce57740562fc} 
+void salva\+\_\+tutto\+\_\+su\+\_\+file (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_nodo_salvataggio}{Nodo\+Salvataggio}} \texorpdfstring{$\ast$}{*}}]{testa}{}\end{DoxyParamCaption})}
+
+
+
+Salva l\textquotesingle{}intera lista dei salvataggi su file. 
+
+Sovrascrive il file "{}salvataggi.\+bin"{} con il contenuto attuale della lista.
+
+
+\begin{DoxyParams}{Parametri}
+{\em testa} & Testa della lista dei salvataggi. \\
+\hline
+\end{DoxyParams}
+
+
+Definizione alla linea \doxymbox{\hyperlink{salvataggio_8c_source_l00022}{22}} del file \doxymbox{\hyperlink{salvataggio_8c_source}{salvataggio.\+c}}.
+
+
+
+Referenzia \doxymbox{\hyperlink{salvataggio_8h_source_l00018}{Nodo\+Salvataggio::\+dati\+\_\+giocatore}}, \doxymbox{\hyperlink{salvataggio_8h_source_l00016}{Nodo\+Salvataggio::\+id}}, \doxymbox{\hyperlink{salvataggio_8h_source_l00019}{Nodo\+Salvataggio::\+prossimo}}, e \doxymbox{\hyperlink{salvataggio_8h_source_l00017}{Nodo\+Salvataggio::\+timestamp}}.
+
+
+
+Referenziato da \doxymbox{\hyperlink{salvataggio_8c_source_l00044}{aggiungi\+\_\+salvataggio()}}, \doxymbox{\hyperlink{salvataggio_8c_source_l00093}{elimina\+\_\+salvataggio()}}, e \doxymbox{\hyperlink{menu_8c_source_l00308}{gestisci\+\_\+trucchi()}}.
+
+\Hypertarget{salvataggio_8c_a75ff6e1d6bcb76a4a5e1391443e2d3d4}\index{salvataggio.c@{salvataggio.c}!stampa\_salvataggi@{stampa\_salvataggi}}
+\index{stampa\_salvataggi@{stampa\_salvataggi}!salvataggio.c@{salvataggio.c}}
+\doxysubsubsection{\texorpdfstring{stampa\_salvataggi()}{stampa\_salvataggi()}}
+{\footnotesize\ttfamily \label{salvataggio_8c_a75ff6e1d6bcb76a4a5e1391443e2d3d4} 
+void stampa\+\_\+salvataggi (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_nodo_salvataggio}{Nodo\+Salvataggio}} \texorpdfstring{$\ast$}{*}}]{testa}{}\end{DoxyParamCaption})}
+
+
+
+Stampa a video l\textquotesingle{}elenco dei salvataggi disponibili. 
+
+Mostra ID, timestamp e riepilogo delle statistiche per ogni salvataggio.
+
+
+\begin{DoxyParams}{Parametri}
+{\em testa} & Testa della lista dei salvataggi. \\
+\hline
+\end{DoxyParams}
+
+
+Definizione alla linea \doxymbox{\hyperlink{salvataggio_8c_source_l00124}{124}} del file \doxymbox{\hyperlink{salvataggio_8c_source}{salvataggio.\+c}}.
+
+
+
+Referenzia \doxymbox{\hyperlink{salvataggio_8h_source_l00018}{Nodo\+Salvataggio::\+dati\+\_\+giocatore}}, \doxymbox{\hyperlink{salvataggio_8h_source_l00016}{Nodo\+Salvataggio::\+id}}, \doxymbox{\hyperlink{giocatore_8h_source_l00022}{Giocatore::\+missione\+\_\+grotta}}, \doxymbox{\hyperlink{giocatore_8h_source_l00021}{Giocatore::\+missione\+\_\+magione}}, \doxymbox{\hyperlink{giocatore_8h_source_l00020}{Giocatore::\+missione\+\_\+palude}}, \doxymbox{\hyperlink{giocatore_8h_source_l00016}{Giocatore::\+monete}}, \doxymbox{\hyperlink{giocatore_8h_source_l00017}{Giocatore::\+numero\+\_\+oggetti}}, \doxymbox{\hyperlink{salvataggio_8h_source_l00019}{Nodo\+Salvataggio::\+prossimo}}, \doxymbox{\hyperlink{giocatore_8h_source_l00014}{Giocatore::\+punti\+\_\+vita}}, e \doxymbox{\hyperlink{salvataggio_8h_source_l00017}{Nodo\+Salvataggio::\+timestamp}}.
+
+
+
+Referenziato da \doxymbox{\hyperlink{menu_8c_source_l00308}{gestisci\+\_\+trucchi()}}, e \doxymbox{\hyperlink{menu_8c_source_l00082}{mostra\+\_\+menu\+\_\+salvataggi()}}.
+

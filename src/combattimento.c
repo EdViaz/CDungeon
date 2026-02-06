@@ -1,3 +1,8 @@
+/**
+ * @file combattimento.c
+ * @brief Implementazione delle logiche di combattimento.
+ */
+
 #include "combattimento.h"
 #include "utilita.h"
 #include <stdio.h>

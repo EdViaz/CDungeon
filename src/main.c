@@ -1,3 +1,7 @@
+/**
+ * @file main.c
+ * @brief Entry point del gioco CDungeon.
+ */
 #include "giocatore.h"
 #include "menu.h"
 #include "salvataggio.h"
@@ -5,7 +9,15 @@
 #include <stdlib.h>
 #include <time.h>
 
-int main() {
+/**
+ * @brief Funzione principale del programma.
+ *
+ * Inizializza il generatore di numeri casuali, carica i salvataggi
+ * e avvia il loop principale del menu.
+ *
+ * @return 0 se il programma termina correttamente.
+ */
+int main(){
   NodoSalvataggio *lista_salvataggi = NULL;
   Giocatore giocatore_corrente;
 

@@ -1,0 +1,50 @@
+\doxysection{giocatore.\+c}
+\hypertarget{giocatore_8c_source}{}\label{giocatore_8c_source}\index{src/giocatore.c@{src/giocatore.c}}
+\doxymbox{\hyperlink{giocatore_8c}{Vai alla documentazione di questo file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{giocatore_8h}{giocatore.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00009}\doxymbox{\hyperlink{giocatore_8c_a1ad218a63bbf715985eea9f583776bd0}{00009}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{giocatore_8c_a1ad218a63bbf715985eea9f583776bd0}{inizializza\_giocatore}}(\doxymbox{\hyperlink{struct_giocatore}{Giocatore}}\ *g)}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00011}00011\ \ \ g-\/>\doxymbox{\hyperlink{struct_giocatore_ac225b51d0e0eeeb38afec9daf647ee27}{punti\_vita}}\ =\ 20;}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00012}00012\ \ \ g-\/>\doxymbox{\hyperlink{struct_giocatore_ad212b4e7315e9b36266dafd1a61eea95}{max\_punti\_vita}}\ =\ 20;}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00013}00013\ \ \ g-\/>\doxymbox{\hyperlink{struct_giocatore_ab16e84c52ef3c289fda14fd416f31a47}{monete}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00014}00014\ \ \ g-\/>\doxymbox{\hyperlink{struct_giocatore_acf4cc601e83274d355859d4b26fadf2a}{numero\_oggetti}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00015}00015\ \ \ g-\/>\doxymbox{\hyperlink{struct_giocatore_af48e7cb8bc0deee433b5feccfb6fb24d}{missione\_palude}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00016}00016\ \ \ g-\/>\doxymbox{\hyperlink{struct_giocatore_ae284c94c16c38a8a81532928e211445f}{missione\_magione}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00017}00017\ \ \ g-\/>\doxymbox{\hyperlink{struct_giocatore_a2b3ca93d976868a3240786b7c70705a2}{missione\_grotta}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00018}00018\ \ \ g-\/>\doxymbox{\hyperlink{struct_giocatore_a295f68fe9e7fbb02ee7a6d5cc49afbd8}{ha\_spada}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00019}00019\ \ \ g-\/>\doxymbox{\hyperlink{struct_giocatore_a2242f3bf63dde9ee5dfe23da609411b6}{ha\_armatura}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00020}00020\ \ \ g-\/>\doxymbox{\hyperlink{struct_giocatore_abe686c6adfcebb242d194e756452576d}{ha\_spada\_eroe}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00021}00021\ \ \ g-\/>\doxymbox{\hyperlink{struct_giocatore_a8b938565022be676747388e1b1ccf950}{ha\_chiave\_castello}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00022}00022\ \}}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00024}\doxymbox{\hyperlink{giocatore_8c_a15bcfdd0b9faa189cf065df896071b50}{00024}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{giocatore_8c_a15bcfdd0b9faa189cf065df896071b50}{stampa\_statistiche\_giocatore}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_giocatore}{Giocatore}}\ *g)}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00025}00025\ \{}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00026}00026\ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n===\ Inventario\ Giocatore\ ===\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00027}00027\ \ \ }
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00028}00028\ \ \ printf(\textcolor{stringliteral}{"{}Punti\ Vita:\ \%d\ /\ \%d\(\backslash\)n"{}},\ g-\/>\doxymbox{\hyperlink{struct_giocatore_ac225b51d0e0eeeb38afec9daf647ee27}{punti\_vita}},\ g-\/>\doxymbox{\hyperlink{struct_giocatore_ad212b4e7315e9b36266dafd1a61eea95}{max\_punti\_vita}});}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00029}00029\ \ \ printf(\textcolor{stringliteral}{"{}Monete:\ \%d\(\backslash\)n"{}},\ g-\/>\doxymbox{\hyperlink{struct_giocatore_ab16e84c52ef3c289fda14fd416f31a47}{monete}});}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00030}00030\ \ \ printf(\textcolor{stringliteral}{"{}Oggetti:\ \%d\(\backslash\)n"{}},\ g-\/>\doxymbox{\hyperlink{struct_giocatore_acf4cc601e83274d355859d4b26fadf2a}{numero\_oggetti}});}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00031}00031\ \ \ printf(\textcolor{stringliteral}{"{}Missioni\ Completate:\ \%d\(\backslash\)n"{}},\ g-\/>\doxymbox{\hyperlink{struct_giocatore_af48e7cb8bc0deee433b5feccfb6fb24d}{missione\_palude}}\ +\ g-\/>\doxymbox{\hyperlink{struct_giocatore_ae284c94c16c38a8a81532928e211445f}{missione\_magione}}\ +\ g-\/>\doxymbox{\hyperlink{struct_giocatore_a2b3ca93d976868a3240786b7c70705a2}{missione\_grotta}});}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00032}00032\ \ \ printf(\textcolor{stringliteral}{"{}Equipaggiamento:\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00033}00033\ \ \ \textcolor{keywordflow}{if}\ (g-\/>\doxymbox{\hyperlink{struct_giocatore_a295f68fe9e7fbb02ee7a6d5cc49afbd8}{ha\_spada}}\ ||\ g-\/>\doxymbox{\hyperlink{struct_giocatore_abe686c6adfcebb242d194e756452576d}{ha\_spada\_eroe}})}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00034}00034\ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/\ Spada:\ \%s\ (+\%d\ attacco)\(\backslash\)n"{}},}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ g-\/>\doxymbox{\hyperlink{struct_giocatore_abe686c6adfcebb242d194e756452576d}{ha\_spada\_eroe}}\ ?\ \textcolor{stringliteral}{"{}Spada\ dell'Eroe"{}}\ :\ \textcolor{stringliteral}{"{}Spada\ Ferro"{}},}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ g-\/>\doxymbox{\hyperlink{struct_giocatore_abe686c6adfcebb242d194e756452576d}{ha\_spada\_eroe}}\ ?\ 2\ :\ 1);}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00037}00037\ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00038}00038\ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/\ Nessuna\ arma\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00039}00039\ \ \ \textcolor{keywordflow}{if}\ (g-\/>\doxymbox{\hyperlink{struct_giocatore_a2242f3bf63dde9ee5dfe23da609411b6}{ha\_armatura}})}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00040}00040\ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/\ Armatura:\ Si\ (-\/1\ danno\ subito)\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00041}00041\ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00042}00042\ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/\ Nessuna\ armatura\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00043}00043\ \ \ \textcolor{keywordflow}{if}\ (g-\/>\doxymbox{\hyperlink{struct_giocatore_a8b938565022be676747388e1b1ccf950}{ha\_chiave\_castello}})}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00044}00044\ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/\ Oggetti\ Chiave:\ Chiave\ del\ Castello\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00046}00046\ \ \ printf(\textcolor{stringliteral}{"{}============================\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{giocatore_8c_source_l00047}00047\ \}}
+
+\end{DoxyCode}

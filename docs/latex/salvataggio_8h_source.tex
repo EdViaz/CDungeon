@@ -1,0 +1,36 @@
+\doxysection{salvataggio.\+h}
+\hypertarget{salvataggio_8h_source}{}\label{salvataggio_8h_source}\index{src/salvataggio.h@{src/salvataggio.h}}
+\doxymbox{\hyperlink{salvataggio_8h}{Vai alla documentazione di questo file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00006}00006\ \textcolor{preprocessor}{\#ifndef\ SALVATAGGIO\_H}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00007}00007\ \textcolor{preprocessor}{\#define\ SALVATAGGIO\_H}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{giocatore_8h}{giocatore.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00014}\doxymbox{\hyperlink{struct_nodo_salvataggio}{00014}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}}
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00015}00015\ \{}
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00016}\doxymbox{\hyperlink{struct_nodo_salvataggio_aba96c9f35a462294c983722d54572325}{00016}}\ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{struct_nodo_salvataggio_aba96c9f35a462294c983722d54572325}{id}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00017}\doxymbox{\hyperlink{struct_nodo_salvataggio_a7fcede169e480b3730937c948a1d99aa}{00017}}\ \ \ \textcolor{keywordtype}{char}\ \doxymbox{\hyperlink{struct_nodo_salvataggio_a7fcede169e480b3730937c948a1d99aa}{timestamp}}[32];\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00018}\doxymbox{\hyperlink{struct_nodo_salvataggio_ac1069992878eb0bdc0830cf10f856880}{00018}}\ \ \ \doxymbox{\hyperlink{struct_giocatore}{Giocatore}}\ \doxymbox{\hyperlink{struct_nodo_salvataggio_ac1069992878eb0bdc0830cf10f856880}{dati\_giocatore}};\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00019}\doxymbox{\hyperlink{struct_nodo_salvataggio_ab49ebcdfa8ffe731283346da8692f9e6}{00019}}\ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ *\doxymbox{\hyperlink{struct_nodo_salvataggio_ab49ebcdfa8ffe731283346da8692f9e6}{prossimo}};\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00020}\doxymbox{\hyperlink{salvataggio_8h_a12b808ab7a9d0c0adad67887b1c2298c}{00020}}\ \}\ \doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}};}
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00031}00031\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{salvataggio_8h_a36b6eb609318283fd72c76bcee64bc5b}{aggiungi\_salvataggio}}(\doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ **testa,\ \doxymbox{\hyperlink{struct_giocatore}{Giocatore}}\ *g);}
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00040}00040\ \doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ *\doxymbox{\hyperlink{salvataggio_8h_aa25228e7cfe267ee45f86f33c3924eec}{carica\_salvataggio}}(\doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ *testa,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00050}00050\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{salvataggio_8h_a2ce4f5bea730900b1014154c2673d38f}{elimina\_salvataggio}}(\doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ **testa,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00059}00059\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{salvataggio_8h_a75ff6e1d6bcb76a4a5e1391443e2d3d4}{stampa\_salvataggi}}(\doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ *testa);}
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00068}00068\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{salvataggio_8h_a92740f4aae86090fc8fdfc5023ffa5f4}{carica\_salvataggi\_da\_file}}(\doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ **testa);}
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00077}00077\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{salvataggio_8h_a0a65de886844282d1821ce57740562fc}{salva\_tutto\_su\_file}}(\doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ *testa);}
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00086}00086\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{salvataggio_8h_a36012a180284fda158e06cb830e22d93}{libera\_salvataggi}}(\doxymbox{\hyperlink{struct_nodo_salvataggio}{NodoSalvataggio}}\ *testa);}
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{salvataggio_8h_source_l00088}00088\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

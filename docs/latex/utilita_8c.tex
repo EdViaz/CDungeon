@@ -1,0 +1,232 @@
+\doxysection{Riferimenti per il file src/\+utilita.c}
+\hypertarget{utilita_8c}{}\label{utilita_8c}\index{src/utilita.c@{src/utilita.c}}
+
+
+Implementazione delle funzioni di utilità.  
+
+
+{\ttfamily \+\#include "{}utilita.\+h"{}}\newline
+{\ttfamily \+\#include $<$stdio.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \+\#include $<$ctype.\+h$>$}\newline
+{\ttfamily \+\#include $<$string.\+h$>$}\newline
+\doxysubsubsection*{Funzioni}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{utilita_8c_a4b4b7026a8200115f8cd165bc3210023}{lancia\+\_\+dado}} (int facce)
+\begin{DoxyCompactList}\small\item\em Lancia un dado con un specificato numero di facce. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{utilita_8c_ae7c83e4d97d50567cda5b807d89d6652}{padovan}} (int n)
+\begin{DoxyCompactList}\small\item\em Calcola l\textquotesingle{}n-\/esimo numero della sequenza di Padovan. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{utilita_8c_aebe1eb385b2dceac51255099bfd31b57}{controlla\+\_\+padovan}} (int num)
+\begin{DoxyCompactList}\small\item\em Verifica se un numero appartiene alla sequenza di Padovan. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{utilita_8c_a430562fd5d83996886377c50f56c41d7}{pulisci\+\_\+schermo}} ()
+\begin{DoxyCompactList}\small\item\em Pulisce lo schermo del terminale. \end{DoxyCompactList}\item 
+char \doxymbox{\hyperlink{utilita_8c_ae3ac40b3cf9c5e690d16a0ad5cfebd9e}{leggi\+\_\+input\+\_\+char}} ()
+\begin{DoxyCompactList}\small\item\em Legge un singolo carattere da input. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{utilita_8c_aa765f343379c735d433c7108926967c4}{leggi\+\_\+intero}} ()
+\begin{DoxyCompactList}\small\item\em Legge un numero intero da input. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{utilita_8c_aa2f404fe5fae3024fb795eb6e84e62c9}{valuta\+\_\+vittoria\+\_\+morra}} (int m1, int m2)
+\begin{DoxyCompactList}\small\item\em Valuta il vincitore nella Morra Cinese semplificata. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrizione dettagliata}
+Implementazione delle funzioni di utilità. 
+
+
+
+Definizione nel file \doxymbox{\hyperlink{utilita_8c_source}{utilita.\+c}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{utilita_8c_doc-func-members}
+\doxysubsection{Documentazione delle funzioni}
+\Hypertarget{utilita_8c_aebe1eb385b2dceac51255099bfd31b57}\index{utilita.c@{utilita.c}!controlla\_padovan@{controlla\_padovan}}
+\index{controlla\_padovan@{controlla\_padovan}!utilita.c@{utilita.c}}
+\doxysubsubsection{\texorpdfstring{controlla\_padovan()}{controlla\_padovan()}}
+{\footnotesize\ttfamily \label{utilita_8c_aebe1eb385b2dceac51255099bfd31b57} 
+int controlla\+\_\+padovan (\begin{DoxyParamCaption}\item[{int}]{num}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se un numero appartiene alla sequenza di Padovan. 
+
+Controlla i primi 25 numeri della sequenza.
+
+
+\begin{DoxyParams}{Parametri}
+{\em num} & Il numero da verificare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+1 se il numero appartiene alla sequenza, 0 altrimenti. 
+\end{DoxyReturn}
+
+
+Definizione alla linea \doxymbox{\hyperlink{utilita_8c_source_l00025}{25}} del file \doxymbox{\hyperlink{utilita_8c_source}{utilita.\+c}}.
+
+
+
+Referenzia \doxymbox{\hyperlink{utilita_8c_source_l00016}{padovan()}}.
+
+
+
+Referenziato da \doxymbox{\hyperlink{combattimento_8c_source_l00013}{inizia\+\_\+combattimento()}}.
+
+\Hypertarget{utilita_8c_a4b4b7026a8200115f8cd165bc3210023}\index{utilita.c@{utilita.c}!lancia\_dado@{lancia\_dado}}
+\index{lancia\_dado@{lancia\_dado}!utilita.c@{utilita.c}}
+\doxysubsubsection{\texorpdfstring{lancia\_dado()}{lancia\_dado()}}
+{\footnotesize\ttfamily \label{utilita_8c_a4b4b7026a8200115f8cd165bc3210023} 
+int lancia\+\_\+dado (\begin{DoxyParamCaption}\item[{int}]{facce}{}\end{DoxyParamCaption})}
+
+
+
+Lancia un dado con un specificato numero di facce. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em facce} & Il numero di facce del dado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+Un numero casuale tra 1 e facce. 
+\end{DoxyReturn}
+
+
+Definizione alla linea \doxymbox{\hyperlink{utilita_8c_source_l00012}{12}} del file \doxymbox{\hyperlink{utilita_8c_source}{utilita.\+c}}.
+
+
+
+Referenziato da \doxymbox{\hyperlink{combattimento_8c_source_l00106}{combattimento\+\_\+boss\+\_\+finale()}}, \doxymbox{\hyperlink{dungeon_8c_source_l00174}{esegui\+\_\+missione()}}, \doxymbox{\hyperlink{dungeon_8c_source_l00014}{genera\+\_\+stanza\+\_\+missione()}}, \doxymbox{\hyperlink{combattimento_8c_source_l00013}{inizia\+\_\+combattimento()}}, e \doxymbox{\hyperlink{menu_8c_source_l00250}{mostra\+\_\+negozio()}}.
+
+\Hypertarget{utilita_8c_ae3ac40b3cf9c5e690d16a0ad5cfebd9e}\index{utilita.c@{utilita.c}!leggi\_input\_char@{leggi\_input\_char}}
+\index{leggi\_input\_char@{leggi\_input\_char}!utilita.c@{utilita.c}}
+\doxysubsubsection{\texorpdfstring{leggi\_input\_char()}{leggi\_input\_char()}}
+{\footnotesize\ttfamily \label{utilita_8c_ae3ac40b3cf9c5e690d16a0ad5cfebd9e} 
+char leggi\+\_\+input\+\_\+char (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Legge un singolo carattere da input. 
+
+Pulisce il buffer e gestisce l\textquotesingle{}input dell\textquotesingle{}utente, restituendo il carattere in minuscolo.
+
+\begin{DoxyReturn}{Restituisce}
+Il carattere letto, oppure 0 in caso di input vuoto o errore. 
+\end{DoxyReturn}
+
+
+Definizione alla linea \doxymbox{\hyperlink{utilita_8c_source_l00050}{50}} del file \doxymbox{\hyperlink{utilita_8c_source}{utilita.\+c}}.
+
+
+
+Referenziato da \doxymbox{\hyperlink{menu_8c_source_l00020}{mostra\+\_\+menu\+\_\+principale()}}, \doxymbox{\hyperlink{menu_8c_source_l00082}{mostra\+\_\+menu\+\_\+salvataggi()}}, e \doxymbox{\hyperlink{menu_8c_source_l00130}{mostra\+\_\+menu\+\_\+villaggio()}}.
+
+\Hypertarget{utilita_8c_aa765f343379c735d433c7108926967c4}\index{utilita.c@{utilita.c}!leggi\_intero@{leggi\_intero}}
+\index{leggi\_intero@{leggi\_intero}!utilita.c@{utilita.c}}
+\doxysubsubsection{\texorpdfstring{leggi\_intero()}{leggi\_intero()}}
+{\footnotesize\ttfamily \label{utilita_8c_aa765f343379c735d433c7108926967c4} 
+int leggi\+\_\+intero (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Legge un numero intero da input. 
+
+Gestisce la validazione dell\textquotesingle{}input richiedendo l\textquotesingle{}inserimento finché non viene fornito un intero valido.
+
+\begin{DoxyReturn}{Restituisce}
+Il numero intero letto. 
+\end{DoxyReturn}
+
+
+Definizione alla linea \doxymbox{\hyperlink{utilita_8c_source_l00076}{76}} del file \doxymbox{\hyperlink{utilita_8c_source}{utilita.\+c}}.
+
+
+
+Referenziato da \doxymbox{\hyperlink{combattimento_8c_source_l00106}{combattimento\+\_\+boss\+\_\+finale()}}, \doxymbox{\hyperlink{dungeon_8c_source_l00174}{esegui\+\_\+missione()}}, \doxymbox{\hyperlink{menu_8c_source_l00308}{gestisci\+\_\+trucchi()}}, \doxymbox{\hyperlink{menu_8c_source_l00177}{mostra\+\_\+menu\+\_\+missione()}}, \doxymbox{\hyperlink{menu_8c_source_l00082}{mostra\+\_\+menu\+\_\+salvataggi()}}, \doxymbox{\hyperlink{menu_8c_source_l00130}{mostra\+\_\+menu\+\_\+villaggio()}}, e \doxymbox{\hyperlink{menu_8c_source_l00250}{mostra\+\_\+negozio()}}.
+
+\Hypertarget{utilita_8c_ae7c83e4d97d50567cda5b807d89d6652}\index{utilita.c@{utilita.c}!padovan@{padovan}}
+\index{padovan@{padovan}!utilita.c@{utilita.c}}
+\doxysubsubsection{\texorpdfstring{padovan()}{padovan()}}
+{\footnotesize\ttfamily \label{utilita_8c_ae7c83e4d97d50567cda5b807d89d6652} 
+int padovan (\begin{DoxyParamCaption}\item[{int}]{n}{}\end{DoxyParamCaption})}
+
+
+
+Calcola l\textquotesingle{}n-\/esimo numero della sequenza di Padovan. 
+
+La sequenza è definita come P(n) = P(n-\/2) + P(n-\/3) con P(0)=1, P(1)=1, P(2)=1.
+
+
+\begin{DoxyParams}{Parametri}
+{\em n} & L\textquotesingle{}indice della sequenza. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+L\textquotesingle{}n-\/esimo numero di Padovan. 
+\end{DoxyReturn}
+
+
+Definizione alla linea \doxymbox{\hyperlink{utilita_8c_source_l00016}{16}} del file \doxymbox{\hyperlink{utilita_8c_source}{utilita.\+c}}.
+
+
+
+Referenzia \doxymbox{\hyperlink{utilita_8c_source_l00016}{padovan()}}.
+
+
+
+Referenziato da \doxymbox{\hyperlink{utilita_8c_source_l00025}{controlla\+\_\+padovan()}}, e \doxymbox{\hyperlink{utilita_8c_source_l00016}{padovan()}}.
+
+\Hypertarget{utilita_8c_a430562fd5d83996886377c50f56c41d7}\index{utilita.c@{utilita.c}!pulisci\_schermo@{pulisci\_schermo}}
+\index{pulisci\_schermo@{pulisci\_schermo}!utilita.c@{utilita.c}}
+\doxysubsubsection{\texorpdfstring{pulisci\_schermo()}{pulisci\_schermo()}}
+{\footnotesize\ttfamily \label{utilita_8c_a430562fd5d83996886377c50f56c41d7} 
+void pulisci\+\_\+schermo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Pulisce lo schermo del terminale. 
+
+Supporta sia sistemi Windows che UNIX-\/like. 
+
+Definizione alla linea \doxymbox{\hyperlink{utilita_8c_source_l00040}{40}} del file \doxymbox{\hyperlink{utilita_8c_source}{utilita.\+c}}.
+
+
+
+Referenziato da \doxymbox{\hyperlink{dungeon_8c_source_l00174}{esegui\+\_\+missione()}}, \doxymbox{\hyperlink{menu_8c_source_l00308}{gestisci\+\_\+trucchi()}}, \doxymbox{\hyperlink{menu_8c_source_l00177}{mostra\+\_\+menu\+\_\+missione()}}, \doxymbox{\hyperlink{menu_8c_source_l00020}{mostra\+\_\+menu\+\_\+principale()}}, \doxymbox{\hyperlink{menu_8c_source_l00130}{mostra\+\_\+menu\+\_\+villaggio()}}, e \doxymbox{\hyperlink{menu_8c_source_l00250}{mostra\+\_\+negozio()}}.
+
+\Hypertarget{utilita_8c_aa2f404fe5fae3024fb795eb6e84e62c9}\index{utilita.c@{utilita.c}!valuta\_vittoria\_morra@{valuta\_vittoria\_morra}}
+\index{valuta\_vittoria\_morra@{valuta\_vittoria\_morra}!utilita.c@{utilita.c}}
+\doxysubsubsection{\texorpdfstring{valuta\_vittoria\_morra()}{valuta\_vittoria\_morra()}}
+{\footnotesize\ttfamily \label{utilita_8c_aa2f404fe5fae3024fb795eb6e84e62c9} 
+int valuta\+\_\+vittoria\+\_\+morra (\begin{DoxyParamCaption}\item[{int}]{mossa1}{, }\item[{int}]{mossa2}{}\end{DoxyParamCaption})}
+
+
+
+Valuta il vincitore nella Morra Cinese semplificata. 
+
+Le regole sono:\+
+\begin{DoxyItemize}
+\item Scudo (1) batte Spada (3)
+\item Magia (2) batte Scudo (1)
+\item Spada (3) batte Magia (2)
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parametri}
+{\em mossa1} & La mossa del primo giocatore. \\
+\hline
+{\em mossa2} & La mossa del secondo giocatore. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+0 per pareggio, 1 se vince mossa1, 2 se vince mossa2. 
+\end{DoxyReturn}
+
+
+Definizione alla linea \doxymbox{\hyperlink{utilita_8c_source_l00091}{91}} del file \doxymbox{\hyperlink{utilita_8c_source}{utilita.\+c}}.
+
+
+
+Referenziato da \doxymbox{\hyperlink{combattimento_8c_source_l00106}{combattimento\+\_\+boss\+\_\+finale()}}.
+
