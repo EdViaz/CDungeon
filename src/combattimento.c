@@ -59,7 +59,7 @@ int inizia_combattimento(Giocatore *g, Stanza *e)
 
     if (attacco > e->colpo_fatale)
     {
-      printf("\nColpo fatale! %s sconfitto!\n", e->nome);
+      printf("Colpo fatale! %s sconfitto!\n", e->nome);
       g->monete += e->ricompensa_monete;
       printf("Ottieni %d monete.\n", e->ricompensa_monete);
       return 1;
@@ -72,6 +72,8 @@ int inizia_combattimento(Giocatore *g, Stanza *e)
       if (g->ha_armatura)
       {
         danno_nemico--;
+        if(danno_nemico < 0)
+          danno_nemico = 0;
         printf("Armatura assorbe 1 danno.\n");
       }
       g->punti_vita -= danno_nemico;
@@ -89,18 +91,18 @@ void applica_danno_trappola(Giocatore *g, Stanza *trappola)
 {
   printf("\n!!! TRAPPOLA: %s !!!\n", trappola->nome);
 
-  int danno = trappola->danno;
+  int danno_trappola = trappola->danno;
 
   if (g->ha_armatura)
   {
-    danno--;
-    if (danno < 0)
-      danno = 0;
+    danno_trappola--;
+    if (danno_trappola < 0)
+      danno_trappola = 0;
     printf("Armatura assorbe 1 danno.\n");
   }
 
-  g->punti_vita -= danno;
-  printf("Subisci %d danni! (HP: %d)\n", danno, g->punti_vita);
+  g->punti_vita -= danno_trappola;
+  printf("Subisci %d danni! (HP: %d)\n", danno_trappola, g->punti_vita);
 }
 
 int combattimento_boss_finale(Giocatore *g)
@@ -120,13 +122,16 @@ int combattimento_boss_finale(Giocatore *g)
            vittorie_boss);
     printf("1. Scudo\n2. Magia\n3. Spada\nScelta: ");
 
+    // Turno Giocatore
     int mossa_eroe = leggi_intero();
     if (mossa_eroe < 1 || mossa_eroe > 3)
       continue;
 
+    // Turno Boss
     int mossa_boss = lancia_dado(3);
     printf("Tu: %s | Boss: %s\n", mosse[mossa_eroe], mosse[mossa_boss]);
 
+    // Valutazione esito
     int esito = valuta_vittoria_morra(mossa_eroe, mossa_boss);
 
     if (esito == 0)

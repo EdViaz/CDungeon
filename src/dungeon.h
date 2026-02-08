@@ -13,8 +13,8 @@
  * @brief Genera una stanza casuale in base alla missione e al lancio del dado.
  *
  * @param tipo_missione ID della missione corrente (1, 2 o 3).
- * @param dado Risultato del lancio del dado per determinare il contenuto.
- * @return La struttura Stanza generata.
+ * @param dado Risultato del lancio del dado per determinare il contenuto della stanza.
+ * @return La struct Stanza generata.
  */
 Stanza genera_stanza_missione(int tipo_missione, int dado);
 

@@ -73,7 +73,7 @@ int leggi_intero();
 // Logica Morra Cinese (1: Scudo, 2: Magia, 3: Spada)
 
 /**
- * @brief Valuta il vincitore nella Morra Cinese semplificata.
+ * @brief Valuta il vincitore nella Morra Cinese.
  *
  * Le regole sono:
  * - Scudo (1) batte Spada (3)
@@ -81,7 +81,7 @@ int leggi_intero();
  * - Spada (3) batte Magia (2)
  *
  * @param mossa1 La mossa del primo giocatore.
- * @param mossa2 La mossa del secondo giocatore.
+ * @param mossa2 La mossa del secondo giocatore (boss).
  * @return 0 per pareggio, 1 se vince mossa1, 2 se vince mossa2.
  */
 int valuta_vittoria_morra(int mossa1, int mossa2);

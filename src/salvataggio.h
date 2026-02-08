@@ -13,9 +13,9 @@
  */
 typedef struct NodoSalvataggio
 {
-  int id;                  /**< Identificativo univoco del salvataggio */
-  char timestamp[32];      /**< Data e ora di creazione del salvataggio */
-  Giocatore dati_giocatore; /**< Copia dello stato del giocatore */
+  int id;                           /**< Identificativo univoco del salvataggio */
+  char timestamp[32];               /**< Data e ora di creazione del salvataggio */
+  Giocatore dati_giocatore;         /**< Copia dello stato del giocatore */
   struct NodoSalvataggio *prossimo; /**< Puntatore al prossimo nodo della lista */
 } NodoSalvataggio;
 
@@ -42,7 +42,7 @@ NodoSalvataggio *carica_salvataggio(NodoSalvataggio *testa, int id);
 /**
  * @brief Elimina un salvataggio dalla lista e dal file.
  *
- * Rimuove il nodo corrispondente all'ID specificato e riscrive il file binario.
+ * Rimuove il nodo corrispondente all'ID specificato e aggiorna il file di salvataggio.
  *
  * @param testa Puntatore doppio alla testa della lista.
  * @param id ID del salvataggio da eliminare.
@@ -63,7 +63,7 @@ void stampa_salvataggi(NodoSalvataggio *testa);
  *
  * Legge il file "salvataggi.bin" e ricostruisce la lista concatenata in memoria.
  *
- * @param testa Puntatore doppio alla testa della lista (verrà inizializzata).
+ * @param testa Puntatore doppio alla testa della lista che verrà inizializzata.
  */
 void carica_salvataggi_da_file(NodoSalvataggio **testa);
 

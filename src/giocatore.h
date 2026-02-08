@@ -14,7 +14,7 @@ typedef struct
   int punti_vita;       /**< Punti vita attuali del giocatore */
   int max_punti_vita;   /**< Punti vita massimi del giocatore */
   int monete;           /**< Numero di monete possedute */
-  int numero_oggetti;   /**< Conteggio generico oggetti (non usato per inventario specifico) */
+  int numero_oggetti;   /**< Conteggio generico oggetti*/
   
   // Flag per missioni completate
   int missione_palude;  /**< 1 se la missione palude è completata, 0 altrimenti */
@@ -33,7 +33,7 @@ typedef struct
  *
  * Imposta HP a 20, monete a 0 e resetta missioni e inventario.
  *
- * @param g Puntatore alla struttura Giocatore da inizializzare.
+ * @param g Puntatore alla struct Giocatore da inizializzare.
  */
 void inizializza_giocatore(Giocatore *g);
 
@@ -42,7 +42,7 @@ void inizializza_giocatore(Giocatore *g);
  *
  * Mostra HP, monete, missioni completate ed equipaggiamento attuale.
  *
- * @param g Puntatore alla struttura Giocatore costante.
+ * @param g Puntatore alla struct Giocatore.
  */
 void stampa_statistiche_giocatore(const Giocatore *g);
 

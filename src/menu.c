@@ -58,6 +58,8 @@ void mostra_menu_principale(NodoSalvataggio **lista, Giocatore *g)
       else
         return;
     }
+
+    // Gestione del codice segreto per i trucchi
     else
     {
       if (in == k_code[k_idx])
@@ -265,11 +267,11 @@ void mostra_negozio(Giocatore *g)
     printf("Seleziona un oggetto da acquistare: ");
 
     // Gestione delle opzioni del menu
-    int s = leggi_intero();
-    if (s == 0)
+    int scelta = leggi_intero();
+    if (scelta == 0)
       return;
 
-    if (s == 1 && g->monete >= 4)
+    if (scelta == 1 && g->monete >= 4)
     {
       g->monete -= 4;
 
@@ -279,7 +281,7 @@ void mostra_negozio(Giocatore *g)
         g->punti_vita = g->max_punti_vita;
       printf("Ripristinati %d punti vita.\n", punti_ripristinati);
     }
-    else if (s == 2 && g->monete >= 5)
+    else if (scelta == 2 && g->monete >= 5)
     {
       if (!g->ha_spada)
       {
@@ -289,7 +291,7 @@ void mostra_negozio(Giocatore *g)
         printf("Spada acquistata.\n");
       }
     }
-    else if (s == 3 && g->monete >= 10)
+    else if (scelta == 3 && g->monete >= 10)
     {
       if (!g->ha_armatura)
       {
@@ -299,8 +301,14 @@ void mostra_negozio(Giocatore *g)
         printf("Armatura acquistata.\n");
       }
     }
+    else if (scelta < 1 || scelta > 3)
+    {
+      printf("Scelta non valida.\n");
+    }
     else
+    {
       printf("Non hai abbastanza monete.\n");
+    }
     getchar();
   } while (1);
 }
@@ -334,23 +342,24 @@ void gestisci_trucchi(Giocatore *g, NodoSalvataggio **lista)
     printf("4. Torna indietro\n");
     printf("Scelta: ");
 
-    int s = leggi_intero();
+    int scelta = leggi_intero();
     int modificato = 0;
 
-    if (s == 1)
+    // Applica i trucchi selezionati
+    if (scelta == 1)
     {
       salv->dati_giocatore.monete = 999;
       modificato = 1;
       printf("Monete impostate a 999!\n");
     }
-    else if (s == 2)
+    else if (scelta == 2)
     {
       salv->dati_giocatore.max_punti_vita = 999;
       salv->dati_giocatore.punti_vita = 999;
       modificato = 1;
       printf("HP impostati a 999!\n");
     }
-    else if (s == 3)
+    else if (scelta == 3)
     {
       salv->dati_giocatore.missione_palude = 1;
       salv->dati_giocatore.missione_magione = 1;
@@ -358,11 +367,12 @@ void gestisci_trucchi(Giocatore *g, NodoSalvataggio **lista)
       modificato = 1;
       printf("Tutte le missioni sbloccate!\n");
     }
-    else if (s == 4)
+    else if (scelta == 4)
     {
       continue;
     }
 
+    // Se sono state apportate modifiche, salva il salvataggio aggiornato su file
     if (modificato)
     {
       salva_tutto_su_file(*lista);

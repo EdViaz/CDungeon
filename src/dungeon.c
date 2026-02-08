@@ -9,8 +9,6 @@
 #include <stdio.h>
 #include <string.h>
 
-void mostra_negozio(Giocatore *g); // Extern
-
 Stanza genera_stanza_missione(int tipo_missione, int dado)
 {
   Stanza s;
@@ -206,6 +204,8 @@ int esegui_missione(Giocatore *g, int tipo_missione, const char *nome_missione)
 
     // Gestione scelta utente
     int scelta = leggi_intero();
+
+    // Scelta esplora
     if (scelta == 1 && n_stanze < 10)
     {
       n_stanze++;

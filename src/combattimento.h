@@ -1,6 +1,6 @@
 /**
  * @file combattimento.h
- * @brief Gestione del combattimento e delle interazioni ostili.
+ * @brief Gestione del combattimento e delle interazioni con nemici, trappole e boss.
  */
 
 #ifndef COMBATTIMENTO_H
@@ -35,11 +35,11 @@ void applica_danno_trappola(Giocatore *g, Stanza *trappola);
 /**
  * @brief Gestisce il boss fight finale contro il Signore Oscuro.
  *
- * Implementa una versione a turni della Morra Cinese (Sasso-Carta-Forbice)
- * con regole personalizzate. Il giocatore deve vincere 3 round su 5.
+ * Implementa una versione a turni della Morra Cinese (Sasso-Carta-Forbice).
+ * Il giocatore deve vincere 3 round su 5.
  *
  * @param g Puntatore al giocatore.
- * @return 1 se il giocatore vince, 0 se muore.
+ * @return 1 se il giocatore vince, 0 se perde.
  */
 int combattimento_boss_finale(Giocatore *g);
 

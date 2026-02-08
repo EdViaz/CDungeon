@@ -76,7 +76,7 @@ char leggi_input_char()
 int leggi_intero()
 {
   int valore;
-  while (scanf("%d", &valore) != 1)
+  while (scanf("%d", &valore) != 1) // Continua a chiedere finché non viene inserito un intero valido
   {
     while (getchar() != '\n')
       ; // Pulisci buffer

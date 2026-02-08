@@ -18,7 +18,6 @@ void ottieni_data_corrente(char *buffer, size_t size)
   snprintf(buffer, size, "%02d-%02d-%04d %02d:%02d:%02d", tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900, tm.tm_hour, tm.tm_min, tm.tm_sec);
 }
 
-// Funzione helper per scrivere l'intera lista su file
 void salva_tutto_su_file(NodoSalvataggio *testa)
 {
   FILE *f = fopen("salvataggi.bin", "wb");
@@ -32,10 +31,11 @@ void salva_tutto_su_file(NodoSalvataggio *testa)
   while (curr)
   {
     // Scriviamo ID, timestamp e dati giocatore
-    // Nota: Non scriviamo il puntatore 'prossimo'
     fwrite(&curr->id, sizeof(int), 1, f);
     fwrite(curr->timestamp, sizeof(curr->timestamp), 1, f);
     fwrite(&curr->dati_giocatore, sizeof(Giocatore), 1, f);
+
+    // Passiamo al prossimo nodo
     curr = curr->prossimo;
   }
   fclose(f);
@@ -70,7 +70,7 @@ void aggiungi_salvataggio(NodoSalvataggio **testa, Giocatore *g)
   nuovo->prossimo = *testa;
   *testa = nuovo;
 
-  // Persistenza su file
+  // Aggiorna il file dopo l'aggiunta
   salva_tutto_su_file(*testa);
 
   printf("Partita salvata con successo! (ID: %d)\n", nuovo->id);
@@ -78,6 +78,7 @@ void aggiungi_salvataggio(NodoSalvataggio **testa, Giocatore *g)
 
 NodoSalvataggio *carica_salvataggio(NodoSalvataggio *testa, int id)
 {
+  // Parto dalla testa e cerco il nodo con l'ID corrispondente
   NodoSalvataggio *curr = testa;
   while (curr)
   {
@@ -85,6 +86,7 @@ NodoSalvataggio *carica_salvataggio(NodoSalvataggio *testa, int id)
     {
       return curr;
     }
+    // Passo al prossimo nodo
     curr = curr->prossimo;
   }
   return NULL;
@@ -99,12 +101,15 @@ void elimina_salvataggio(NodoSalvataggio **testa, int id)
   {
     if (curr->id == id)
     {
+      // Rimuoviamo il nodo dalla lista
       if (prev)
       {
+        // Se non è il primo nodo, aggiorniamo il puntatore del nodo precedente
         prev->prossimo = curr->prossimo;
       }
       else
       {
+        // Se è il primo nodo, aggiorniamo la testa della lista
         *testa = curr->prossimo;
       }
       free(curr);
@@ -115,6 +120,7 @@ void elimina_salvataggio(NodoSalvataggio **testa, int id)
       printf("Salvataggio %d eliminato.\n", id);
       return;
     }
+    // Passiamo al prossimo nodo
     prev = curr;
     curr = curr->prossimo;
   }
@@ -144,23 +150,25 @@ void stampa_salvataggi(NodoSalvataggio *testa)
 
 void libera_salvataggi(NodoSalvataggio *testa)
 {
+
+  // Scorriamo la lista e liberiamo ogni nodo
   NodoSalvataggio *curr = testa;
   while (curr)
   {
     NodoSalvataggio *temp = curr;
+    // Passiamo al prossimo nodo prima di liberare quello corrente
     curr = curr->prossimo;
     free(temp);
   }
 }
 
-// Nuova funzione per caricare dal file all'avvio
 void carica_salvataggi_da_file(NodoSalvataggio **testa)
 {
   FILE *f = fopen("salvataggi.bin", "rb");
   if (!f)
     return; // File non esistente, nessun salvataggio
 
-  // Svuota lista attuale se ce ne fosse bisogno (ma all'avvio è NULL)
+  // Svuota lista attuale se ce ne fosse bisogno
   libera_salvataggi(*testa);
   *testa = NULL;
 
@@ -169,24 +177,28 @@ void carica_salvataggi_da_file(NodoSalvataggio **testa)
     NodoSalvataggio *nuovo = (NodoSalvataggio *)malloc(sizeof(NodoSalvataggio));
     if (!nuovo)
       break;
-      
+
     // Leggi i 3 campi (ID, timestamp, dati_giocatore)
-    if (fread(&nuovo->id, sizeof(int), 1, f) != 1)
+
+    if (fread(&nuovo->id, sizeof(int), 1, f) != 1) // Se non riesce a leggere l'ID, probabilmente siamo alla fine del file
     {
       free(nuovo); // Dealloca se fallisce la lettura
       break;
     }
 
-    fread(nuovo->timestamp, sizeof(nuovo->timestamp), 1, f);
-    fread(&nuovo->dati_giocatore, sizeof(Giocatore), 1, f);
+    fread(nuovo->timestamp, sizeof(nuovo->timestamp), 1, f); // Legge il timestamp
+    fread(&nuovo->dati_giocatore, sizeof(Giocatore), 1, f);  // Legge i dati del giocatore
 
+    // Inserisce il nuovo nodo in fondo alla lista
     nuovo->prossimo = NULL;
     if (*testa == NULL)
     {
+      // Se la lista è vuota, il nuovo nodo diventa la testa
       *testa = nuovo;
     }
     else
     {
+      // Altrimenti, scorriamo fino alla fine della lista e aggiungiamo il nuovo nodo
       NodoSalvataggio *temp = *testa;
       while (temp->prossimo)
         temp = temp->prossimo;
