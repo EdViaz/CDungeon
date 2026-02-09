@@ -28,7 +28,6 @@
   <td id="projectalign">
    <div id="projectname">CDungeon<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">Un gioco dungeon crawler testuale in C</div>
   </td>
  </tr>
  </tbody>
@@ -93,7 +92,7 @@ $(function(){initNavTree('salvataggio_8c.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Implementazione del sistema di persistenza dei dati.  
+<p>Implementazione delle funzioni per la gestione dei salvataggi.  
 <a href="#details">Continua...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="salvataggio_8h_source.html">salvataggio.h</a>&quot;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
@@ -122,7 +121,7 @@ Funzioni</h2></td></tr>
 <tr class="memdesc:a92740f4aae86090fc8fdfc5023ffa5f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carica tutti i salvataggi dal file binario all'avvio.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
-<div class="textblock"><p>Implementazione del sistema di persistenza dei dati. </p>
+<div class="textblock"><p>Implementazione delle funzioni per la gestione dei salvataggi. </p>
 
 <p class="definition">Definizione nel file <a class="el" href="salvataggio_8c_source.html">salvataggio.c</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
@@ -157,9 +156,9 @@ Funzioni</h2></td></tr>
 
 <p class="definition">Definizione alla linea <a class="el" href="salvataggio_8c_source.html#l00044">44</a> del file <a class="el" href="salvataggio_8c_source.html">salvataggio.c</a>.</p>
 
-<p class="reference">Referenzia <a class="el" href="salvataggio_8h_source.html#l00018">NodoSalvataggio::dati_giocatore</a>, <a class="el" href="salvataggio_8h_source.html#l00016">NodoSalvataggio::id</a>, <a class="el" href="salvataggio_8c_source.html#l00013">ottieni_data_corrente()</a>, <a class="el" href="salvataggio_8h_source.html#l00019">NodoSalvataggio::prossimo</a>, <a class="el" href="salvataggio_8c_source.html#l00022">salva_tutto_su_file()</a>, e <a class="el" href="salvataggio_8h_source.html#l00017">NodoSalvataggio::timestamp</a>.</p>
+<p class="reference">Referenzia <a class="el" href="salvataggio_8h_source.html#l00018">NodoSalvataggio::dati_giocatore</a>, <a class="el" href="salvataggio_8h_source.html#l00016">NodoSalvataggio::id</a>, <a class="el" href="salvataggio_8c_source.html#l00013">ottieni_data_corrente()</a>, <a class="el" href="salvataggio_8h_source.html#l00019">NodoSalvataggio::prossimo</a>, <a class="el" href="salvataggio_8c_source.html#l00021">salva_tutto_su_file()</a>, e <a class="el" href="salvataggio_8h_source.html#l00017">NodoSalvataggio::timestamp</a>.</p>
 
-<p class="reference">Referenziato da <a class="el" href="menu_8c_source.html#l00130">mostra_menu_villaggio()</a>.</p>
+<p class="reference">Referenziato da <a class="el" href="menu_8c_source.html#l00132">mostra_menu_villaggio()</a>.</p>
 
 </div>
 </div>
@@ -182,14 +181,14 @@ Funzioni</h2></td></tr>
 <p>Legge il file "salvataggi.bin" e ricostruisce la lista concatenata in memoria.</p>
 <dl class="params"><dt>Parametri</dt><dd>
   <table class="params">
-    <tr><td class="paramname">testa</td><td>Puntatore doppio alla testa della lista (verrà inizializzata). </td></tr>
+    <tr><td class="paramname">testa</td><td>Puntatore doppio alla testa della lista che verrà inizializzata. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definizione alla linea <a class="el" href="salvataggio_8c_source.html#l00157">157</a> del file <a class="el" href="salvataggio_8c_source.html">salvataggio.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="salvataggio_8c_source.html#l00165">165</a> del file <a class="el" href="salvataggio_8c_source.html">salvataggio.c</a>.</p>
 
-<p class="reference">Referenzia <a class="el" href="salvataggio_8h_source.html#l00018">NodoSalvataggio::dati_giocatore</a>, <a class="el" href="salvataggio_8h_source.html#l00016">NodoSalvataggio::id</a>, <a class="el" href="salvataggio_8c_source.html#l00145">libera_salvataggi()</a>, <a class="el" href="salvataggio_8h_source.html#l00019">NodoSalvataggio::prossimo</a>, e <a class="el" href="salvataggio_8h_source.html#l00017">NodoSalvataggio::timestamp</a>.</p>
+<p class="reference">Referenzia <a class="el" href="salvataggio_8h_source.html#l00018">NodoSalvataggio::dati_giocatore</a>, <a class="el" href="salvataggio_8h_source.html#l00016">NodoSalvataggio::id</a>, <a class="el" href="salvataggio_8c_source.html#l00151">libera_salvataggi()</a>, <a class="el" href="salvataggio_8h_source.html#l00019">NodoSalvataggio::prossimo</a>, e <a class="el" href="salvataggio_8h_source.html#l00017">NodoSalvataggio::timestamp</a>.</p>
 
 <p class="reference">Referenziato da <a class="el" href="main_8c_source.html#l00020">main()</a>.</p>
 
@@ -228,7 +227,7 @@ Funzioni</h2></td></tr>
 
 <p class="reference">Referenzia <a class="el" href="salvataggio_8h_source.html#l00016">NodoSalvataggio::id</a>, e <a class="el" href="salvataggio_8h_source.html#l00019">NodoSalvataggio::prossimo</a>.</p>
 
-<p class="reference">Referenziato da <a class="el" href="menu_8c_source.html#l00308">gestisci_trucchi()</a>, e <a class="el" href="menu_8c_source.html#l00082">mostra_menu_salvataggi()</a>.</p>
+<p class="reference">Referenziato da <a class="el" href="menu_8c_source.html#l00316">gestisci_trucchi()</a>, e <a class="el" href="menu_8c_source.html#l00084">mostra_menu_salvataggi()</a>.</p>
 
 </div>
 </div>
@@ -252,7 +251,7 @@ Funzioni</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Elimina un salvataggio dalla lista e dal file. </p>
-<p>Rimuove il nodo corrispondente all'ID specificato e riscrive il file binario.</p>
+<p>Rimuove il nodo corrispondente all'ID specificato e aggiorna il file di salvataggio.</p>
 <dl class="params"><dt>Parametri</dt><dd>
   <table class="params">
     <tr><td class="paramname">testa</td><td>Puntatore doppio alla testa della lista. </td></tr>
@@ -261,11 +260,11 @@ Funzioni</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definizione alla linea <a class="el" href="salvataggio_8c_source.html#l00093">93</a> del file <a class="el" href="salvataggio_8c_source.html">salvataggio.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="salvataggio_8c_source.html#l00095">95</a> del file <a class="el" href="salvataggio_8c_source.html">salvataggio.c</a>.</p>
 
-<p class="reference">Referenzia <a class="el" href="salvataggio_8h_source.html#l00016">NodoSalvataggio::id</a>, <a class="el" href="salvataggio_8h_source.html#l00019">NodoSalvataggio::prossimo</a>, e <a class="el" href="salvataggio_8c_source.html#l00022">salva_tutto_su_file()</a>.</p>
+<p class="reference">Referenzia <a class="el" href="salvataggio_8h_source.html#l00016">NodoSalvataggio::id</a>, <a class="el" href="salvataggio_8h_source.html#l00019">NodoSalvataggio::prossimo</a>, e <a class="el" href="salvataggio_8c_source.html#l00021">salva_tutto_su_file()</a>.</p>
 
-<p class="reference">Referenziato da <a class="el" href="menu_8c_source.html#l00082">mostra_menu_salvataggi()</a>.</p>
+<p class="reference">Referenziato da <a class="el" href="menu_8c_source.html#l00084">mostra_menu_salvataggi()</a>.</p>
 
 </div>
 </div>
@@ -293,11 +292,11 @@ Funzioni</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definizione alla linea <a class="el" href="salvataggio_8c_source.html#l00145">145</a> del file <a class="el" href="salvataggio_8c_source.html">salvataggio.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="salvataggio_8c_source.html#l00151">151</a> del file <a class="el" href="salvataggio_8c_source.html">salvataggio.c</a>.</p>
 
 <p class="reference">Referenzia <a class="el" href="salvataggio_8h_source.html#l00019">NodoSalvataggio::prossimo</a>.</p>
 
-<p class="reference">Referenziato da <a class="el" href="salvataggio_8c_source.html#l00157">carica_salvataggi_da_file()</a>, e <a class="el" href="main_8c_source.html#l00020">main()</a>.</p>
+<p class="reference">Referenziato da <a class="el" href="salvataggio_8c_source.html#l00165">carica_salvataggi_da_file()</a>, e <a class="el" href="main_8c_source.html#l00020">main()</a>.</p>
 
 </div>
 </div>
@@ -350,11 +349,11 @@ Funzioni</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definizione alla linea <a class="el" href="salvataggio_8c_source.html#l00022">22</a> del file <a class="el" href="salvataggio_8c_source.html">salvataggio.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="salvataggio_8c_source.html#l00021">21</a> del file <a class="el" href="salvataggio_8c_source.html">salvataggio.c</a>.</p>
 
 <p class="reference">Referenzia <a class="el" href="salvataggio_8h_source.html#l00018">NodoSalvataggio::dati_giocatore</a>, <a class="el" href="salvataggio_8h_source.html#l00016">NodoSalvataggio::id</a>, <a class="el" href="salvataggio_8h_source.html#l00019">NodoSalvataggio::prossimo</a>, e <a class="el" href="salvataggio_8h_source.html#l00017">NodoSalvataggio::timestamp</a>.</p>
 
-<p class="reference">Referenziato da <a class="el" href="salvataggio_8c_source.html#l00044">aggiungi_salvataggio()</a>, <a class="el" href="salvataggio_8c_source.html#l00093">elimina_salvataggio()</a>, e <a class="el" href="menu_8c_source.html#l00308">gestisci_trucchi()</a>.</p>
+<p class="reference">Referenziato da <a class="el" href="salvataggio_8c_source.html#l00044">aggiungi_salvataggio()</a>, <a class="el" href="salvataggio_8c_source.html#l00095">elimina_salvataggio()</a>, e <a class="el" href="menu_8c_source.html#l00316">gestisci_trucchi()</a>.</p>
 
 </div>
 </div>
@@ -382,11 +381,11 @@ Funzioni</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definizione alla linea <a class="el" href="salvataggio_8c_source.html#l00124">124</a> del file <a class="el" href="salvataggio_8c_source.html">salvataggio.c</a>.</p>
+<p class="definition">Definizione alla linea <a class="el" href="salvataggio_8c_source.html#l00130">130</a> del file <a class="el" href="salvataggio_8c_source.html">salvataggio.c</a>.</p>
 
 <p class="reference">Referenzia <a class="el" href="salvataggio_8h_source.html#l00018">NodoSalvataggio::dati_giocatore</a>, <a class="el" href="salvataggio_8h_source.html#l00016">NodoSalvataggio::id</a>, <a class="el" href="giocatore_8h_source.html#l00022">Giocatore::missione_grotta</a>, <a class="el" href="giocatore_8h_source.html#l00021">Giocatore::missione_magione</a>, <a class="el" href="giocatore_8h_source.html#l00020">Giocatore::missione_palude</a>, <a class="el" href="giocatore_8h_source.html#l00016">Giocatore::monete</a>, <a class="el" href="giocatore_8h_source.html#l00017">Giocatore::numero_oggetti</a>, <a class="el" href="salvataggio_8h_source.html#l00019">NodoSalvataggio::prossimo</a>, <a class="el" href="giocatore_8h_source.html#l00014">Giocatore::punti_vita</a>, e <a class="el" href="salvataggio_8h_source.html#l00017">NodoSalvataggio::timestamp</a>.</p>
 
-<p class="reference">Referenziato da <a class="el" href="menu_8c_source.html#l00308">gestisci_trucchi()</a>, e <a class="el" href="menu_8c_source.html#l00082">mostra_menu_salvataggi()</a>.</p>
+<p class="reference">Referenziato da <a class="el" href="menu_8c_source.html#l00316">gestisci_trucchi()</a>, e <a class="el" href="menu_8c_source.html#l00084">mostra_menu_salvataggi()</a>.</p>
 
 </div>
 </div>

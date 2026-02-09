@@ -28,7 +28,6 @@
   <td id="projectalign">
    <div id="projectname">CDungeon<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">Un gioco dungeon crawler testuale in C</div>
   </td>
  </tr>
  </tbody>
@@ -176,7 +175,7 @@ $(function(){initNavTree('utilita_8c_source.html','',''); });
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="utilita_8c.html#aa765f343379c735d433c7108926967c4">   76</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="utilita_8c.html#aa765f343379c735d433c7108926967c4">leggi_intero</a>()</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>{</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="keywordtype">int</span> valore;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keywordflow">while</span> (scanf(<span class="stringliteral">&quot;%d&quot;</span>, &amp;valore) != 1)</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keywordflow">while</span> (scanf(<span class="stringliteral">&quot;%d&quot;</span>, &amp;valore) != 1) <span class="comment">// Continua a chiedere finché non viene inserito un intero valido</span></div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  {</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordflow">while</span> (getchar() != <span class="charliteral">&#39;\n&#39;</span>)</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>      ; <span class="comment">// Pulisci buffer</span></div>
@@ -207,12 +206,12 @@ $(function(){initNavTree('utilita_8c_source.html','',''); });
 </div>
 <div class="ttc" id="autilita_8c_html_a430562fd5d83996886377c50f56c41d7"><div class="ttname"><a href="utilita_8c.html#a430562fd5d83996886377c50f56c41d7">pulisci_schermo</a></div><div class="ttdeci">void pulisci_schermo()</div><div class="ttdoc">Pulisce lo schermo del terminale.</div><div class="ttdef"><b>Definition</b> <a href="#l00040">utilita.c:40</a></div></div>
 <div class="ttc" id="autilita_8c_html_a4b4b7026a8200115f8cd165bc3210023"><div class="ttname"><a href="utilita_8c.html#a4b4b7026a8200115f8cd165bc3210023">lancia_dado</a></div><div class="ttdeci">int lancia_dado(int facce)</div><div class="ttdoc">Lancia un dado con un specificato numero di facce.</div><div class="ttdef"><b>Definition</b> <a href="#l00012">utilita.c:12</a></div></div>
-<div class="ttc" id="autilita_8c_html_aa2f404fe5fae3024fb795eb6e84e62c9"><div class="ttname"><a href="utilita_8c.html#aa2f404fe5fae3024fb795eb6e84e62c9">valuta_vittoria_morra</a></div><div class="ttdeci">int valuta_vittoria_morra(int m1, int m2)</div><div class="ttdoc">Valuta il vincitore nella Morra Cinese semplificata.</div><div class="ttdef"><b>Definition</b> <a href="#l00091">utilita.c:91</a></div></div>
+<div class="ttc" id="autilita_8c_html_aa2f404fe5fae3024fb795eb6e84e62c9"><div class="ttname"><a href="utilita_8c.html#aa2f404fe5fae3024fb795eb6e84e62c9">valuta_vittoria_morra</a></div><div class="ttdeci">int valuta_vittoria_morra(int m1, int m2)</div><div class="ttdoc">Valuta il vincitore nella Morra Cinese.</div><div class="ttdef"><b>Definition</b> <a href="#l00091">utilita.c:91</a></div></div>
 <div class="ttc" id="autilita_8c_html_aa765f343379c735d433c7108926967c4"><div class="ttname"><a href="utilita_8c.html#aa765f343379c735d433c7108926967c4">leggi_intero</a></div><div class="ttdeci">int leggi_intero()</div><div class="ttdoc">Legge un numero intero da input.</div><div class="ttdef"><b>Definition</b> <a href="#l00076">utilita.c:76</a></div></div>
 <div class="ttc" id="autilita_8c_html_ae3ac40b3cf9c5e690d16a0ad5cfebd9e"><div class="ttname"><a href="utilita_8c.html#ae3ac40b3cf9c5e690d16a0ad5cfebd9e">leggi_input_char</a></div><div class="ttdeci">char leggi_input_char()</div><div class="ttdoc">Legge un singolo carattere da input.</div><div class="ttdef"><b>Definition</b> <a href="#l00050">utilita.c:50</a></div></div>
 <div class="ttc" id="autilita_8c_html_ae7c83e4d97d50567cda5b807d89d6652"><div class="ttname"><a href="utilita_8c.html#ae7c83e4d97d50567cda5b807d89d6652">padovan</a></div><div class="ttdeci">int padovan(int n)</div><div class="ttdoc">Calcola l&#39;n-esimo numero della sequenza di Padovan.</div><div class="ttdef"><b>Definition</b> <a href="#l00016">utilita.c:16</a></div></div>
 <div class="ttc" id="autilita_8c_html_aebe1eb385b2dceac51255099bfd31b57"><div class="ttname"><a href="utilita_8c.html#aebe1eb385b2dceac51255099bfd31b57">controlla_padovan</a></div><div class="ttdeci">int controlla_padovan(int num)</div><div class="ttdoc">Verifica se un numero appartiene alla sequenza di Padovan.</div><div class="ttdef"><b>Definition</b> <a href="#l00025">utilita.c:25</a></div></div>
-<div class="ttc" id="autilita_8h_html"><div class="ttname"><a href="utilita_8h.html">utilita.h</a></div><div class="ttdoc">Funzioni di utilità generale per il gioco.</div></div>
+<div class="ttc" id="autilita_8h_html"><div class="ttname"><a href="utilita_8h.html">utilita.h</a></div><div class="ttdoc">Funzioni di Utilità generale per il gioco.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

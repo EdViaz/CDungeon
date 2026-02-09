@@ -10,203 +10,203 @@
 \DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
 \DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <string.h>}}
 \DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00011}00011\ }
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00012}00012\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{dungeon_8c_ac5915507336363849f340947c49ab5ed}{mostra\_negozio}}(\doxymbox{\hyperlink{struct_giocatore}{Giocatore}}\ *g);\ \textcolor{comment}{//\ Extern}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00013}00013\ }
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00014}\doxymbox{\hyperlink{dungeon_8c_a9f96d41676b4ed7e4e5a7ebb5389f3bb}{00014}}\ \doxymbox{\hyperlink{struct_stanza}{Stanza}}\ \doxymbox{\hyperlink{dungeon_8c_a9f96d41676b4ed7e4e5a7ebb5389f3bb}{genera\_stanza\_missione}}(\textcolor{keywordtype}{int}\ tipo\_missione,\ \textcolor{keywordtype}{int}\ dado)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00015}00015\ \{}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00016}00016\ \ \ \doxymbox{\hyperlink{struct_stanza}{Stanza}}\ s;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00017}00017\ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a2eef9f8da31bc3016cf8aeb444ec9c3e}{STANZA\_NESSUNA}};}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00018}00018\ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Nulla"{}});}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00019}00019\ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00020}00020\ \ \ s.\doxymbox{\hyperlink{struct_stanza_ae9293aeee552ad6fa5be9bd057a0bbad}{colpo\_fatale}}\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00021}00021\ \ \ s.\doxymbox{\hyperlink{struct_stanza_ab6d3a43ba66225ffecebe3f70286f4c3}{ricompensa\_monete}}\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00022}00022\ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1dd41141a23b7e75521bbdf5dc9c22c8}{is\_boss}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00012}\doxymbox{\hyperlink{dungeon_8c_a9f96d41676b4ed7e4e5a7ebb5389f3bb}{00012}}\ \doxymbox{\hyperlink{struct_stanza}{Stanza}}\ \doxymbox{\hyperlink{dungeon_8c_a9f96d41676b4ed7e4e5a7ebb5389f3bb}{genera\_stanza\_missione}}(\textcolor{keywordtype}{int}\ tipo\_missione,\ \textcolor{keywordtype}{int}\ dado)}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00014}00014\ \ \ \doxymbox{\hyperlink{struct_stanza}{Stanza}}\ s;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00015}00015\ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a2eef9f8da31bc3016cf8aeb444ec9c3e}{STANZA\_NESSUNA}};}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00016}00016\ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Nulla"{}});}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00017}00017\ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00018}00018\ \ \ s.\doxymbox{\hyperlink{struct_stanza_ae9293aeee552ad6fa5be9bd057a0bbad}{colpo\_fatale}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00019}00019\ \ \ s.\doxymbox{\hyperlink{struct_stanza_ab6d3a43ba66225ffecebe3f70286f4c3}{ricompensa\_monete}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00020}00020\ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1dd41141a23b7e75521bbdf5dc9c22c8}{is\_boss}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00022}00022\ \ \ \textcolor{comment}{//\ Configurazione\ entita\ in\ base\ a\ missione\ e\ dado}}
 \DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00023}00023\ }
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00024}00024\ \ \ \textcolor{comment}{//\ Configurazione\ entita\ in\ base\ a\ missione\ e\ dado}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00025}00025\ }
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00026}00026\ \ \ \textcolor{comment}{//\ Missione\ 1:\ Palude}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00027}00027\ \ \ \textcolor{keywordflow}{if}\ (tipo\_missione\ ==\ 1)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00028}00028\ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (dado\ ==\ 1)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00030}00030\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00031}00031\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Cane\ Selvaggio"{}});}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00032}00032\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a1d7ed1e26bf385602732100b37eab5a6}{STANZA\_NEMICO}};}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00033}00033\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ae9293aeee552ad6fa5be9bd057a0bbad}{colpo\_fatale}}\ =\ 2;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00034}00034\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 1;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00035}00035\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 2)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00037}00037\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00038}00038\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Goblin"{}});}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00039}00039\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a1d7ed1e26bf385602732100b37eab5a6}{STANZA\_NEMICO}};}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00040}00040\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ae9293aeee552ad6fa5be9bd057a0bbad}{colpo\_fatale}}\ =\ 3;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00041}00041\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 2;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00042}00042\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ab6d3a43ba66225ffecebe3f70286f4c3}{ricompensa\_monete}}\ =\ 2;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00043}00043\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 3)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00045}00045\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00046}00046\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Scheletro"{}});}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00047}00047\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a1d7ed1e26bf385602732100b37eab5a6}{STANZA\_NEMICO}};}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00048}00048\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ae9293aeee552ad6fa5be9bd057a0bbad}{colpo\_fatale}}\ =\ 4;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00049}00049\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 2;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00050}00050\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ab6d3a43ba66225ffecebe3f70286f4c3}{ricompensa\_monete}}\ =\ 4;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00051}00051\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 4)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00053}00053\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00054}00054\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Orco"{}});}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00055}00055\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a1d7ed1e26bf385602732100b37eab5a6}{STANZA\_NEMICO}};}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00056}00056\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ae9293aeee552ad6fa5be9bd057a0bbad}{colpo\_fatale}}\ =\ 3;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00057}00057\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 4;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00058}00058\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ab6d3a43ba66225ffecebe3f70286f4c3}{ricompensa\_monete}}\ =\ 6;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00059}00059\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00060}00060\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 5)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00061}00061\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00062}00062\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Acquitrino\ Velenoso"{}});}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00063}00063\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a99e0a627ca9f213be1f833b1ec0f7bac}{STANZA\_TRAPPOLA}};}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00064}00064\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ \doxymbox{\hyperlink{utilita_8c_a4b4b7026a8200115f8cd165bc3210023}{lancia\_dado}}(6);}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00065}00065\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 6)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00067}00067\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00068}00068\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Generale\ Orco"{}});}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00069}00069\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a1d7ed1e26bf385602732100b37eab5a6}{STANZA\_NEMICO}};}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00070}00070\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ae9293aeee552ad6fa5be9bd057a0bbad}{colpo\_fatale}}\ =\ 6;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00071}00071\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 3;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00072}00072\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ab6d3a43ba66225ffecebe3f70286f4c3}{ricompensa\_monete}}\ =\ 12;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00073}00073\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1dd41141a23b7e75521bbdf5dc9c22c8}{is\_boss}}\ =\ 1;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00074}00074\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00075}00075\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00076}00076\ \ \ \textcolor{comment}{//\ Missione\ 2:\ Magione}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00077}00077\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (tipo\_missione\ ==\ 2)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00078}00078\ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00079}00079\ \ \ \ \ \textcolor{keywordflow}{if}\ (dado\ ==\ 1)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00080}00080\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00081}00081\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Botola\ Buia"{}});}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00082}00082\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a99e0a627ca9f213be1f833b1ec0f7bac}{STANZA\_TRAPPOLA}};}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00083}00083\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 3;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00084}00084\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00085}00085\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 2)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00086}00086\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00087}00087\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Pipistrello"{}});}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00088}00088\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a1d7ed1e26bf385602732100b37eab5a6}{STANZA\_NEMICO}};}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00089}00089\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ae9293aeee552ad6fa5be9bd057a0bbad}{colpo\_fatale}}\ =\ 2;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00090}00090\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 2;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00091}00091\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ab6d3a43ba66225ffecebe3f70286f4c3}{ricompensa\_monete}}\ =\ 1;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00092}00092\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00093}00093\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 3)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00094}00094\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00095}00095\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Zombie"{}});}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00096}00096\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a1d7ed1e26bf385602732100b37eab5a6}{STANZA\_NEMICO}};}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00097}00097\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ae9293aeee552ad6fa5be9bd057a0bbad}{colpo\_fatale}}\ =\ 3;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00098}00098\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 2;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00099}00099\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ab6d3a43ba66225ffecebe3f70286f4c3}{ricompensa\_monete}}\ =\ 2;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00100}00100\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00101}00101\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 4)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00102}00102\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00103}00103\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Fantasma"{}});}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00104}00104\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a1d7ed1e26bf385602732100b37eab5a6}{STANZA\_NEMICO}};}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00105}00105\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ae9293aeee552ad6fa5be9bd057a0bbad}{colpo\_fatale}}\ =\ 5;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00106}00106\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 2;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00107}00107\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ab6d3a43ba66225ffecebe3f70286f4c3}{ricompensa\_monete}}\ =\ 4;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00108}00108\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00109}00109\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 5)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00110}00110\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00111}00111\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Vampiro\ Superiore"{}});}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00112}00112\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a1d7ed1e26bf385602732100b37eab5a6}{STANZA\_NEMICO}};}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00113}00113\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ae9293aeee552ad6fa5be9bd057a0bbad}{colpo\_fatale}}\ =\ 4;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00114}00114\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 4;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00115}00115\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ab6d3a43ba66225ffecebe3f70286f4c3}{ricompensa\_monete}}\ =\ 7;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00116}00116\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1dd41141a23b7e75521bbdf5dc9c22c8}{is\_boss}}\ =\ 1;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00117}00117\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00118}00118\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 6)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00119}00119\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00120}00120\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Demone\ Custode"{}});}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00121}00121\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a1d7ed1e26bf385602732100b37eab5a6}{STANZA\_NEMICO}};}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00122}00122\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ae9293aeee552ad6fa5be9bd057a0bbad}{colpo\_fatale}}\ =\ 4;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00123}00123\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 6;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00124}00124\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ab6d3a43ba66225ffecebe3f70286f4c3}{ricompensa\_monete}}\ =\ 10;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00125}00125\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1dd41141a23b7e75521bbdf5dc9c22c8}{is\_boss}}\ =\ 1;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00126}00126\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00127}00127\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00128}00128\ \ \ \textcolor{comment}{//\ Missione\ 3:\ Grotta}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00129}00129\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (tipo\_missione\ ==\ 3)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00130}00130\ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00131}00131\ \ \ \ \ \textcolor{keywordflow}{if}\ (dado\ ==\ 1)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00132}00132\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00133}00133\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Stanza\ Vuota"{}});}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00134}00134\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a4f58ac68ebc1a3e681938add56876458}{STANZA\_VUOTA}};}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00135}00135\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00136}00136\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 2)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00137}00137\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00138}00138\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Cristalli\ Cadenti"{}});}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00139}00139\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a99e0a627ca9f213be1f833b1ec0f7bac}{STANZA\_TRAPPOLA}};}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00140}00140\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 2;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00141}00141\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00142}00142\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 3)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00143}00143\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00144}00144\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Ponte\ Pericolante"{}});}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00145}00145\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a99e0a627ca9f213be1f833b1ec0f7bac}{STANZA\_TRAPPOLA}};}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00146}00146\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00147}00147\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00148}00148\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 4)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00149}00149\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00150}00150\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Forziere\ Misterioso"{}});}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00151}00151\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a99e0a627ca9f213be1f833b1ec0f7bac}{STANZA\_TRAPPOLA}};}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00152}00152\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 2;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00153}00153\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ab6d3a43ba66225ffecebe3f70286f4c3}{ricompensa\_monete}}\ =\ 10;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00154}00154\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00155}00155\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 5)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00156}00156\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00157}00157\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Rupe\ scoscesa"{}});}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00158}00158\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a99e0a627ca9f213be1f833b1ec0f7bac}{STANZA\_TRAPPOLA}};}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00159}00159\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ \doxymbox{\hyperlink{utilita_8c_a4b4b7026a8200115f8cd165bc3210023}{lancia\_dado}}(6);}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00160}00160\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00161}00161\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 6)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00162}00162\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00163}00163\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Drago\ Antico"{}});}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00164}00164\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a1d7ed1e26bf385602732100b37eab5a6}{STANZA\_NEMICO}};}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00165}00165\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ae9293aeee552ad6fa5be9bd057a0bbad}{colpo\_fatale}}\ =\ 5;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00166}00166\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 10;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00167}00167\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ab6d3a43ba66225ffecebe3f70286f4c3}{ricompensa\_monete}}\ =\ 12;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00168}00168\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1dd41141a23b7e75521bbdf5dc9c22c8}{is\_boss}}\ =\ 1;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00169}00169\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00170}00170\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00171}00171\ \ \ \textcolor{keywordflow}{return}\ s;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00172}00172\ \}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00173}00173\ }
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00174}\doxymbox{\hyperlink{dungeon_8c_af6eb2dc1e93cb44e5242e2de262a1ceb}{00174}}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{dungeon_8c_af6eb2dc1e93cb44e5242e2de262a1ceb}{esegui\_missione}}(\doxymbox{\hyperlink{struct_giocatore}{Giocatore}}\ *g,\ \textcolor{keywordtype}{int}\ tipo\_missione,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *nome\_missione)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00175}00175\ \{}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00176}00176\ \ \ \textcolor{keywordtype}{int}\ target\ =\ (tipo\_missione\ ==\ 1)\ ?\ 3\ :\ 1;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00177}00177\ \ \ \textcolor{keywordtype}{int}\ progress\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00178}00178\ \ \ \textcolor{keywordtype}{int}\ n\_stanze\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00179}00179\ \ \ \textcolor{keywordtype}{int}\ completata\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00180}00180\ }
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00181}00181\ \ \ \textcolor{keywordflow}{do}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00182}00182\ \ \ \{}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00183}00183\ \ \ \ \ \doxymbox{\hyperlink{utilita_8c_a430562fd5d83996886377c50f56c41d7}{pulisci\_schermo}}();}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00184}00184\ \ \ \ \ printf(\textcolor{stringliteral}{"{}===\ \%s\ ===\(\backslash\)n"{}},\ nome\_missione);}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00185}00185\ }
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00186}00186\ \ \ \ \ \textcolor{comment}{//\ Obiettivi\ missione\ 'Palude'}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00187}00187\ \ \ \ \ \textcolor{keywordflow}{if}\ (tipo\_missione\ ==\ 1)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00188}00188\ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Obiettivo:\ Sconfiggi\ \%d\ Generali\ Orco\ (\%d/\%d)\(\backslash\)n"{}},\ target,\ progress,\ target);}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00189}00189\ }
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00190}00190\ \ \ \ \ \textcolor{comment}{//\ Obiettivi\ missione\ 'Magione'}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00191}00191\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (tipo\_missione\ ==\ 2)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00192}00192\ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Obiettivo:\ Sconfiggi\ Vampiro\ Superiore\ (\%d/\%d)\ e\ prendi\ Chiave\ (\%d/1)\(\backslash\)n"{}},\ progress,\ target,\ g-\/>\doxymbox{\hyperlink{struct_giocatore_a8b938565022be676747388e1b1ccf950}{ha\_chiave\_castello}});}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00193}00193\ }
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00194}00194\ \ \ \ \ \textcolor{comment}{//\ Obiettivi\ missione\ 'Grotta'}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00195}00195\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (tipo\_missione\ ==\ 3)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00196}00196\ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Obiettivo:\ Sconfiggi\ Drago\ (\%d/1)\ e\ prendi\ Spada\ (\%d/1)\(\backslash\)n"{}},\ progress,\ g-\/>\doxymbox{\hyperlink{struct_giocatore_abe686c6adfcebb242d194e756452576d}{ha\_spada\_eroe}});}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00197}00197\ }
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00198}00198\ \ \ \ \ \textcolor{comment}{//\ Stanze\ esplorate}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00199}00199\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Stanze\ Esplorate:\ \%d/10\(\backslash\)n\(\backslash\)n"{}},\ n\_stanze);}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00200}00200\ }
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00201}00201\ \ \ \ \ \textcolor{comment}{//\ Menu\ azioni}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00202}00202\ \ \ \ \ \textcolor{keywordflow}{if}\ (n\_stanze\ <\ 10)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00203}00203\ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}1.\ Esplora\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00204}00204\ \ \ \ \ printf(\textcolor{stringliteral}{"{}2.\ Negozio\(\backslash\)n3.\ Inventario\(\backslash\)n4.\ Torna\ al\ Villaggio\ (Completa\ Obbiettivo\ oppure\ Paga\ 50\ monete)\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00205}00205\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Seleziona\ una\ delle\ opzioni\ del\ menu\ [1-\/4]:\ "{}});}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00206}00206\ }
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00207}00207\ \ \ \ \ \textcolor{comment}{//\ Gestione\ scelta\ utente}}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00208}00208\ \ \ \ \ \textcolor{keywordtype}{int}\ scelta\ =\ \doxymbox{\hyperlink{utilita_8c_aa765f343379c735d433c7108926967c4}{leggi\_intero}}();}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00024}00024\ \ \ \textcolor{comment}{//\ Missione\ 1:\ Palude}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00025}00025\ \ \ \textcolor{keywordflow}{if}\ (tipo\_missione\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00026}00026\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{if}\ (dado\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00028}00028\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00029}00029\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Cane\ Selvaggio"{}});}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00030}00030\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a1d7ed1e26bf385602732100b37eab5a6}{STANZA\_NEMICO}};}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00031}00031\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ae9293aeee552ad6fa5be9bd057a0bbad}{colpo\_fatale}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00032}00032\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00033}00033\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 2)}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00035}00035\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00036}00036\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Goblin"{}});}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00037}00037\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a1d7ed1e26bf385602732100b37eab5a6}{STANZA\_NEMICO}};}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00038}00038\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ae9293aeee552ad6fa5be9bd057a0bbad}{colpo\_fatale}}\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00039}00039\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00040}00040\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ab6d3a43ba66225ffecebe3f70286f4c3}{ricompensa\_monete}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 3)}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00043}00043\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00044}00044\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Scheletro"{}});}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00045}00045\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a1d7ed1e26bf385602732100b37eab5a6}{STANZA\_NEMICO}};}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00046}00046\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ae9293aeee552ad6fa5be9bd057a0bbad}{colpo\_fatale}}\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00047}00047\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00048}00048\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ab6d3a43ba66225ffecebe3f70286f4c3}{ricompensa\_monete}}\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 4)}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00051}00051\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00052}00052\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Orco"{}});}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00053}00053\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a1d7ed1e26bf385602732100b37eab5a6}{STANZA\_NEMICO}};}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00054}00054\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ae9293aeee552ad6fa5be9bd057a0bbad}{colpo\_fatale}}\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00055}00055\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00056}00056\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ab6d3a43ba66225ffecebe3f70286f4c3}{ricompensa\_monete}}\ =\ 6;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 5)}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00059}00059\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00060}00060\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Acquitrino\ Velenoso"{}});}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00061}00061\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a99e0a627ca9f213be1f833b1ec0f7bac}{STANZA\_TRAPPOLA}};}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00062}00062\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ \doxymbox{\hyperlink{utilita_8c_a4b4b7026a8200115f8cd165bc3210023}{lancia\_dado}}(6);}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00063}00063\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 6)}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00065}00065\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00066}00066\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Generale\ Orco"{}});}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00067}00067\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a1d7ed1e26bf385602732100b37eab5a6}{STANZA\_NEMICO}};}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00068}00068\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ae9293aeee552ad6fa5be9bd057a0bbad}{colpo\_fatale}}\ =\ 6;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00069}00069\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00070}00070\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ab6d3a43ba66225ffecebe3f70286f4c3}{ricompensa\_monete}}\ =\ 12;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00071}00071\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1dd41141a23b7e75521bbdf5dc9c22c8}{is\_boss}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00073}00073\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00074}00074\ \ \ \textcolor{comment}{//\ Missione\ 2:\ Magione}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00075}00075\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (tipo\_missione\ ==\ 2)}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00076}00076\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{if}\ (dado\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00078}00078\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00079}00079\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Botola\ Buia"{}});}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00080}00080\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a99e0a627ca9f213be1f833b1ec0f7bac}{STANZA\_TRAPPOLA}};}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00081}00081\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00083}00083\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 2)}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00084}00084\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00085}00085\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Pipistrello"{}});}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00086}00086\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a1d7ed1e26bf385602732100b37eab5a6}{STANZA\_NEMICO}};}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00087}00087\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ae9293aeee552ad6fa5be9bd057a0bbad}{colpo\_fatale}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00088}00088\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00089}00089\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ab6d3a43ba66225ffecebe3f70286f4c3}{ricompensa\_monete}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00090}00090\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00091}00091\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 3)}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00092}00092\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00093}00093\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Zombie"{}});}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00094}00094\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a1d7ed1e26bf385602732100b37eab5a6}{STANZA\_NEMICO}};}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00095}00095\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ae9293aeee552ad6fa5be9bd057a0bbad}{colpo\_fatale}}\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00096}00096\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00097}00097\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ab6d3a43ba66225ffecebe3f70286f4c3}{ricompensa\_monete}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00098}00098\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00099}00099\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 4)}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00100}00100\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00101}00101\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Fantasma"{}});}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00102}00102\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a1d7ed1e26bf385602732100b37eab5a6}{STANZA\_NEMICO}};}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00103}00103\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ae9293aeee552ad6fa5be9bd057a0bbad}{colpo\_fatale}}\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00104}00104\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00105}00105\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ab6d3a43ba66225ffecebe3f70286f4c3}{ricompensa\_monete}}\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00106}00106\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00107}00107\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 5)}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00108}00108\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00109}00109\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Vampiro\ Superiore"{}});}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00110}00110\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a1d7ed1e26bf385602732100b37eab5a6}{STANZA\_NEMICO}};}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00111}00111\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ae9293aeee552ad6fa5be9bd057a0bbad}{colpo\_fatale}}\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00112}00112\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00113}00113\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ab6d3a43ba66225ffecebe3f70286f4c3}{ricompensa\_monete}}\ =\ 7;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00114}00114\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1dd41141a23b7e75521bbdf5dc9c22c8}{is\_boss}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00115}00115\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00116}00116\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 6)}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00117}00117\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00118}00118\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Demone\ Custode"{}});}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00119}00119\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a1d7ed1e26bf385602732100b37eab5a6}{STANZA\_NEMICO}};}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00120}00120\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ae9293aeee552ad6fa5be9bd057a0bbad}{colpo\_fatale}}\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00121}00121\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 6;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00122}00122\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ab6d3a43ba66225ffecebe3f70286f4c3}{ricompensa\_monete}}\ =\ 10;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00123}00123\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1dd41141a23b7e75521bbdf5dc9c22c8}{is\_boss}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00124}00124\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00125}00125\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00126}00126\ \ \ \textcolor{comment}{//\ Missione\ 3:\ Grotta}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00127}00127\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (tipo\_missione\ ==\ 3)}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00128}00128\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00129}00129\ \ \ \ \ \textcolor{keywordflow}{if}\ (dado\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00130}00130\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00131}00131\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Stanza\ Vuota"{}});}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00132}00132\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a4f58ac68ebc1a3e681938add56876458}{STANZA\_VUOTA}};}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00133}00133\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00134}00134\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 2)}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00135}00135\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00136}00136\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Cristalli\ Cadenti"{}});}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00137}00137\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a99e0a627ca9f213be1f833b1ec0f7bac}{STANZA\_TRAPPOLA}};}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00138}00138\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00139}00139\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00140}00140\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 3)}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00141}00141\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00142}00142\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Ponte\ Pericolante"{}});}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00143}00143\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a99e0a627ca9f213be1f833b1ec0f7bac}{STANZA\_TRAPPOLA}};}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00144}00144\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00145}00145\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00146}00146\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 4)}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00147}00147\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00148}00148\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Forziere\ Misterioso"{}});}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00149}00149\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a99e0a627ca9f213be1f833b1ec0f7bac}{STANZA\_TRAPPOLA}};}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00150}00150\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00151}00151\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ab6d3a43ba66225ffecebe3f70286f4c3}{ricompensa\_monete}}\ =\ 10;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00152}00152\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00153}00153\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 5)}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00154}00154\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00155}00155\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Rupe\ scoscesa"{}});}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00156}00156\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a99e0a627ca9f213be1f833b1ec0f7bac}{STANZA\_TRAPPOLA}};}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00157}00157\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ \doxymbox{\hyperlink{utilita_8c_a4b4b7026a8200115f8cd165bc3210023}{lancia\_dado}}(6);}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00158}00158\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00159}00159\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dado\ ==\ 6)}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00160}00160\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00161}00161\ \ \ \ \ \ \ sprintf(s.\doxymbox{\hyperlink{struct_stanza_a5cfa66d12c84ed56a49aa28af36f24c8}{nome}},\ \textcolor{stringliteral}{"{}Drago\ Antico"{}});}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00162}00162\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1fe19a1ffce537de2ad60df5ce86166a}{tipo}}\ =\ \doxymbox{\hyperlink{stanza_8h_a345e14e9a00bab462630bf1978aa24a6a1d7ed1e26bf385602732100b37eab5a6}{STANZA\_NEMICO}};}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00163}00163\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ae9293aeee552ad6fa5be9bd057a0bbad}{colpo\_fatale}}\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00164}00164\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a78b1b25620cb462c61e6c88618ad282e}{danno}}\ =\ 10;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00165}00165\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_ab6d3a43ba66225ffecebe3f70286f4c3}{ricompensa\_monete}}\ =\ 12;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00166}00166\ \ \ \ \ \ \ s.\doxymbox{\hyperlink{struct_stanza_a1dd41141a23b7e75521bbdf5dc9c22c8}{is\_boss}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00167}00167\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00168}00168\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00169}00169\ \ \ \textcolor{keywordflow}{return}\ s;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00170}00170\ \}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00172}\doxymbox{\hyperlink{dungeon_8c_af6eb2dc1e93cb44e5242e2de262a1ceb}{00172}}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{dungeon_8c_af6eb2dc1e93cb44e5242e2de262a1ceb}{esegui\_missione}}(\doxymbox{\hyperlink{struct_giocatore}{Giocatore}}\ *g,\ \textcolor{keywordtype}{int}\ tipo\_missione,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *nome\_missione)}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00173}00173\ \{}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00174}00174\ \ \ \textcolor{keywordtype}{int}\ target\ =\ (tipo\_missione\ ==\ 1)\ ?\ 3\ :\ 1;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00175}00175\ \ \ \textcolor{keywordtype}{int}\ progress\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00176}00176\ \ \ \textcolor{keywordtype}{int}\ n\_stanze\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00177}00177\ \ \ \textcolor{keywordtype}{int}\ completata\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00179}00179\ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00180}00180\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00181}00181\ \ \ \ \ \doxymbox{\hyperlink{utilita_8c_a430562fd5d83996886377c50f56c41d7}{pulisci\_schermo}}();}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00182}00182\ \ \ \ \ printf(\textcolor{stringliteral}{"{}===\ \%s\ ===\(\backslash\)n"{}},\ nome\_missione);}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00183}00183\ }
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00184}00184\ \ \ \ \ \textcolor{comment}{//\ Obiettivi\ missione\ 'Palude'}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00185}00185\ \ \ \ \ \textcolor{keywordflow}{if}\ (tipo\_missione\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00186}00186\ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Obiettivo:\ Sconfiggi\ \%d\ Generali\ Orco\ (\%d/\%d)\(\backslash\)n"{}},\ target,\ progress,\ target);}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00188}00188\ \ \ \ \ \textcolor{comment}{//\ Obiettivi\ missione\ 'Magione'}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00189}00189\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (tipo\_missione\ ==\ 2)}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00190}00190\ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Obiettivo:\ Sconfiggi\ Vampiro\ Superiore\ (\%d/\%d)\ e\ prendi\ Chiave\ (\%d/1)\(\backslash\)n"{}},\ progress,\ target,\ g-\/>\doxymbox{\hyperlink{struct_giocatore_a8b938565022be676747388e1b1ccf950}{ha\_chiave\_castello}});}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00192}00192\ \ \ \ \ \textcolor{comment}{//\ Obiettivi\ missione\ 'Grotta'}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00193}00193\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (tipo\_missione\ ==\ 3)}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00194}00194\ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Obiettivo:\ Sconfiggi\ Drago\ (\%d/1)\ e\ prendi\ Spada\ (\%d/1)\(\backslash\)n"{}},\ progress,\ g-\/>\doxymbox{\hyperlink{struct_giocatore_abe686c6adfcebb242d194e756452576d}{ha\_spada\_eroe}});}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00196}00196\ \ \ \ \ \textcolor{comment}{//\ Stanze\ esplorate}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00197}00197\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Stanze\ Esplorate:\ \%d/10\(\backslash\)n\(\backslash\)n"{}},\ n\_stanze);}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00199}00199\ \ \ \ \ \textcolor{comment}{//\ Menu\ azioni}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00200}00200\ \ \ \ \ \textcolor{keywordflow}{if}\ (n\_stanze\ <\ 10)}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00201}00201\ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}1.\ Esplora\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00202}00202\ \ \ \ \ printf(\textcolor{stringliteral}{"{}2.\ Negozio\(\backslash\)n3.\ Inventario\(\backslash\)n4.\ Torna\ al\ Villaggio\ (Completa\ Obbiettivo\ oppure\ Paga\ 50\ monete)\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00203}00203\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Seleziona\ una\ delle\ opzioni\ del\ menu\ [1-\/4]:\ "{}});}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00205}00205\ \ \ \ \ \textcolor{comment}{//\ Gestione\ scelta\ utente}}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00206}00206\ \ \ \ \ \textcolor{keywordtype}{int}\ scelta\ =\ \doxymbox{\hyperlink{utilita_8c_aa765f343379c735d433c7108926967c4}{leggi\_intero}}();}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00208}00208\ \ \ \ \ \textcolor{comment}{//\ Scelta\ esplora}}
 \DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00209}00209\ \ \ \ \ \textcolor{keywordflow}{if}\ (scelta\ ==\ 1\ \&\&\ n\_stanze\ <\ 10)}
 \DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00210}00210\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00211}00211\ \ \ \ \ \ \ n\_stanze++;}
@@ -318,7 +318,7 @@
 \DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00317}00317\ }
 \DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00318}00318\ \ \ \ \ \textcolor{comment}{//\ Scelta\ negozio}}
 \DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00319}00319\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (scelta\ ==\ 2)}
-\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00320}00320\ \ \ \ \ \ \ \doxymbox{\hyperlink{dungeon_8c_ac5915507336363849f340947c49ab5ed}{mostra\_negozio}}(g);}
+\DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00320}00320\ \ \ \ \ \ \ \doxymbox{\hyperlink{menu_8c_ac5915507336363849f340947c49ab5ed}{mostra\_negozio}}(g);}
 \DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00321}00321\ }
 \DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00322}00322\ \ \ \ \ \textcolor{comment}{//\ Scelta\ inventario}}
 \DoxyCodeLine{\Hypertarget{dungeon_8c_source_l00323}00323\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (scelta\ ==\ 3)}

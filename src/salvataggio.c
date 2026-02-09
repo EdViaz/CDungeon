@@ -1,6 +1,6 @@
 /**
  * @file salvataggio.c
- * @brief Implementazione del sistema di persistenza dei dati.
+ * @brief Implementazione delle funzioni per la gestione dei salvataggi.
  */
 
 #include "salvataggio.h"

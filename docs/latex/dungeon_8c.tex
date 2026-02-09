@@ -14,8 +14,6 @@ Implementazione della logica del dungeon e delle missioni.
 \doxysubsubsection*{Funzioni}
 \begin{DoxyCompactItemize}
 \item 
-void \doxymbox{\hyperlink{dungeon_8c_ac5915507336363849f340947c49ab5ed}{mostra\+\_\+negozio}} (\doxymbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}g)
-\item 
 \doxymbox{\hyperlink{struct_stanza}{Stanza}} \doxymbox{\hyperlink{dungeon_8c_a9f96d41676b4ed7e4e5a7ebb5389f3bb}{genera\+\_\+stanza\+\_\+missione}} (int tipo\+\_\+missione, int dado)
 \begin{DoxyCompactList}\small\item\em Genera una stanza casuale in base alla missione e al lancio del dado. \end{DoxyCompactList}\item 
 int \doxymbox{\hyperlink{dungeon_8c_af6eb2dc1e93cb44e5242e2de262a1ceb}{esegui\+\_\+missione}} (\doxymbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}g, int tipo\+\_\+missione, const char \texorpdfstring{$\ast$}{*}nome\+\_\+missione)
@@ -60,15 +58,15 @@ Include la navigazione tra le stanze, il combattimento, il negozio e la gestione
 \end{DoxyReturn}
 
 
-Definizione alla linea \doxymbox{\hyperlink{dungeon_8c_source_l00174}{174}} del file \doxymbox{\hyperlink{dungeon_8c_source}{dungeon.\+c}}.
+Definizione alla linea \doxymbox{\hyperlink{dungeon_8c_source_l00172}{172}} del file \doxymbox{\hyperlink{dungeon_8c_source}{dungeon.\+c}}.
 
 
 
-Referenzia \doxymbox{\hyperlink{combattimento_8c_source_l00088}{applica\+\_\+danno\+\_\+trappola()}}, \doxymbox{\hyperlink{stanza_8h_source_l00027}{Stanza::\+danno}}, \doxymbox{\hyperlink{dungeon_8c_source_l00014}{genera\+\_\+stanza\+\_\+missione()}}, \doxymbox{\hyperlink{giocatore_8h_source_l00028}{Giocatore::\+ha\+\_\+chiave\+\_\+castello}}, \doxymbox{\hyperlink{giocatore_8h_source_l00027}{Giocatore::\+ha\+\_\+spada\+\_\+eroe}}, \doxymbox{\hyperlink{combattimento_8c_source_l00013}{inizia\+\_\+combattimento()}}, \doxymbox{\hyperlink{stanza_8h_source_l00030}{Stanza::\+is\+\_\+boss}}, \doxymbox{\hyperlink{utilita_8c_source_l00012}{lancia\+\_\+dado()}}, \doxymbox{\hyperlink{utilita_8c_source_l00076}{leggi\+\_\+intero()}}, \doxymbox{\hyperlink{giocatore_8h_source_l00016}{Giocatore::\+monete}}, \doxymbox{\hyperlink{menu_8c_source_l00250}{mostra\+\_\+negozio()}}, \doxymbox{\hyperlink{stanza_8h_source_l00025}{Stanza::\+nome}}, \doxymbox{\hyperlink{giocatore_8h_source_l00017}{Giocatore::\+numero\+\_\+oggetti}}, \doxymbox{\hyperlink{utilita_8c_source_l00040}{pulisci\+\_\+schermo()}}, \doxymbox{\hyperlink{giocatore_8h_source_l00014}{Giocatore::\+punti\+\_\+vita}}, \doxymbox{\hyperlink{stanza_8h_source_l00029}{Stanza::\+ricompensa\+\_\+monete}}, \doxymbox{\hyperlink{giocatore_8c_source_l00024}{stampa\+\_\+statistiche\+\_\+giocatore()}}, \doxymbox{\hyperlink{stanza_8h_source_l00015}{STANZA\+\_\+\+NEMICO}}, \doxymbox{\hyperlink{stanza_8h_source_l00016}{STANZA\+\_\+\+TRAPPOLA}}, e \doxymbox{\hyperlink{stanza_8h_source_l00026}{Stanza::\+tipo}}.
+Referenzia \doxymbox{\hyperlink{combattimento_8c_source_l00090}{applica\+\_\+danno\+\_\+trappola()}}, \doxymbox{\hyperlink{stanza_8h_source_l00027}{Stanza::\+danno}}, \doxymbox{\hyperlink{dungeon_8c_source_l00012}{genera\+\_\+stanza\+\_\+missione()}}, \doxymbox{\hyperlink{giocatore_8h_source_l00028}{Giocatore::\+ha\+\_\+chiave\+\_\+castello}}, \doxymbox{\hyperlink{giocatore_8h_source_l00027}{Giocatore::\+ha\+\_\+spada\+\_\+eroe}}, \doxymbox{\hyperlink{combattimento_8c_source_l00013}{inizia\+\_\+combattimento()}}, \doxymbox{\hyperlink{stanza_8h_source_l00030}{Stanza::\+is\+\_\+boss}}, \doxymbox{\hyperlink{utilita_8c_source_l00012}{lancia\+\_\+dado()}}, \doxymbox{\hyperlink{utilita_8c_source_l00076}{leggi\+\_\+intero()}}, \doxymbox{\hyperlink{giocatore_8h_source_l00016}{Giocatore::\+monete}}, \doxymbox{\hyperlink{menu_8c_source_l00252}{mostra\+\_\+negozio()}}, \doxymbox{\hyperlink{stanza_8h_source_l00025}{Stanza::\+nome}}, \doxymbox{\hyperlink{giocatore_8h_source_l00017}{Giocatore::\+numero\+\_\+oggetti}}, \doxymbox{\hyperlink{utilita_8c_source_l00040}{pulisci\+\_\+schermo()}}, \doxymbox{\hyperlink{giocatore_8h_source_l00014}{Giocatore::\+punti\+\_\+vita}}, \doxymbox{\hyperlink{stanza_8h_source_l00029}{Stanza::\+ricompensa\+\_\+monete}}, \doxymbox{\hyperlink{giocatore_8c_source_l00024}{stampa\+\_\+statistiche\+\_\+giocatore()}}, \doxymbox{\hyperlink{stanza_8h_source_l00015}{STANZA\+\_\+\+NEMICO}}, \doxymbox{\hyperlink{stanza_8h_source_l00016}{STANZA\+\_\+\+TRAPPOLA}}, e \doxymbox{\hyperlink{stanza_8h_source_l00026}{Stanza::\+tipo}}.
 
 
 
-Referenziato da \doxymbox{\hyperlink{menu_8c_source_l00177}{mostra\+\_\+menu\+\_\+missione()}}.
+Referenziato da \doxymbox{\hyperlink{menu_8c_source_l00179}{mostra\+\_\+menu\+\_\+missione()}}.
 
 \Hypertarget{dungeon_8c_a9f96d41676b4ed7e4e5a7ebb5389f3bb}\index{dungeon.c@{dungeon.c}!genera\_stanza\_missione@{genera\_stanza\_missione}}
 \index{genera\_stanza\_missione@{genera\_stanza\_missione}!dungeon.c@{dungeon.c}}
@@ -84,15 +82,15 @@ Genera una stanza casuale in base alla missione e al lancio del dado.
 \begin{DoxyParams}{Parametri}
 {\em tipo\+\_\+missione} & ID della missione corrente (1, 2 o 3). \\
 \hline
-{\em dado} & Risultato del lancio del dado per determinare il contenuto. \\
+{\em dado} & Risultato del lancio del dado per determinare il contenuto della stanza. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Restituisce}
-La struttura \doxylink{struct_stanza}{Stanza} generata. 
+La struct \doxylink{struct_stanza}{Stanza} generata. 
 \end{DoxyReturn}
 
 
-Definizione alla linea \doxymbox{\hyperlink{dungeon_8c_source_l00014}{14}} del file \doxymbox{\hyperlink{dungeon_8c_source}{dungeon.\+c}}.
+Definizione alla linea \doxymbox{\hyperlink{dungeon_8c_source_l00012}{12}} del file \doxymbox{\hyperlink{dungeon_8c_source}{dungeon.\+c}}.
 
 
 
@@ -100,23 +98,5 @@ Referenzia \doxymbox{\hyperlink{stanza_8h_source_l00028}{Stanza::\+colpo\+\_\+fa
 
 
 
-Referenziato da \doxymbox{\hyperlink{dungeon_8c_source_l00174}{esegui\+\_\+missione()}}.
-
-\Hypertarget{dungeon_8c_ac5915507336363849f340947c49ab5ed}\index{dungeon.c@{dungeon.c}!mostra\_negozio@{mostra\_negozio}}
-\index{mostra\_negozio@{mostra\_negozio}!dungeon.c@{dungeon.c}}
-\doxysubsubsection{\texorpdfstring{mostra\_negozio()}{mostra\_negozio()}}
-{\footnotesize\ttfamily \label{dungeon_8c_ac5915507336363849f340947c49ab5ed} 
-void mostra\+\_\+negozio (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{g}{}\end{DoxyParamCaption})}
-
-
-
-Definizione alla linea \doxymbox{\hyperlink{menu_8c_source_l00250}{250}} del file \doxymbox{\hyperlink{menu_8c_source}{menu.\+c}}.
-
-
-
-Referenzia \doxymbox{\hyperlink{giocatore_8h_source_l00026}{Giocatore::\+ha\+\_\+armatura}}, \doxymbox{\hyperlink{giocatore_8h_source_l00025}{Giocatore::\+ha\+\_\+spada}}, \doxymbox{\hyperlink{utilita_8c_source_l00012}{lancia\+\_\+dado()}}, \doxymbox{\hyperlink{utilita_8c_source_l00076}{leggi\+\_\+intero()}}, \doxymbox{\hyperlink{giocatore_8h_source_l00015}{Giocatore::\+max\+\_\+punti\+\_\+vita}}, \doxymbox{\hyperlink{giocatore_8h_source_l00016}{Giocatore::\+monete}}, \doxymbox{\hyperlink{giocatore_8h_source_l00017}{Giocatore::\+numero\+\_\+oggetti}}, \doxymbox{\hyperlink{utilita_8c_source_l00040}{pulisci\+\_\+schermo()}}, e \doxymbox{\hyperlink{giocatore_8h_source_l00014}{Giocatore::\+punti\+\_\+vita}}.
-
-
-
-Referenziato da \doxymbox{\hyperlink{dungeon_8c_source_l00174}{esegui\+\_\+missione()}}.
+Referenziato da \doxymbox{\hyperlink{dungeon_8c_source_l00172}{esegui\+\_\+missione()}}.
 

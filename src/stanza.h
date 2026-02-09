@@ -1,6 +1,6 @@
 /**
  * @file stanza.h
- * @brief Definizione della struttura e dei tipi di stanza.
+ * @brief Definizione della struttura e dei tipi di Stanza.
  */
 
 #ifndef STANZA_H

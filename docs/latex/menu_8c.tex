@@ -18,9 +18,9 @@ Implementazione dei menu e dell\textquotesingle{}interfaccia utente.
 \begin{DoxyCompactItemize}
 \item 
 void \doxymbox{\hyperlink{menu_8c_a3e5f1d895295d6b89c3d07beb33e7037}{gestisci\+\_\+trucchi}} (\doxymbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}g, \doxymbox{\hyperlink{struct_nodo_salvataggio}{Nodo\+Salvataggio}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}lista)
-\item 
+\begin{DoxyCompactList}\small\item\em Gestisce i trucchi del gioco. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{menu_8c_a11de43b02b60e35143787ae178496f61}{mostra\+\_\+menu\+\_\+salvataggi}} (\doxymbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}g, \doxymbox{\hyperlink{struct_nodo_salvataggio}{Nodo\+Salvataggio}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}lista)
-\item 
+\begin{DoxyCompactList}\small\item\em Mostra il menu dei salvataggi. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{menu_8c_ad1ed83d16ec7e745c6d69d8105c556d2}{mostra\+\_\+menu\+\_\+principale}} (\doxymbox{\hyperlink{struct_nodo_salvataggio}{Nodo\+Salvataggio}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}lista, \doxymbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}g)
 \begin{DoxyCompactList}\small\item\em Mostra il menu principale del gioco. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{menu_8c_ad53023e0f45953e91c154e71ce044895}{mostra\+\_\+menu\+\_\+villaggio}} (\doxymbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}g, \doxymbox{\hyperlink{struct_nodo_salvataggio}{Nodo\+Salvataggio}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}lista)
@@ -47,15 +47,28 @@ Definizione nel file \doxymbox{\hyperlink{menu_8c_source}{menu.\+c}}.
 \index{gestisci\_trucchi@{gestisci\_trucchi}!menu.c@{menu.c}}
 \doxysubsubsection{\texorpdfstring{gestisci\_trucchi()}{gestisci\_trucchi()}}
 {\footnotesize\ttfamily \label{menu_8c_a3e5f1d895295d6b89c3d07beb33e7037} 
-void gestisci\+\_\+trucchi (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{\doxymbox{\hyperlink{struct_nodo_salvataggio}{Nodo\+Salvataggio}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+void gestisci\+\_\+trucchi (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{\doxymbox{\hyperlink{struct_nodo_salvataggio}{Nodo\+Salvataggio}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{lista\+\_\+salvataggi}{}\end{DoxyParamCaption})}
 
 
 
-Definizione alla linea \doxymbox{\hyperlink{menu_8c_source_l00308}{308}} del file \doxymbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+Gestisce i trucchi del gioco. 
+
+Permette di modificare i salvataggi esistenti per ottenere vantaggi come monete aggiuntive, HP aggiuntivi, o altri benefici.
+
+
+\begin{DoxyParams}{Parametri}
+{\em g} & Puntatore al giocatore, necessario per caricare e modificare il salvataggio selezionato. \\
+\hline
+{\em lista\+\_\+salvataggi} & Puntatore alla lista dei salvataggi per la selezione e modifica. \\
+\hline
+\end{DoxyParams}
+
+
+Definizione alla linea \doxymbox{\hyperlink{menu_8c_source_l00316}{316}} del file \doxymbox{\hyperlink{menu_8c_source}{menu.\+c}}.
 
 
 
-Referenzia \doxymbox{\hyperlink{salvataggio_8c_source_l00079}{carica\+\_\+salvataggio()}}, \doxymbox{\hyperlink{salvataggio_8h_source_l00018}{Nodo\+Salvataggio::\+dati\+\_\+giocatore}}, \doxymbox{\hyperlink{utilita_8c_source_l00076}{leggi\+\_\+intero()}}, \doxymbox{\hyperlink{giocatore_8h_source_l00015}{Giocatore::\+max\+\_\+punti\+\_\+vita}}, \doxymbox{\hyperlink{giocatore_8h_source_l00022}{Giocatore::\+missione\+\_\+grotta}}, \doxymbox{\hyperlink{giocatore_8h_source_l00021}{Giocatore::\+missione\+\_\+magione}}, \doxymbox{\hyperlink{giocatore_8h_source_l00020}{Giocatore::\+missione\+\_\+palude}}, \doxymbox{\hyperlink{giocatore_8h_source_l00016}{Giocatore::\+monete}}, \doxymbox{\hyperlink{utilita_8c_source_l00040}{pulisci\+\_\+schermo()}}, \doxymbox{\hyperlink{giocatore_8h_source_l00014}{Giocatore::\+punti\+\_\+vita}}, \doxymbox{\hyperlink{salvataggio_8c_source_l00022}{salva\+\_\+tutto\+\_\+su\+\_\+file()}}, e \doxymbox{\hyperlink{salvataggio_8c_source_l00124}{stampa\+\_\+salvataggi()}}.
+Referenzia \doxymbox{\hyperlink{salvataggio_8c_source_l00079}{carica\+\_\+salvataggio()}}, \doxymbox{\hyperlink{salvataggio_8h_source_l00018}{Nodo\+Salvataggio::\+dati\+\_\+giocatore}}, \doxymbox{\hyperlink{utilita_8c_source_l00076}{leggi\+\_\+intero()}}, \doxymbox{\hyperlink{giocatore_8h_source_l00015}{Giocatore::\+max\+\_\+punti\+\_\+vita}}, \doxymbox{\hyperlink{giocatore_8h_source_l00022}{Giocatore::\+missione\+\_\+grotta}}, \doxymbox{\hyperlink{giocatore_8h_source_l00021}{Giocatore::\+missione\+\_\+magione}}, \doxymbox{\hyperlink{giocatore_8h_source_l00020}{Giocatore::\+missione\+\_\+palude}}, \doxymbox{\hyperlink{giocatore_8h_source_l00016}{Giocatore::\+monete}}, \doxymbox{\hyperlink{utilita_8c_source_l00040}{pulisci\+\_\+schermo()}}, \doxymbox{\hyperlink{giocatore_8h_source_l00014}{Giocatore::\+punti\+\_\+vita}}, \doxymbox{\hyperlink{salvataggio_8c_source_l00021}{salva\+\_\+tutto\+\_\+su\+\_\+file()}}, e \doxymbox{\hyperlink{salvataggio_8c_source_l00130}{stampa\+\_\+salvataggi()}}.
 
 
 
@@ -80,15 +93,15 @@ Elenca le missioni disponibili e avviabili dal giocatore.
 \end{DoxyParams}
 
 
-Definizione alla linea \doxymbox{\hyperlink{menu_8c_source_l00177}{177}} del file \doxymbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+Definizione alla linea \doxymbox{\hyperlink{menu_8c_source_l00179}{179}} del file \doxymbox{\hyperlink{menu_8c_source}{menu.\+c}}.
 
 
 
-Referenzia \doxymbox{\hyperlink{combattimento_8c_source_l00106}{combattimento\+\_\+boss\+\_\+finale()}}, \doxymbox{\hyperlink{dungeon_8c_source_l00174}{esegui\+\_\+missione()}}, \doxymbox{\hyperlink{utilita_8c_source_l00076}{leggi\+\_\+intero()}}, \doxymbox{\hyperlink{giocatore_8h_source_l00022}{Giocatore::\+missione\+\_\+grotta}}, \doxymbox{\hyperlink{giocatore_8h_source_l00021}{Giocatore::\+missione\+\_\+magione}}, \doxymbox{\hyperlink{giocatore_8h_source_l00020}{Giocatore::\+missione\+\_\+palude}}, \doxymbox{\hyperlink{utilita_8c_source_l00040}{pulisci\+\_\+schermo()}}, e \doxymbox{\hyperlink{giocatore_8h_source_l00014}{Giocatore::\+punti\+\_\+vita}}.
+Referenzia \doxymbox{\hyperlink{combattimento_8c_source_l00108}{combattimento\+\_\+boss\+\_\+finale()}}, \doxymbox{\hyperlink{dungeon_8c_source_l00172}{esegui\+\_\+missione()}}, \doxymbox{\hyperlink{utilita_8c_source_l00076}{leggi\+\_\+intero()}}, \doxymbox{\hyperlink{giocatore_8h_source_l00022}{Giocatore::\+missione\+\_\+grotta}}, \doxymbox{\hyperlink{giocatore_8h_source_l00021}{Giocatore::\+missione\+\_\+magione}}, \doxymbox{\hyperlink{giocatore_8h_source_l00020}{Giocatore::\+missione\+\_\+palude}}, \doxymbox{\hyperlink{utilita_8c_source_l00040}{pulisci\+\_\+schermo()}}, e \doxymbox{\hyperlink{giocatore_8h_source_l00014}{Giocatore::\+punti\+\_\+vita}}.
 
 
 
-Referenziato da \doxymbox{\hyperlink{menu_8c_source_l00130}{mostra\+\_\+menu\+\_\+villaggio()}}.
+Referenziato da \doxymbox{\hyperlink{menu_8c_source_l00132}{mostra\+\_\+menu\+\_\+villaggio()}}.
 
 \Hypertarget{menu_8c_ad1ed83d16ec7e745c6d69d8105c556d2}\index{menu.c@{menu.c}!mostra\_menu\_principale@{mostra\_menu\_principale}}
 \index{mostra\_menu\_principale@{mostra\_menu\_principale}!menu.c@{menu.c}}
@@ -106,7 +119,7 @@ Permette di iniziare una nuova partita, caricare un salvataggio o uscire. Contie
 \begin{DoxyParams}{Parametri}
 {\em lista\+\_\+salvataggi} & Puntatore alla lista dei salvataggi. \\
 \hline
-{\em giocatore\+\_\+corrente} & Puntatore alla struttura dati del giocatore corrente. \\
+{\em giocatore\+\_\+corrente} & Puntatore alla struct \doxylink{struct_giocatore}{Giocatore} corrente. \\
 \hline
 \end{DoxyParams}
 
@@ -115,25 +128,38 @@ Definizione alla linea \doxymbox{\hyperlink{menu_8c_source_l00020}{20}} del file
 
 
 
-Referenzia \doxymbox{\hyperlink{menu_8c_source_l00308}{gestisci\+\_\+trucchi()}}, \doxymbox{\hyperlink{giocatore_8c_source_l00009}{inizializza\+\_\+giocatore()}}, \doxymbox{\hyperlink{utilita_8c_source_l00050}{leggi\+\_\+input\+\_\+char()}}, \doxymbox{\hyperlink{menu_8c_source_l00082}{mostra\+\_\+menu\+\_\+salvataggi()}}, \doxymbox{\hyperlink{menu_8c_source_l00130}{mostra\+\_\+menu\+\_\+villaggio()}}, e \doxymbox{\hyperlink{utilita_8c_source_l00040}{pulisci\+\_\+schermo()}}.
+Referenzia \doxymbox{\hyperlink{menu_8c_source_l00316}{gestisci\+\_\+trucchi()}}, \doxymbox{\hyperlink{giocatore_8c_source_l00009}{inizializza\+\_\+giocatore()}}, \doxymbox{\hyperlink{utilita_8c_source_l00050}{leggi\+\_\+input\+\_\+char()}}, \doxymbox{\hyperlink{menu_8c_source_l00084}{mostra\+\_\+menu\+\_\+salvataggi()}}, \doxymbox{\hyperlink{menu_8c_source_l00132}{mostra\+\_\+menu\+\_\+villaggio()}}, e \doxymbox{\hyperlink{utilita_8c_source_l00040}{pulisci\+\_\+schermo()}}.
 
 
 
-Referenziato da \doxymbox{\hyperlink{main_8c_source_l00020}{main()}}, e \doxymbox{\hyperlink{menu_8c_source_l00130}{mostra\+\_\+menu\+\_\+villaggio()}}.
+Referenziato da \doxymbox{\hyperlink{main_8c_source_l00020}{main()}}, e \doxymbox{\hyperlink{menu_8c_source_l00132}{mostra\+\_\+menu\+\_\+villaggio()}}.
 
 \Hypertarget{menu_8c_a11de43b02b60e35143787ae178496f61}\index{menu.c@{menu.c}!mostra\_menu\_salvataggi@{mostra\_menu\_salvataggi}}
 \index{mostra\_menu\_salvataggi@{mostra\_menu\_salvataggi}!menu.c@{menu.c}}
 \doxysubsubsection{\texorpdfstring{mostra\_menu\_salvataggi()}{mostra\_menu\_salvataggi()}}
 {\footnotesize\ttfamily \label{menu_8c_a11de43b02b60e35143787ae178496f61} 
-void mostra\+\_\+menu\+\_\+salvataggi (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{\doxymbox{\hyperlink{struct_nodo_salvataggio}{Nodo\+Salvataggio}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+void mostra\+\_\+menu\+\_\+salvataggi (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{\doxymbox{\hyperlink{struct_nodo_salvataggio}{Nodo\+Salvataggio}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{lista\+\_\+salvataggi}{}\end{DoxyParamCaption})}
 
 
 
-Definizione alla linea \doxymbox{\hyperlink{menu_8c_source_l00082}{82}} del file \doxymbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+Mostra il menu dei salvataggi. 
+
+Elenca i salvataggi disponibili e permette di caricarli o eliminarli.
+
+
+\begin{DoxyParams}{Parametri}
+{\em g} & Puntatore al giocatore, necessario per caricare il salvataggio selezionato. \\
+\hline
+{\em lista\+\_\+salvataggi} & Puntatore alla lista dei salvataggi. \\
+\hline
+\end{DoxyParams}
+
+
+Definizione alla linea \doxymbox{\hyperlink{menu_8c_source_l00084}{84}} del file \doxymbox{\hyperlink{menu_8c_source}{menu.\+c}}.
 
 
 
-Referenzia \doxymbox{\hyperlink{salvataggio_8c_source_l00079}{carica\+\_\+salvataggio()}}, \doxymbox{\hyperlink{salvataggio_8h_source_l00018}{Nodo\+Salvataggio::\+dati\+\_\+giocatore}}, \doxymbox{\hyperlink{salvataggio_8c_source_l00093}{elimina\+\_\+salvataggio()}}, \doxymbox{\hyperlink{utilita_8c_source_l00050}{leggi\+\_\+input\+\_\+char()}}, \doxymbox{\hyperlink{utilita_8c_source_l00076}{leggi\+\_\+intero()}}, \doxymbox{\hyperlink{menu_8c_source_l00130}{mostra\+\_\+menu\+\_\+villaggio()}}, e \doxymbox{\hyperlink{salvataggio_8c_source_l00124}{stampa\+\_\+salvataggi()}}.
+Referenzia \doxymbox{\hyperlink{salvataggio_8c_source_l00079}{carica\+\_\+salvataggio()}}, \doxymbox{\hyperlink{salvataggio_8h_source_l00018}{Nodo\+Salvataggio::\+dati\+\_\+giocatore}}, \doxymbox{\hyperlink{salvataggio_8c_source_l00095}{elimina\+\_\+salvataggio()}}, \doxymbox{\hyperlink{utilita_8c_source_l00050}{leggi\+\_\+input\+\_\+char()}}, \doxymbox{\hyperlink{utilita_8c_source_l00076}{leggi\+\_\+intero()}}, \doxymbox{\hyperlink{menu_8c_source_l00132}{mostra\+\_\+menu\+\_\+villaggio()}}, e \doxymbox{\hyperlink{salvataggio_8c_source_l00130}{stampa\+\_\+salvataggi()}}.
 
 
 
@@ -149,7 +175,7 @@ void mostra\+\_\+menu\+\_\+villaggio (\begin{DoxyParamCaption}\item[{\doxymbox{\
 
 Mostra il menu del villaggio. 
 
-Hub principale per il giocatore tra le missioni. Permette di curarsi, gestire l\textquotesingle{}inventario, salvare o intraprendere nuove missioni.
+Permette di curarsi, gestire l\textquotesingle{}inventario, salvare o intraprendere nuove missioni.
 
 
 \begin{DoxyParams}{Parametri}
@@ -160,15 +186,15 @@ Hub principale per il giocatore tra le missioni. Permette di curarsi, gestire l\
 \end{DoxyParams}
 
 
-Definizione alla linea \doxymbox{\hyperlink{menu_8c_source_l00130}{130}} del file \doxymbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+Definizione alla linea \doxymbox{\hyperlink{menu_8c_source_l00132}{132}} del file \doxymbox{\hyperlink{menu_8c_source}{menu.\+c}}.
 
 
 
-Referenzia \doxymbox{\hyperlink{salvataggio_8c_source_l00044}{aggiungi\+\_\+salvataggio()}}, \doxymbox{\hyperlink{utilita_8c_source_l00050}{leggi\+\_\+input\+\_\+char()}}, \doxymbox{\hyperlink{utilita_8c_source_l00076}{leggi\+\_\+intero()}}, \doxymbox{\hyperlink{giocatore_8h_source_l00015}{Giocatore::\+max\+\_\+punti\+\_\+vita}}, \doxymbox{\hyperlink{giocatore_8h_source_l00016}{Giocatore::\+monete}}, \doxymbox{\hyperlink{menu_8c_source_l00177}{mostra\+\_\+menu\+\_\+missione()}}, \doxymbox{\hyperlink{menu_8c_source_l00020}{mostra\+\_\+menu\+\_\+principale()}}, \doxymbox{\hyperlink{utilita_8c_source_l00040}{pulisci\+\_\+schermo()}}, \doxymbox{\hyperlink{giocatore_8h_source_l00014}{Giocatore::\+punti\+\_\+vita}}, e \doxymbox{\hyperlink{giocatore_8c_source_l00024}{stampa\+\_\+statistiche\+\_\+giocatore()}}.
+Referenzia \doxymbox{\hyperlink{salvataggio_8c_source_l00044}{aggiungi\+\_\+salvataggio()}}, \doxymbox{\hyperlink{utilita_8c_source_l00050}{leggi\+\_\+input\+\_\+char()}}, \doxymbox{\hyperlink{utilita_8c_source_l00076}{leggi\+\_\+intero()}}, \doxymbox{\hyperlink{giocatore_8h_source_l00015}{Giocatore::\+max\+\_\+punti\+\_\+vita}}, \doxymbox{\hyperlink{giocatore_8h_source_l00016}{Giocatore::\+monete}}, \doxymbox{\hyperlink{menu_8c_source_l00179}{mostra\+\_\+menu\+\_\+missione()}}, \doxymbox{\hyperlink{menu_8c_source_l00020}{mostra\+\_\+menu\+\_\+principale()}}, \doxymbox{\hyperlink{utilita_8c_source_l00040}{pulisci\+\_\+schermo()}}, \doxymbox{\hyperlink{giocatore_8h_source_l00014}{Giocatore::\+punti\+\_\+vita}}, e \doxymbox{\hyperlink{giocatore_8c_source_l00024}{stampa\+\_\+statistiche\+\_\+giocatore()}}.
 
 
 
-Referenziato da \doxymbox{\hyperlink{menu_8c_source_l00020}{mostra\+\_\+menu\+\_\+principale()}}, e \doxymbox{\hyperlink{menu_8c_source_l00082}{mostra\+\_\+menu\+\_\+salvataggi()}}.
+Referenziato da \doxymbox{\hyperlink{menu_8c_source_l00020}{mostra\+\_\+menu\+\_\+principale()}}, e \doxymbox{\hyperlink{menu_8c_source_l00084}{mostra\+\_\+menu\+\_\+salvataggi()}}.
 
 \Hypertarget{menu_8c_ac5915507336363849f340947c49ab5ed}\index{menu.c@{menu.c}!mostra\_negozio@{mostra\_negozio}}
 \index{mostra\_negozio@{mostra\_negozio}!menu.c@{menu.c}}
@@ -189,7 +215,7 @@ Permette al giocatore di acquistare oggetti e cure in cambio di monete.
 \end{DoxyParams}
 
 
-Definizione alla linea \doxymbox{\hyperlink{menu_8c_source_l00250}{250}} del file \doxymbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+Definizione alla linea \doxymbox{\hyperlink{menu_8c_source_l00252}{252}} del file \doxymbox{\hyperlink{menu_8c_source}{menu.\+c}}.
 
 
 
@@ -197,5 +223,5 @@ Referenzia \doxymbox{\hyperlink{giocatore_8h_source_l00026}{Giocatore::\+ha\+\_\
 
 
 
-Referenziato da \doxymbox{\hyperlink{dungeon_8c_source_l00174}{esegui\+\_\+missione()}}.
+Referenziato da \doxymbox{\hyperlink{dungeon_8c_source_l00172}{esegui\+\_\+missione()}}.
 
