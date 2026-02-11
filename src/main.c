@@ -27,7 +27,7 @@ int main(){
   // Inizializza seed random
   srand(time(NULL));
 
-  printf("Benvenuto in CDungeon!\n");
+  printf("Benvenuto in CDungeon! (premi Invio per iniziare)\n");
   getchar();
   mostra_menu_principale(&lista_salvataggi, &giocatore_corrente);
 

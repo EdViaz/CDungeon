@@ -1,0 +1,152 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\babel@toc {nil}{}\relax 
+\contentsline {chapter}{\numberline {1}Gerarchia delle directory}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Directory}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Indice delle strutture dati}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Strutture dati}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Indice dei file}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Elenco dei file}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Documentazione delle directory}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Riferimenti per la directory src}{7}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Documentazione delle classi}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Riferimenti per la struct Giocatore}{9}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Descrizione dettagliata}{9}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Documentazione dei campi}{9}{subsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.1}ha\_armatura}{9}{subsubsection.5.1.2.1}%
+\contentsline {subsubsection}{\numberline {5.1.2.2}ha\_chiave\_castello}{10}{subsubsection.5.1.2.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.3}ha\_spada}{10}{subsubsection.5.1.2.3}%
+\contentsline {subsubsection}{\numberline {5.1.2.4}ha\_spada\_eroe}{10}{subsubsection.5.1.2.4}%
+\contentsline {subsubsection}{\numberline {5.1.2.5}max\_punti\_vita}{10}{subsubsection.5.1.2.5}%
+\contentsline {subsubsection}{\numberline {5.1.2.6}missione\_grotta}{10}{subsubsection.5.1.2.6}%
+\contentsline {subsubsection}{\numberline {5.1.2.7}missione\_magione}{11}{subsubsection.5.1.2.7}%
+\contentsline {subsubsection}{\numberline {5.1.2.8}missione\_palude}{11}{subsubsection.5.1.2.8}%
+\contentsline {subsubsection}{\numberline {5.1.2.9}monete}{11}{subsubsection.5.1.2.9}%
+\contentsline {subsubsection}{\numberline {5.1.2.10}numero\_oggetti}{11}{subsubsection.5.1.2.10}%
+\contentsline {subsubsection}{\numberline {5.1.2.11}punti\_vita}{11}{subsubsection.5.1.2.11}%
+\contentsline {section}{\numberline {5.2}Riferimenti per la struct Nodo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Salvataggio}{12}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Descrizione dettagliata}{12}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Documentazione dei campi}{12}{subsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2.1}dati\_giocatore}{12}{subsubsection.5.2.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2.2}id}{12}{subsubsection.5.2.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2.3}prossimo}{13}{subsubsection.5.2.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.2.4}timestamp}{13}{subsubsection.5.2.2.4}%
+\contentsline {section}{\numberline {5.3}Riferimenti per la struct Stanza}{13}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Descrizione dettagliata}{13}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Documentazione dei campi}{14}{subsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.1}colpo\_fatale}{14}{subsubsection.5.3.2.1}%
+\contentsline {subsubsection}{\numberline {5.3.2.2}danno}{14}{subsubsection.5.3.2.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.3}is\_boss}{14}{subsubsection.5.3.2.3}%
+\contentsline {subsubsection}{\numberline {5.3.2.4}nome}{14}{subsubsection.5.3.2.4}%
+\contentsline {subsubsection}{\numberline {5.3.2.5}ricompensa\_monete}{14}{subsubsection.5.3.2.5}%
+\contentsline {subsubsection}{\numberline {5.3.2.6}tipo}{14}{subsubsection.5.3.2.6}%
+\contentsline {chapter}{\numberline {6}Documentazione dei file}{15}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Riferimenti per il file src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}combattimento.c}{15}{section.6.1}%
+\contentsline {section}{\numberline {6.2}combattimento.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{15}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Riferimenti per il file src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}combattimento.h}{17}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Descrizione dettagliata}{17}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Documentazione delle funzioni}{18}{subsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.1}applica\_danno\_trappola()}{18}{subsubsection.6.3.2.1}%
+\contentsline {subsubsection}{\numberline {6.3.2.2}combattimento\_boss\_finale()}{18}{subsubsection.6.3.2.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.3}inizia\_combattimento()}{18}{subsubsection.6.3.2.3}%
+\contentsline {section}{\numberline {6.4}combattimento.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{19}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Riferimenti per il file src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}dungeon.c}{19}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Descrizione dettagliata}{20}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Documentazione delle funzioni}{20}{subsection.6.5.2}%
+\contentsline {subsubsection}{\numberline {6.5.2.1}esegui\_missione()}{20}{subsubsection.6.5.2.1}%
+\contentsline {subsubsection}{\numberline {6.5.2.2}genera\_stanza\_missione()}{20}{subsubsection.6.5.2.2}%
+\contentsline {section}{\numberline {6.6}dungeon.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{21}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Riferimenti per il file src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}dungeon.h}{25}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Descrizione dettagliata}{25}{subsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.7.2}Documentazione delle funzioni}{25}{subsection.6.7.2}%
+\contentsline {subsubsection}{\numberline {6.7.2.1}esegui\_missione()}{25}{subsubsection.6.7.2.1}%
+\contentsline {subsubsection}{\numberline {6.7.2.2}genera\_stanza\_missione()}{26}{subsubsection.6.7.2.2}%
+\contentsline {section}{\numberline {6.8}dungeon.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{26}{section.6.8}%
+\contentsline {section}{\numberline {6.9}Riferimenti per il file src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}giocatore.c}{27}{section.6.9}%
+\contentsline {subsection}{\numberline {6.9.1}Descrizione dettagliata}{27}{subsection.6.9.1}%
+\contentsline {subsection}{\numberline {6.9.2}Documentazione delle funzioni}{27}{subsection.6.9.2}%
+\contentsline {subsubsection}{\numberline {6.9.2.1}inizializza\_giocatore()}{27}{subsubsection.6.9.2.1}%
+\contentsline {subsubsection}{\numberline {6.9.2.2}stampa\_statistiche\_giocatore()}{27}{subsubsection.6.9.2.2}%
+\contentsline {section}{\numberline {6.10}giocatore.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{28}{section.6.10}%
+\contentsline {section}{\numberline {6.11}Riferimenti per il file src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}giocatore.h}{28}{section.6.11}%
+\contentsline {subsection}{\numberline {6.11.1}Descrizione dettagliata}{29}{subsection.6.11.1}%
+\contentsline {subsection}{\numberline {6.11.2}Documentazione delle funzioni}{29}{subsection.6.11.2}%
+\contentsline {subsubsection}{\numberline {6.11.2.1}inizializza\_giocatore()}{29}{subsubsection.6.11.2.1}%
+\contentsline {subsubsection}{\numberline {6.11.2.2}stampa\_statistiche\_giocatore()}{29}{subsubsection.6.11.2.2}%
+\contentsline {section}{\numberline {6.12}giocatore.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{30}{section.6.12}%
+\contentsline {section}{\numberline {6.13}Riferimenti per il file src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}main.c}{30}{section.6.13}%
+\contentsline {subsection}{\numberline {6.13.1}Descrizione dettagliata}{31}{subsection.6.13.1}%
+\contentsline {subsection}{\numberline {6.13.2}Documentazione delle funzioni}{31}{subsection.6.13.2}%
+\contentsline {subsubsection}{\numberline {6.13.2.1}main()}{31}{subsubsection.6.13.2.1}%
+\contentsline {section}{\numberline {6.14}main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{31}{section.6.14}%
+\contentsline {section}{\numberline {6.15}Riferimenti per il file src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}menu.c}{32}{section.6.15}%
+\contentsline {subsection}{\numberline {6.15.1}Descrizione dettagliata}{32}{subsection.6.15.1}%
+\contentsline {subsection}{\numberline {6.15.2}Documentazione delle funzioni}{32}{subsection.6.15.2}%
+\contentsline {subsubsection}{\numberline {6.15.2.1}gestisci\_trucchi()}{32}{subsubsection.6.15.2.1}%
+\contentsline {subsubsection}{\numberline {6.15.2.2}mostra\_menu\_missione()}{33}{subsubsection.6.15.2.2}%
+\contentsline {subsubsection}{\numberline {6.15.2.3}mostra\_menu\_principale()}{33}{subsubsection.6.15.2.3}%
+\contentsline {subsubsection}{\numberline {6.15.2.4}mostra\_menu\_salvataggi()}{34}{subsubsection.6.15.2.4}%
+\contentsline {subsubsection}{\numberline {6.15.2.5}mostra\_menu\_villaggio()}{34}{subsubsection.6.15.2.5}%
+\contentsline {subsubsection}{\numberline {6.15.2.6}mostra\_negozio()}{34}{subsubsection.6.15.2.6}%
+\contentsline {section}{\numberline {6.16}menu.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{35}{section.6.16}%
+\contentsline {section}{\numberline {6.17}Riferimenti per il file src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}menu.h}{39}{section.6.17}%
+\contentsline {subsection}{\numberline {6.17.1}Descrizione dettagliata}{40}{subsection.6.17.1}%
+\contentsline {subsection}{\numberline {6.17.2}Documentazione delle funzioni}{40}{subsection.6.17.2}%
+\contentsline {subsubsection}{\numberline {6.17.2.1}gestisci\_trucchi()}{40}{subsubsection.6.17.2.1}%
+\contentsline {subsubsection}{\numberline {6.17.2.2}mostra\_menu\_missione()}{40}{subsubsection.6.17.2.2}%
+\contentsline {subsubsection}{\numberline {6.17.2.3}mostra\_menu\_principale()}{41}{subsubsection.6.17.2.3}%
+\contentsline {subsubsection}{\numberline {6.17.2.4}mostra\_menu\_salvataggi()}{41}{subsubsection.6.17.2.4}%
+\contentsline {subsubsection}{\numberline {6.17.2.5}mostra\_menu\_villaggio()}{42}{subsubsection.6.17.2.5}%
+\contentsline {subsubsection}{\numberline {6.17.2.6}mostra\_negozio()}{42}{subsubsection.6.17.2.6}%
+\contentsline {section}{\numberline {6.18}menu.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{42}{section.6.18}%
+\contentsline {section}{\numberline {6.19}Riferimenti per il file src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}salvataggio.c}{43}{section.6.19}%
+\contentsline {subsection}{\numberline {6.19.1}Descrizione dettagliata}{43}{subsection.6.19.1}%
+\contentsline {subsection}{\numberline {6.19.2}Documentazione delle funzioni}{43}{subsection.6.19.2}%
+\contentsline {subsubsection}{\numberline {6.19.2.1}aggiungi\_salvataggio()}{43}{subsubsection.6.19.2.1}%
+\contentsline {subsubsection}{\numberline {6.19.2.2}carica\_salvataggi\_da\_file()}{44}{subsubsection.6.19.2.2}%
+\contentsline {subsubsection}{\numberline {6.19.2.3}carica\_salvataggio()}{44}{subsubsection.6.19.2.3}%
+\contentsline {subsubsection}{\numberline {6.19.2.4}elimina\_salvataggio()}{45}{subsubsection.6.19.2.4}%
+\contentsline {subsubsection}{\numberline {6.19.2.5}libera\_salvataggi()}{45}{subsubsection.6.19.2.5}%
+\contentsline {subsubsection}{\numberline {6.19.2.6}ottieni\_data\_corrente()}{45}{subsubsection.6.19.2.6}%
+\contentsline {subsubsection}{\numberline {6.19.2.7}salva\_tutto\_su\_file()}{45}{subsubsection.6.19.2.7}%
+\contentsline {subsubsection}{\numberline {6.19.2.8}stampa\_salvataggi()}{46}{subsubsection.6.19.2.8}%
+\contentsline {section}{\numberline {6.20}salvataggio.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{46}{section.6.20}%
+\contentsline {section}{\numberline {6.21}Riferimenti per il file src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}salvataggio.h}{49}{section.6.21}%
+\contentsline {subsection}{\numberline {6.21.1}Descrizione dettagliata}{49}{subsection.6.21.1}%
+\contentsline {subsection}{\numberline {6.21.2}Documentazione delle ridefinizioni di tipo (typedef)}{50}{subsection.6.21.2}%
+\contentsline {subsubsection}{\numberline {6.21.2.1}NodoSalvataggio}{50}{subsubsection.6.21.2.1}%
+\contentsline {subsection}{\numberline {6.21.3}Documentazione delle funzioni}{50}{subsection.6.21.3}%
+\contentsline {subsubsection}{\numberline {6.21.3.1}aggiungi\_salvataggio()}{50}{subsubsection.6.21.3.1}%
+\contentsline {subsubsection}{\numberline {6.21.3.2}carica\_salvataggi\_da\_file()}{50}{subsubsection.6.21.3.2}%
+\contentsline {subsubsection}{\numberline {6.21.3.3}carica\_salvataggio()}{50}{subsubsection.6.21.3.3}%
+\contentsline {subsubsection}{\numberline {6.21.3.4}elimina\_salvataggio()}{51}{subsubsection.6.21.3.4}%
+\contentsline {subsubsection}{\numberline {6.21.3.5}libera\_salvataggi()}{51}{subsubsection.6.21.3.5}%
+\contentsline {subsubsection}{\numberline {6.21.3.6}salva\_tutto\_su\_file()}{52}{subsubsection.6.21.3.6}%
+\contentsline {subsubsection}{\numberline {6.21.3.7}stampa\_salvataggi()}{52}{subsubsection.6.21.3.7}%
+\contentsline {section}{\numberline {6.22}salvataggio.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{53}{section.6.22}%
+\contentsline {section}{\numberline {6.23}Riferimenti per il file src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}stanza.h}{53}{section.6.23}%
+\contentsline {subsection}{\numberline {6.23.1}Descrizione dettagliata}{53}{subsection.6.23.1}%
+\contentsline {subsection}{\numberline {6.23.2}Documentazione dei tipi enumerati}{53}{subsection.6.23.2}%
+\contentsline {subsubsection}{\numberline {6.23.2.1}TipoStanza}{53}{subsubsection.6.23.2.1}%
+\contentsline {section}{\numberline {6.24}stanza.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{54}{section.6.24}%
+\contentsline {section}{\numberline {6.25}Riferimenti per il file src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}utilita.c}{54}{section.6.25}%
+\contentsline {subsection}{\numberline {6.25.1}Descrizione dettagliata}{55}{subsection.6.25.1}%
+\contentsline {subsection}{\numberline {6.25.2}Documentazione delle funzioni}{55}{subsection.6.25.2}%
+\contentsline {subsubsection}{\numberline {6.25.2.1}controlla\_padovan()}{55}{subsubsection.6.25.2.1}%
+\contentsline {subsubsection}{\numberline {6.25.2.2}lancia\_dado()}{55}{subsubsection.6.25.2.2}%
+\contentsline {subsubsection}{\numberline {6.25.2.3}leggi\_input\_char()}{56}{subsubsection.6.25.2.3}%
+\contentsline {subsubsection}{\numberline {6.25.2.4}leggi\_intero()}{56}{subsubsection.6.25.2.4}%
+\contentsline {subsubsection}{\numberline {6.25.2.5}padovan()}{56}{subsubsection.6.25.2.5}%
+\contentsline {subsubsection}{\numberline {6.25.2.6}pulisci\_schermo()}{57}{subsubsection.6.25.2.6}%
+\contentsline {subsubsection}{\numberline {6.25.2.7}valuta\_vittoria\_morra()}{57}{subsubsection.6.25.2.7}%
+\contentsline {section}{\numberline {6.26}utilita.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{58}{section.6.26}%
+\contentsline {section}{\numberline {6.27}Riferimenti per il file src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}utilita.h}{59}{section.6.27}%
+\contentsline {subsection}{\numberline {6.27.1}Descrizione dettagliata}{59}{subsection.6.27.1}%
+\contentsline {subsection}{\numberline {6.27.2}Documentazione delle funzioni}{59}{subsection.6.27.2}%
+\contentsline {subsubsection}{\numberline {6.27.2.1}controlla\_padovan()}{59}{subsubsection.6.27.2.1}%
+\contentsline {subsubsection}{\numberline {6.27.2.2}lancia\_dado()}{60}{subsubsection.6.27.2.2}%
+\contentsline {subsubsection}{\numberline {6.27.2.3}leggi\_input\_char()}{60}{subsubsection.6.27.2.3}%
+\contentsline {subsubsection}{\numberline {6.27.2.4}leggi\_intero()}{61}{subsubsection.6.27.2.4}%
+\contentsline {subsubsection}{\numberline {6.27.2.5}padovan()}{61}{subsubsection.6.27.2.5}%
+\contentsline {subsubsection}{\numberline {6.27.2.6}pulisci\_schermo()}{61}{subsubsection.6.27.2.6}%
+\contentsline {subsubsection}{\numberline {6.27.2.7}valuta\_vittoria\_morra()}{62}{subsubsection.6.27.2.7}%
+\contentsline {section}{\numberline {6.28}utilita.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{62}{section.6.28}%

@@ -37,4 +37,4 @@ USE_PDFLATEX           = YES
 LATEX_BATCHMODE        = NO
 LATEX_HIDE_INDICES     = NO
 LATEX_BIB_STYLE        = plain
-HAVE_DOT               = NO
+HAVE_DOT               = YES

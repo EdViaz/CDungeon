@@ -5,3 +5,9 @@ Leonardo D'Alessio 911408
 Tommaso Favaro 910539
 
 Edoardo Viale 909516
+
+Come compilare
+
+ gcc -std=c99 -o cdungeon src/*.c
+
+ ./cdungeon
